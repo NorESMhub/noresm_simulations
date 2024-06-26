@@ -1,0 +1,143 @@
+#! /bin/bash
+
+## Create a new branch with a clean history and no case files.
+## Given a case directory and a tag name, store all the case files, commit
+##   them, and push them to NorESMhub/noresmdev_case_config or another
+##   repository.
+
+## Update the script version here to indicate changes
+## Use semantic versioning (https://semver.org/).
+VERSION="0.0.1"
+
+# Store some pathnames, find tools needed by this script
+tool=$(basename $0)
+tooldir=$(dirname $(realpath $0))
+
+## Error codes
+SUCCESS=0               # Routine ran without error
+ERR_BADARG=02           # Bad command line argument
+ERR_MISSINGARG=03       # Missing command line argument
+ERR_DUPLICATE_ARG=04    # Duplicate argument on command line
+ERR_CASE_NOTFOUND=05    # Case directory not found
+
+## Configuration variables
+AUTO_PUSH="ON"
+BRANCH=""
+CASE_DIR=""
+ISSUE_NUM=""
+REPOSITORY="https://github.com/NorESMhub/noresmdev_case_config"
+TAG=""
+
+## Internal variables
+directories_to_copy="Buildconf CaseDocs SourceMods cmake_macros"
+files_to_copy="CaseStatus Depends.* Macros.* README.* *.xml"
+files_to_copy="${files_to_copy} replay.sh software_environment.txt user_nl_*"
+remote_name=""
+
+help() {
+    echo -e "${tool}, version ${VERSION}\n"
+    echo "Tool to collect NorESM case information into a new repository tag"
+    echo "Usage:"
+    echo "  ${tool} [OPTIONS] <case path>"
+    echo "       --repo <repo>       repository to store (default: '${REPOSITORY}')"
+    echo "       --tag  <tag>        tag name for case (default: none)"
+    echo "       --branch <branch>   create a branch (default: none)"
+    echo "       --issue <issue #>   Issue number to document (default: none)"
+    echo "       --(no-)auto-push    Push new tag back to remote repo (default: on)"
+    echo ""
+    echo "Note: One of --tag or --branch is required."
+    echo "      Only tags are auto-pushed to the remote."
+    echo "      If --tag is given but not --branch, a temporary branch is created,"
+    echo "      then deleted after the tag is created."
+    echo "      If --branch is given but not --tag, the changes are stored in the"
+    echo "      branch but not pushed to the remote."
+    if [ $# -ne 0 ]; then
+        exit $1
+    else
+        exit
+    fi
+}
+
+herr() {
+    ## Write an error message, show help, and exit if an error has been found
+    ## $1 is an error code (zero means no error)
+    ## $2 is an error message
+    if [ ${1} -ne 0 ]; then
+        echo "ERROR: ${2}"
+        help ${1}
+    fi
+}
+
+perr() {
+    ## Write an error message and exit if an error has been found
+    ## $1 is an error code (zero means no error)
+    ## $2 is an error message
+    if [ ${1} -ne 0 ]; then
+        echo "ERROR: ${2}"
+        exit ${1}
+    fi
+}
+
+if [ $# -lt 1 ]; then
+    herr ${ERR_MISSINGARG} "A pathname to a case directory is required"
+fi
+
+while [ $# -gt 0 ]; do
+    key="$1"
+    case $key in
+        -h | --help)
+            help 0
+            ;;
+        --auto-push)
+            AUTO_PUSH="ON"
+            ;;
+        --no-auto-push)
+            AUTO_PUSH="OFF"
+            ;;
+        --branch)
+            if [ $# -lt 2 ]; then
+                echo "--branch requires a branch name"
+                help
+            fi
+            if [ -n "${BRANCH}" ]; then
+                echo "WARNING, --branch already set to '${BRANCH}', replacing with '${2}'"
+            fi
+            BRANCH="${2}"
+            shift
+            ;;
+        --repo)
+            if [ $# -lt 2 ]; then
+                echo "--repo requires the URL to a repository"
+                help
+            fi
+            REPOSITORY="${2}"
+            shift
+            ;;
+        --tag)
+            if [ $# -lt 2 ]; then
+                echo "--tag requires a tag name"
+                help
+            fi
+            if [ -n "${TAG}" ]; then
+                echo "WARNING, --branch already set to '${BRANCH}', replacing with '${2}'"
+            fi
+            TAG="${2}"
+            shift
+            ;;
+        -*) # unknown
+            echo "ERROR: Unknown argument, '${1}'"
+            help 1
+            ;;
+        *) # positional arg
+            if [ -n "${CASE_DIR}" ]; then
+                herr ${ERR_DUPLICATE_ARG} "Case directory, '${CASE_DIR}', already entered"
+            fi
+            CASE_DIR="${1}"
+            ;;
+    esac
+    shift
+done
+
+if [ ! -d "${CASE_DIR}" ]; then
+    herr ${ERR_CASE_NOTFOUND} "Case directory, '${CASE_DIR}', not found"
+fi
