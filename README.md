@@ -9,7 +9,7 @@ The idea for this repository was stolen shamelessly from the [NCAR amwg_dev repo
   - noresm25_preindust_coupled
   - noresm25_preindust_amip
 - Determine a case name for your run using the proposed naming convention of
-    ``shortcompsetname_codeversion_grid_somekindofinfo_yyyymmdd``
+    ``compset_alias.grid_alias.codeversion.somekindofinfo.yyyyymmdd``
 - Open an issue and fill out the template
   -- include a link to the branch in the issue (when pushed)
 - Create your case directory and using the script (TBD) push your case directory to the branch
