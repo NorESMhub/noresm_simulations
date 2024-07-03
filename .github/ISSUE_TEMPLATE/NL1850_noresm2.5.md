@@ -3,7 +3,7 @@ name: NorESM2.5 - Fully coupled pre-industrial (NLT1850)
 about: Documenting information about a NorESM simulation.
 title: Enter casename (shortcompsetname_codeversion_grid_somekindofinfo_yyyymmdd)
 labels:
-- 'NLT1850'
+- 'N1850'
 - 'NorESM2.5'
 assignees: ''
 ---
