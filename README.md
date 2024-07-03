@@ -1,11 +1,25 @@
-# noresmdev_case_config repo
-The noresmdev_case_config repository is dedicated to development of new cases for NorESM including for NorESM component models.
+# noresm_simulations
+
+The noresm_simulations repository is dedicated to development of new cases for NorESM including for NorESM component models.
 
 The idea for this repository was stolen shamelessly from the [NCAR amwg_dev repo](https://github.com/NCAR/amwg_dev).
 
-## Development simulations: To start a new development case, follow these steps:
-- Open a [New issue](https://github.com/NorESMhub/noresmdev_case_config/issues/new/choose)
-- Create a new branch with a name that describes the new case (e.g. add_interactive_pirates)
-- Include a link to the branch in the issue (when pushed)
-- Add an appropriate label (NorESM for fully-coupled cases, otherwise, the lead component model).
+## To start a new development simulation, follow these steps:
+- Determine what branch your experiment case directory will live on, current supported branches are:
+  - noresm25_preindust_coupled
+  - noresm25_preindust_amip
+- Determine a case name for your run using the proposed naming convention of
+    ``compset_alias.grid_alias.codeversion.somekindofinfo.yyyyymmdd``
+- Open an issue and fill out the template
+  -- include a link to the branch in the issue (when pushed)
+- Create your case directory and using the script (TBD) push your case directory to the branch
 
+## To capture an experimental run to this branch
+1. Run the CaptureCase tool (from the repository's case_capture_tool branch or from an installed location).
+2. Choose this branch when prompted or enter it on the command line (see --help).
+
+## Discussions
+Discussions relevant to NorESM development and preparation for CMIP7 could be posted under [Discussions](https://github.com/NorESMhub/noresm_simulations/discussions).
+
+- Discussions provide you with the ability to directly engage with other developers while staying on GitHub.
+- To ensure that the conversation remains productive and helpful, please keep your discussions organized by using relevant titles, applying labels, and refraining from mixing topics.
