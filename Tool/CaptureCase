@@ -1,0 +1,467 @@
+#! /bin/bash
+
+## Add the case information from an experiment run
+## Given a case directory store all the case files, commit
+##   them, create a tag, and push it to NorESMhub/noresm_simulations or
+##   another repository.
+
+## Update the script version here to indicate changes
+## Use semantic versioning (https://semver.org/).
+VERSION="0.0.1"
+
+# Store some pathnames, find tools needed by this script
+tool="$(basename $0)"
+tooldir="$(dirname $(realpath $0))"
+repodir="$(dirname ${tooldir})"
+git_commands="${tooldir}/git_commands.sh"
+utilities="${tooldir}/utils.sh"
+
+## Error codes
+SUCCESS=0               # Routine ran without error
+ERR_BADARG=02           # Bad command line argument
+ERR_MISSINGARG=03       # Missing command line argument
+ERR_DUPLICATE_ARG=04    # Duplicate argument on command line
+ERR_CASE_NOTFOUND=05    # Case directory not found
+ERR_BAD_CASEDIR=06      # Case directory missing files
+ERR_BAD_REPODIR=07      # Case repository is not good
+ERR_BAD_URL=08          # Bad repo URL
+ERR_BRANCH_FAIL=09      # Failure with git branch command
+
+## We use this a lot
+repo_name="noresm_simulations"
+
+## Configuration variables
+declare AUTO_PUSH="ON"
+declare BRANCH=""
+declare BRANCH_SET="no"
+declare CASE_DIR=""
+declare -i ISSUE_NUM=""
+declare -i NUM_TIMING=1
+declare REPO_DIR=""
+declare REPO_URL="https://github.com/NorESMhub/${repo_name}"
+
+## Internal variables
+directories_to_copy=("Buildconf" "CaseDocs" "SourceMods" "cmake_macros")
+files_to_copy=("CaseStatus" "Depends.*" "Macros.*" "README.*" "*.xml")
+files_to_copy+=("replay.sh" "software_environment.txt" "user_nl_*")
+files_to_copy+=("case.st_archive" ".env_mach_specific.*")
+timing_files=()
+optional_files=(".case.run")
+remote_name=""
+
+# Load the utilities (note perr may not exist if tihs fails)
+source ${utilities}
+perr $? "loading utilities script, '${utilities}'"
+
+# Load the git comands
+source ${git_commands}
+perr $? "loading git commands script, '${git_commands}'"
+
+help() {
+    local default_br=""
+    local default_url=""
+    local ind="    "
+    if [ -n "${BRANCH}" ]; then
+        default_br=" (default: ${BRANCH})"
+    fi
+    if [ -n "${REPO_URL}" ]; then
+        default_url="\n${ind}${ind}(default: '${REPO_URL}')"
+    fi
+    echo -e "${tool}, version ${VERSION}\n"
+    echo "Tool to collect NorESM case information into a new repository tag"
+    echo ""
+    echo "USAGE: ${tool} [OPTIONS] <case path> <repository clone path>"
+    echo ""
+    echo "${ind}- <case path> must be a path to an existing NorESM case. This"
+    echo "${ind}  script requires that ./case.setup has been run. Building and running"
+    echo "${ind}  the case will allow more information to be saved."
+    echo "${ind}- <repository clone path> is a path to a ${repo_name} repository."
+    echo "${ind}  You can create one with:"
+    echo "${ind}  git clone https://github.com/NorESMhub/${repo_name}"
+    echo -e "\nSYNOPSIS"
+    echo "${ind}1. Copies case files from <case path> to the appropriate branch in"
+    echo "${ind}   <repository clone path>. See the --branch option below."
+    echo "${ind}2. Commits these files to the branch."
+    echo "${ind}3. Creates a new tag for this commit (<case_name_v00x>)."
+    echo "${ind}4. Pushes the branch and tag to the upstream git repo"
+    echo "${ind}   (see --url option below)."
+    echo -e "\nOPTIONS:"
+    echo "${ind}--branch <branch>"
+    echo "${ind}${ind}Case information will be saved to <branch>${default_br}"
+    echo "${ind}${ind}This should be the experiment branch that represents the case"
+    echo "${ind}${ind}being saved. If you do not specify this option, you will be asked to"
+    echo "${ind}${ind}select a branch when the script is run."
+    echo "${ind}--issue <issue #>"
+    echo "${ind}${ind}GitHub issue number to document (default: none)"
+    echo "${ind}${ind}If entered, the URL for the GitHub issue is added to"
+    echo "${ind}${ind}the git log messages."
+    echo "${ind}--num-timing-files <#>"
+    echo "${ind}${ind}Number of timing files to store (default: ${NUM_TIMING})"
+    echo "${ind}${ind}Each model run creates a set of timing files. Setting"
+    echo "${ind}${ind}--num-timing-files to a positive number, N, will store timing"
+    echo "${ind}${ind}file sets for up to the last N model runs."
+    echo "${ind}${ind}Setting --num-timing-files to zero will store all timing files."
+    echo "${ind}--url <url>"
+    echo -e "${ind}${ind}URL for pushing case info${default_url}"
+    echo "${ind}${ind} This is the upstream remote which by default is the noresm_simulations"
+    echo "${ind}${ind}repo in the NorESMhub GitHub organization. The updated branch and the"
+    echo "${ind}${ind}new tag are pushed to this URL unless --no-auto-push is specified"
+    echo "${ind}${ind}on the command line."
+    echo "${ind}--auto-push, --no-auto-push"
+    echo "${ind}${ind}Push (Don't push) the new tag back to remote repo"
+    echo "${ind}${ind}(default: --auto-push)"
+    if [ $# -ne 0 ]; then
+        exit $1
+    else
+        exit
+    fi
+}
+
+herr() {
+    ## Write an error message, show help, and exit if an error has been found
+    ## $1 is an error code (zero means no error)
+    ## $2 is an error message
+    if [ ${1} -ne 0 ]; then
+        echo -e "\nERROR: ${2}\n"
+        help ${1}
+    fi
+}
+
+if in_git_worktree; then
+    BRANCH="$(git_current_branch)"
+    herr $? "Invalid branch name, '${BRANCH}'"
+    BRANCH="$(git_allowed_branch_name ${BRANCH})"
+fi
+
+while [ $# -gt 0 ]; do
+    key="$1"
+    case $key in
+        -h | --help)
+            help 0
+            ;;
+        --auto-push)
+            AUTO_PUSH="ON"
+            ;;
+        --no-auto-push)
+            AUTO_PUSH="OFF"
+            ;;
+        --branch)
+            if [ $# -lt 2 ]; then
+                echo "--branch requires a branch name"
+                help
+            fi
+            if [ -n "${BRANCH}" ]; then
+                echo "WARNING, --branch already set to '${BRANCH}', replacing with '${2}'"
+            fi
+            BRANCH="${2}"
+            BRANCH_SET="yes"
+            shift
+            ;;
+        --issue)
+            if [ $# -lt 2 ]; then
+                echo "--issue requires a GitHub issue number"
+                help
+            fi
+            ISSUE_NUM="${2}"
+            shift
+            ;;
+        --num-timing-files)
+            if [ $# -lt 2 ]; then
+                echo "--num-timing-files requires a non-negative integer"
+                help
+            fi
+            if [ ${2} -lt 0 ]; then
+                echo "Invalid, --num-timing-files requires a non-negative integer"
+            fi
+            NUM_TIMING="${2}"
+            shift
+            ;;
+        --url)
+            if [ $# -lt 2 ]; then
+                echo "--url requires the URL to a repository"
+                help
+            fi
+            REPO_URL="${2}"
+            shift
+            ;;
+        -*) # unknown
+            echo "ERROR: Unknown argument, '${1}'"
+            help 1
+            ;;
+        *) # positional arg
+            if [ -n "${CASE_DIR}" ]; then
+                if [ -n "${REPO_DIR}" ]; then
+                    herr ${ERR_DUPLICATE_ARG} "Too many arguments"
+                else
+                    REPO_DIR="${1}"
+                fi
+            else
+                CASE_DIR="${1}"
+            fi
+            ;;
+    esac
+    shift
+done
+
+## We need a case directory
+if [ ! -d "${CASE_DIR}" ]; then
+    herr ${ERR_CASE_NOTFOUND} "Case directory, '${CASE_DIR}', not found"
+fi
+CASE_DIR="$(realpath ${CASE_DIR})"
+
+## We need a repository directory
+if [ ! -d "${REPO_DIR}" ]; then
+    if yn_query "Repository clone, '${REPO_DIR}', does not exist, clone"; then
+        if [ -e "${REPO_DIR}" ]; then
+            perr ${ERR_BAD_REPODIR} "Cannot clone into '${REPO_DIR}', not empty."
+        fi
+        git clone "${REPO_URL}" "${REPO_DIR}"
+        perr $? "trying to clone '${REPO_URL}' into '${REPO_DIR}'"
+    else
+        herr ${ERR_CASE_NOTFOUND} "Repository directory, '${REPO_DIR}', not found"
+    fi
+fi
+REPO_DIR="$(realpath ${REPO_DIR})"
+
+## Do some minimal checks on the case directory
+cd ${CASE_DIR}
+perr $? "Unable to cd to case directory, '${CASE_DIR}'"
+
+declare -i nerrs=0
+for file in ${files_to_copy[@]}; do
+    ## Note we use ls instead of testing for presence to allow wildcards
+    if [ -z "$(ls ${file} 2> /dev/null)" ]; then
+        echo "Case directory missing '${file}'"
+        nerrs=$((nerrs + 1))
+    fi
+done
+for dir in ${directories_to_copy[@]}; do
+    if [ ! -d "${dir}" ]; then
+        echo "Case directory missing directory, '${dir}'"
+        nerrs=$((nerrs + 1))
+    fi
+done
+if [ ${nerrs} -gt 0 ]; then
+    perr ${ERR_BAD_CASEDIR} "Invalid or incomplete case directory, '${CASE_DIR}'"
+fi
+
+## Add timing files
+for tfname in "timing/cesm.ESMF_Profile*" "timing/cesm_timing*"; do
+    if [ ${NUM_TIMING} -gt 0 ]; then
+        tfile=($(ls -t ${tfname} | head -n ${NUM_TIMING}))
+    else
+        tfile=($(ls -t ${tfname}))
+    fi
+    if [ ${#tfile[@]} -gt 0 ]; then
+        files_to_copy+=(${tfile[@]})
+    else
+        echo "WARNING: Missing timing file, '${tfname}'"
+    fi
+done
+
+# Add optional files
+for file in ${optional_files[@]}; do
+    for sfile in $(ls ${file}); do
+        files_to_copy+=("${sfile}")
+    done
+done
+
+## Check repository directory
+cd ${REPO_DIR}
+perr $? "Unable to cd to repository directory, '${REPO_DIR}'"
+
+if ! in_git_worktree; then
+    perr ${ERR_BAD_REPODIR} "Repository dir, '${REPO_DIR}' is not a git repository"
+fi
+
+## Set a default branch (if not set)
+if [ "${BRANCH_SET}" == "no" -a -z "${BRANCH}" ]; then
+    BRANCH="$(git_current_branch)"
+    herr $? "Invalid branch name, '${BRANCH}'"
+    BRANCH="$(git_allowed_branch_name ${BRANCH})"
+fi
+
+## Find the remote to update
+remote=$(git_url_remote ${REPO_URL})
+
+if [ -z "${remote}" ]; then
+    if yn_query "Remote URL, '${REPO_URL}', not found, try to fetch anyway"; then
+        url_bits=($(echo ${REPO_URL} | sed -e 's@^.*github.com[/:]@@' -e 's@/@ @'))
+        remote_name="${url_bits[0]}_${url_bits[1]}"
+        while [ -n "$(is_git_remote ${remote_name})" ]; do
+            remote_name+="x"
+        done
+        git remote add "${remote_name}" "${REPO_URL}"
+    fi
+    # Make sure everything is okay now
+    remote=$(git_url_remote ${REPO_URL})
+    if [ -z "${remote}" ]; then
+        perr ${ERR_BAD_URL} "Unable to fetch information from '${REPO_URL}'"
+    fi
+fi
+
+## Always update the remote
+git fetch --quiet --tags ${remote}
+perr $? "Unable to fetch from '${remote}' (${REPO_URL})"
+
+## Find target branch
+exp_branches=($(git_experiment_branches))
+# Does BRANCH already exist?
+ebranch=""
+for br in ${exp_branches[@]}; do
+    if [ "${br}" == "${BRANCH}" ]; then
+        ebranch="${br}"
+        break
+    fi
+done
+
+## Do we need to ask the user to select a branch?
+if [ "${BRANCH_SET}" == "no" ]; then
+    declare -A branches
+    count=0
+    query_str="Select a branch where this case will be stored"
+    for br in ${exp_branches[@]}; do
+        count=$((count + 1))
+        branches[${count}]="${br}"
+        if [ -n "${branch_str}" ]; then
+            branch_str+="%"
+        fi
+        branch_str+="${count}:${br}"
+    done
+    query ${branch_str} "${query_str} (1 - ${count}):"
+    res=$?
+    BRANCH="${branches[${res}]}"
+    BRANCH_SET="yes"
+    unset branches
+fi
+
+## Does the local branch exist?
+local_branch="$(git_branch_local ${BRANCH})"
+
+if [ -n "${local_branch}" ]; then
+    ## Local branch exists, find the upstream
+    upstream="$(git_branch_upstream ${local_branch})"
+    perr $? "Unable to find the upstream branch for ${local_branch}"
+    ## Update the branch from the remote
+    git checkout ${local_branch}
+    perr $? "Unable to check out local branch (${local_branch})"
+    git merge --quiet --ff-only "${upstream}"
+    perr $? "Unable to update local branch (${local_branch})"
+else
+    ## Local branch does not exist, create it and check it out
+    git branch ${BRANCH} ${remote}/${BRANCH}
+    perr $? "Unable to create local branch, (${BRANCH})"
+    local_branch="$(git branch --list ${BRANCH})"
+    if [ -z "${local_branch}" ]; then
+        perr ${ERR_BRANCH_FAIL} "Failure to create local branch, '${BRANCH}'"
+    fi
+    git checkout ${local_branch}
+    perr $? "Unable to check out local branch (${local_branch})"
+fi
+
+## We want only current case files but many will be updated.
+## Mark all existing files so we can delete anything that is not updated
+## Note, do not delete README.md
+
+declare -A curr_files
+cd ${REPO_DIR}
+perr $? "Unable to cd to repo directory, '${REPO_DIR}'"
+for file in $(find . -not -path "./.git/*" -type f); do
+    fname="$(echo ${file} | sed -e 's@^./@@')"
+    if [ "${fname}" != "README.md" ]; then
+        curr_files["${fname}"]=1
+    fi
+done
+
+## Now, copy all the files (done from CASE_DIR)
+cd ${CASE_DIR}
+perr $? "Unable to cd to case directory, '${CASE_DIR}'"
+for file in ${files_to_copy[@]}; do
+    for sfile in $(ls ${file}); do
+        sdir=$(dirname "${sfile}")
+        if [ ! -d "${REPO_DIR}/${sdir}" ]; then
+            mkdir --parents "${REPO_DIR}/${sdir}"
+        fi
+        cp ${sfile} ${REPO_DIR}/${sdir}
+        perr $? "Unable to copy file into repo, '${sfile}'"
+        # Mark sfile as updated
+        curr_files["${sfile}"]=0
+        git -C ${REPO_DIR} add "${sfile}"
+        perr $? "Cannot add '${sfile}'"
+    done
+done
+
+## Copy all the directories
+for dir in ${directories_to_copy[@]}; do
+    cp -R "${dir}" "${REPO_DIR}"
+    perr $? "Unable to copy files into repo subdir, '${REPO_DIR}/${dir}'"
+    # Mark files in dir as updated
+    for sfile in $(find ${dir} -type f); do
+        fname="$(echo ${sfile} | sed -e 's@^./@@')"
+        curr_files["${fname}"]=0
+        git -C ${REPO_DIR} add "${fname}"
+        perr $? "Cannot add '${fname}'"
+    done
+done
+
+## Delete any files that were not copied
+cd ${REPO_DIR}
+perr $? "Unable to cd to the repository directory"
+for file in ${!curr_files[@]}; do
+    if [ ${curr_files["${file}"]} == 1 ]; then
+        git rm --quiet "${file}"
+        perr $? "Unable to remove unused file, '${file}'"
+    fi
+done
+
+## Commit the changes
+cd ${REPO_DIR}
+perr $? "Unable to cd to the repository directory"
+case_name=$(basename "${CASE_DIR}")
+commit_msg="Case capture of ${case_name} at $(date)"
+tree_stat="$(git status --porcelain)"
+if [ -z "${tree_stat}" ]; then
+    echo "WARNING: No changes in case files detected, no new commit to make"
+elif [ -n "${ISSUE_NUM}" ]; then
+    issue_msg="See https://github.com/NorESMhub/noresm_simulations/issues/${ISSUE_NUM}"
+    git commit -m "${commit_msg}" -m "${issue_msg}"
+    perr $? "Unable to commit case capture"
+else
+    git commit -m "${commit_msg}"
+    perr $? "Unable to commit case capture"
+fi
+
+## Push the branch back to the remote
+if [ "${AUTO_PUSH}" == "ON" ]; then
+    git push ${remote} ${BRANCH}
+    perr $? "Unable to push branch, ${BRANCH}, to ${remote}"
+fi
+
+## Create a unique tag for this commit
+declare -i tagnum=1
+tagname=""
+while [ -z "${tagname}" ]; do
+    tagname=$(printf "%s_v%03d" ${case_name} ${tagnum})
+    if [ -n "$(git tag --list ${tagname})" ]; then
+        ## We found a tag, make a new one
+        tagnum=$((tagnum + 1 ))
+        tagname=""
+    fi
+done
+
+## Tag the commit
+if [ -z "${tree_stat}" ]; then
+    echo "WARNING: No changes in case files detected, no new tag will be made"
+elif [ -n "${ISSUE_NUM}" ]; then
+    git tag -a "${tagname}" -m "${commit_msg}" -m "${issue_msg}"
+    perr $? "Unable to create new tag, '${tagname}'"
+else
+    git tag -a "${tagname}" -m "${commit_msg}" -m "${issue_msg}"
+    perr $? "Unable to create new tag, '${tagname}'"
+fi
+
+## Push the tag back to the remote
+if [ "${AUTO_PUSH}" == "ON" ]; then
+    git push ${remote} ${tagname}
+    perr $? "Unable to push tag, ${tagname}, to ${remote}"
+fi

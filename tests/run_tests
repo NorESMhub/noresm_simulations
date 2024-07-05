@@ -1,0 +1,37 @@
+#! /bin/bash
+
+## Run all test scripts
+scriptdir=$(cd $(dirname $0); echo "$(pwd -P)")
+test_src_dir="${scriptdir}/test_src"
+test_scripts="${test_src_dir}/test_scripts.sh"
+
+declare LOGPASS=${LOGPASS:-"yes"}
+declare TOTTESTS=0
+declare TOTFAIL=0
+
+if [ $# -eq 1 -a "${1}" == "--fail-only" ]; then
+    LOGPASS="no"
+elif [ $# -gt 0 ]; then
+    echo "$(basename ${0}) [ --fail-only ]"
+    exit 1
+fi
+
+export LOGPASS
+
+echo "Running git tests"
+source ${test_src_dir}/test_git_commands.sh
+gittests=$(git_test_total)
+gitfail=$(git_test_failures)
+
+TOTTESTS=$((TOTTESTS + gittests))
+TOTFAIL=$((TOTFAIL + gitfail))
+
+echo -e "\nRunning utility tests"
+source ${test_src_dir}/test_utils.sh < ${test_src_dir}/util_test_input
+utiltests=$(utility_test_total)
+utilfail=$(utility_test_failures)
+
+TOTTESTS=$((TOTTESTS + utiltests))
+TOTFAIL=$((TOTFAIL + utilfail))
+
+report_test_results "" ${TOTTESTS} ${TOTFAIL}

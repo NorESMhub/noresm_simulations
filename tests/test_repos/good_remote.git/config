@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "NorESMhub"]
+	url = https://github.com/NorESMhub/noresm_simulations
+	fetch = +refs/heads/*:refs/remotes/NorESMhub/*
+[branch "noresm25_preindust_coupled"]
+	remote = NorESMhub
+	merge = refs/heads/noresm25_preindust_coupled

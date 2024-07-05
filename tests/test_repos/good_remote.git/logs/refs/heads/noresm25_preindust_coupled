@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 0ef63c3960f96ae429ff8fdc829c3168a9db9721 Steve Goldhaber <stevenng@met.no> 1719571592 +0200	commit (initial): Add README.md
+0ef63c3960f96ae429ff8fdc829c3168a9db9721 0ef63c3960f96ae429ff8fdc829c3168a9db9721 Steve Goldhaber <stevenng@met.no> 1719584331 +0200	Branch: renamed refs/heads/NorESM-2.5_NHIST to refs/heads/noresm25_preindust_coupled
+0ef63c3960f96ae429ff8fdc829c3168a9db9721 54838c4a231926d4a1e38d748a65eefe25fd5fda Steve Goldhaber <stevenng@met.no> 1719584459 +0200	commit: Add README.md
