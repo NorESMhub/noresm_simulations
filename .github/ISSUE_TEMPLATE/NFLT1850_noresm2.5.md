@@ -1,7 +1,7 @@
 ---
 name: NorESM2.5 - AMIP pre-industrial (NF1850)
 about: Documenting information about a NorESM simulation.
-title: Enter casename (shortcompsetname_codeversion_grid_somekindofinfo_yyyymmdd)
+title: Enter casename (shortcompsetname.grid.codeversion.somekindofinfo.yyyymmdd)
 labels:
 - 'NF1850' 
 - 'NorESM2.5'
