@@ -25,7 +25,7 @@ be set to DOCN.
 <entry id="build_chem_proc" value="0,1" list="" valid_values="">
 Switch to force the build of the chemistry preprocessor.
 </entry>
-<entry id="cam_bld" value="/cluster/work/users/mvertens/noresm/test_nf1850oslo/Buildconf/camconf" list="" valid_values="">
+<entry id="cam_bld" value="/cluster/work/users/mvertens/noresm/test_nf1850oslo" list="" valid_values="">
 CAM build directory; contains .o and .mod files.
 </entry>
 <entry id="cam_dir" value="/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam" list="" valid_values="">

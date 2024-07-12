@@ -4,18 +4,9 @@
  convproc_wup_max		= 4.0D0
 /
 &aerosol_nl
- aer_drydep_list		= 'bc_a1', 'bc_a4', 'dst_a1', 'dst_a2', 'dst_a3', 'ncl_a1', 'ncl_a2', 'ncl_a3', 'num_a1', 'num_a2', 'num_a3',
-         'num_a4', 'pom_a1', 'pom_a4', 'so4_a1', 'so4_a2', 'so4_a3', 'soa_a1', 'soa_a2'
- aer_wetdep_list		= 'bc_a1', 'bc_a4', 'dst_a1', 'dst_a2', 'dst_a3', 'ncl_a1', 'ncl_a2', 'ncl_a3', 'num_a1', 'num_a2', 'num_a3',
-         'num_a4', 'pom_a1', 'pom_a4', 'so4_a1', 'so4_a2', 'so4_a3', 'soa_a1', 'soa_a2'
- modal_accum_coarse_exch		= .true.
- seasalt_emis_scale		= 1.5D0
  sol_factb_interstitial		= 0.1D0
  sol_facti_cloud_borne		= 1.0D0
  sol_factic_interstitial		= 0.4D0
-/
-&aerosol_optics_nl
- water_refindex_file		= '/cluster/shared/noresm/inputdata/atm/cam/physprops/water_refindex_rrtmg_c080910.nc'
 /
 &air_composition_nl
  dry_air_species		= ''
@@ -39,62 +30,44 @@
  print_energy_errors		= .false.
 /
 &chem_inparm
- bndtvg		= '/cluster/shared/noresm/inputdata/atm/cam/ggas/noaamisc.r8.nc'
  chem_use_chemtrop		= .true.
  depvel_lnd_file		= '/cluster/shared/noresm/inputdata/atm/cam/chem/trop_mozart/dvel/regrid_vegetation.nc'
  drydep_srf_file		= '/cluster/shared/noresm/inputdata/atm/cam/chem/trop_mam/atmsrf_ne30pg3_cdf5_180522.nc'
  exo_coldens_file		= '/cluster/shared/noresm/inputdata/atm/cam/chem/trop_mozart/phot/exo_coldens.nc'
- ext_frc_cycle_yr		=   1850       
- ext_frc_specifier		= 'num_a1 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_so4_a1_anthro-ene_vertical_mol_175001-201412_ne30pg3_c20200103.nc',
-         'num_a1 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_a1_so4_contvolcano_vertical_850-5000_ne30pg3_c20200125.nc',
-         'num_a2 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_a2_so4_contvolcano_vertical_850-5000_ne30pg3_c20200125.nc',
-         'SO2 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_SO2_contvolcano_vertical_850-5000_ne30pg3_c20200125.nc',
-         'so4_a1 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_so4_a1_anthro-ene_vertical_mol_175001-201412_ne30pg3_c20200103.nc',
-         'so4_a1 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_so4_a1_contvolcano_vertical_850-5000_ne30pg3_c20200125.nc',
-         'so4_a2 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_so4_a2_contvolcano_vertical_850-5000_ne30pg3_c20200125.nc'
+ ext_frc_cycle_yr		= 1850
+ ext_frc_specifier		= 'H2O    ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/elev/H2O_emission_CH4_oxidationx2_elev_3DmonthlyL70_1850climoCMIP6piControl001_y21-50avg_c180802.nc',
+         'BC_AX  ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_BC_AX_airALL_vertical_1850_0.9x1.25_version20180512.nc',
+         'BC_AX  ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_BC_AX_anthroprofENEIND_vertical_1850_0.9x1.25_version20180512.nc',
+         'BC_N   ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_BC_N_airALL_vertical_1850_0.9x1.25_version20180512.nc',
+         'BC_N   ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_BC_N_anthroprofENEIND_vertical_1850_0.9x1.25_version20180512.nc',
+         'BC_NI  ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_BC_NI_bbAGRIBORFDEFOPEATSAVATEMF_vertical_1850_0.9x1.25_version20180512.nc',
+         'OM_NI  ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_OM_NI_airALL_vertical_1850_0.9x1.25_version20180512.nc',
+         'OM_NI  ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_OM_NI_anthroprofENEIND_vertical_1850_0.9x1.25_version20180512.nc',
+         'OM_NI  ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_OM_NI_bbAGRIBORFDEFOPEATSAVATEMF_vertical_1850_0.9x1.25_version20180512.nc',
+         'SO2    ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO2_airALL_vertical_1850_0.9x1.25_version20180512.nc',
+         'SO2    ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO2_anthroprofENEIND_vertical_1850_0.9x1.25_version20180512.nc',
+         'SO2    ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO2_bbAGRIBORFDEFOPEATSAVATEMF_vertical_1850_0.9x1.25_version20180512.nc',
+         'SO2    ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO2_volcCONTEXPL_vertical_1850_0.9x1.25_version20180512.nc',
+         'SO4_PR ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO4_PR_airALL_vertical_1850_0.9x1.25_version20180512.nc',
+         'SO4_PR ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO4_PR_anthroprofENEIND_vertical_1850_0.9x1.25_version20180512.nc',
+         'SO4_PR ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO4_PR_bbAGRIBORFDEFOPEATSAVATEMF_vertical_1850_0.9x1.25_version20180512.nc',
+         'SO4_PR ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO4_PR_volcCONTEXPL_vertical_1850_0.9x1.25_version20180512.nc'
  ext_frc_type		= 'CYCLICAL'
  fstrat_list		= ' '
- ghg_chem		= .true.
- h2orates		= '/cluster/shared/noresm/inputdata/atm/waccm/phot/xh2o_c080826.nc'
  photo_max_zen		= 88.85D0
  rsf_file		= '/cluster/shared/noresm/inputdata/atm/waccm/phot/RSF_GT200nm_v3.0_c080811.nc'
- srf_emis_cycle_yr		=  1850       
- srf_emis_specifier		= 'bc_a4 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_bc_a4_anthro_surface_175001-201412_ne30pg3_c20191118.nc',
-         'bc_a4 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_bc_a4_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'DMS -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_DMS_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'num_a1 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_so4_a1_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'num_a1 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_so4_a1_anthro-ag-ship_surface_mol_175001-201412_ne30pg3_c20200103.nc',
-         'num_a2 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_so4_a2_anthro-res_surface_mol_175001-201412_ne30pg3_c20200103.nc',
-         'num_a4 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_bc_a4_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'num_a4 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_bc_a4_anthro_surface_175001-201412_ne30pg3_c20191118.nc',
-         'num_a4 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_pom_a4_anthro_surface_175001-201412_ne30pg3_c20191118.nc',
-         'num_a4 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_num_pom_a4_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'pom_a4 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_pom_a4_anthro_surface_175001-201412_ne30pg3_c20191118.nc',
-         'pom_a4 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_pom_a4_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'SO2 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_SO2_anthro-ag-ship-res_surface_mol_175001-201412_ne30pg3_c20200103.nc',
-         'SO2 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_SO2_anthro-ene_surface_mol_175001-201412_ne30pg3_c20200103.nc',
-         'SO2 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_SO2_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'so4_a1 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_so4_a1_anthro-ag-ship_surface_mol_175001-201412_ne30pg3_c20200103.nc',
-         'so4_a1 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_so4_a1_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'so4_a2 -> /cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_so4_a2_anthro-res_surface_mol_175001-201412_ne30pg3_c20200103.nc',
-         'SOAE -> 2.5592D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_BENZENE_anthro_surface_175001-201412_ne30pg3_c20191118.nc',
-         'SOAE -> 2.5592D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_BENZENE_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'SOAE -> 0.5954D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_ISOP_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'SOAE -> 8.5371D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_IVOC_anthro_surface_175001-201412_ne30pg3_c20200103.nc',
-         'SOAE -> 8.5371D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_IVOC_bb_surface_175001-201512_ne30pg3_c20191119.nc',
-         'SOAE -> 5.1004D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_MTERP_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'SOAE -> 16.650D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_SVOC_anthro_surface_175001-201412_ne30pg3_c20200103.nc',
-         'SOAE -> 16.650D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_SVOC_bb_surface_175001-201512_ne30pg3_c20191119.nc',
-         'SOAE -> 8.2367D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_TOLUENE_anthro_surface_175001-201412_ne30pg3_c20191118.nc',
-         'SOAE -> 8.2367D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_TOLUENE_bb_surface_175001-201512_ne30pg3_c20191118.nc',
-         'SOAE -> 6.5013D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_XYLENES_anthro_surface_175001-201412_ne30pg3_c20191118.nc',
-         'SOAE -> 6.5013D0*/cluster/shared/noresm/inputdata/atm/cam/chem/emis/historical_ne30pg3/emissions-cmip6_XYLENES_bb_surface_175001-201512_ne30pg3_c20191118.nc'
+ srf_emis_cycle_yr		= 1850
+ srf_emis_specifier		= 'BC_AX  ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_BC_AX_anthrosurfAGRTRADOMSOLWSTSHP_surface_1850_0.9x1.25_version20180512.nc',
+         'BC_N   ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_BC_N_anthrosurfAGRTRADOMSOLWSTSHP_surface_1850_0.9x1.25_version20180512.nc',
+         'OM_NI  ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_OM_NI_anthrosurfAGRTRADOMSOLWSTSHP_surface_1850_0.9x1.25_version20180512.nc',
+         'SO2    ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO2_anthrosurfAGRTRADOMSOLWSTSHP_surface_1850_0.9x1.25_version20180512.nc',
+         'SO4_PR ->  /cluster/shared/noresm/inputdata/atm/cam/chem/emis/cmip6_emissions_version20180512/emissions_cmip6_noresm2_SO4_PR_anthrosurfAGRTRADOMSOLWSTSHP_surface_1850_0.9x1.25_version20180512.nc'
  srf_emis_type		= 'CYCLICAL'
  tracer_cnst_cycle_yr		=    1850    
  tracer_cnst_datapath		= '/cluster/shared/noresm/inputdata/atm/cam/tracer_cnst'
  tracer_cnst_file		= 'tracer_cnst_WACCM6_halons_3DmonthlyL70_1850climoCMIP6piControl001_y21-50avg_c180802.nc'
  tracer_cnst_filelist		= ''
- tracer_cnst_specifier		= 'O3','OH','NO3','HO2','HALONS'
+ tracer_cnst_specifier		= 'O3','OH','NO3','HO2'
  tracer_cnst_type		= 'CYCLICAL'
  xs_long_file		= '/cluster/shared/noresm/inputdata/atm/waccm/phot/temp_prs_GT200nm_c221005mm.nc'
 /
@@ -104,6 +77,9 @@
  flbc_list		= 'CO2','CH4','N2O','CFC11','CFC12','CFC11eq'
  flbc_type		= 'CYCLICAL'
  scenario_ghg		= 'CHEM_LBC_FILE'
+/
+&circ_diag_nl
+ do_circulation_diags		=  .true. 
 /
 &cldfrc2m_nl
  cldfrc2m_do_avg_aist_algs		= .false.
@@ -315,7 +291,7 @@
  pgwv		= 32
  pgwv_long		= 0
  rdg_beta_cd_llb		= 1.0D0
- tau_0_ubc		= .true.
+ tau_0_ubc		=   .true.   
  taubgnd		= 1.25D-3
  trpd_leewv_rdg_beta		= .false.
  use_gw_rdg_beta		= .true.
@@ -390,13 +366,6 @@
  nucleate_ice_use_troplev		= .true.
  use_preexisting_ice		= .true.
 /
-&ocean_emis_nl
- bubble_mediated_transfer		= .false.
- csw_cycle_yr		= 1850 
- csw_specifier		= 'DMS -> /cluster/shared/noresm/inputdata/atm/cam/chem/ocnexch/Csw_DMS_Lana2011_f09f09_1750_2100_20200717a.nc'
- csw_time_type		= 'CYCLICAL'
- ocean_salinity_file		= '/cluster/shared/noresm/inputdata/atm/cam/chem/ocnexch/SSS_climatology_f09f09_c20230110.nc'
-/
 &oslo_ctl_nl
  aerotab_table_dir		= '/cluster/shared/noresm/inputdata/noresm-only/atm/cam/camoslo/AeroTab_8jun17/'
  dms_cycle_year		= 2000
@@ -410,7 +379,7 @@
  volc_fraction_coarse		= 0.0
 /
 &phys_ctl_nl
- cam_chempkg		= 'ghg_mam4'
+ cam_chempkg		= 'trop_mam_oslo'
  cam_physpkg		= 'cam_dev'
  cam_snapshot_after_num		=    -1 
  cam_snapshot_before_num		=   -1 
@@ -421,7 +390,7 @@
  do_hb_above_clubb		= .true.   
  eddy_scheme		= 'CLUBB_SGS'
  history_aero_optics		=           .false.  
- history_aerosol		=               .false.  
+ history_aerosol		= .true.
  history_amwg		=                  .true.   
  history_budget		=                .false.  
  history_chemistry		=             .true.   
@@ -455,12 +424,11 @@
  prescribed_ozone_name		= 'O3'
  prescribed_ozone_type		= 'CYCLICAL'
 /
-&prescribed_strataero_nl
- prescribed_strataero_cycle_yr		=       1850   
- prescribed_strataero_datapath		= '/cluster/shared/noresm/inputdata/atm/cam/ozone_strataero'
- prescribed_strataero_file		= 'ozone_strataero_cyclical_WACCM6_L70_CMIP6-piControl.001_y21-50avg_zm_5day_c180802.nc'
- prescribed_strataero_type		= 'CYCLICAL'
- prescribed_strataero_use_chemtrop		=   .true.   
+&prescribed_volcaero_nl
+ prescribed_volcaero_cycle_yr		= 1850
+ prescribed_volcaero_datapath		= '/cluster/shared/noresm/inputdata/atm/cam/volc'
+ prescribed_volcaero_file		= 'CMIP_CAM6_radiation_average_v3_reformatted.nc'
+ prescribed_volcaero_type		= 'CYCLICAL'
 /
 &pumas_stochastic_tau_nl
  pumas_stochastic_tau_kernel_filename		= '/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/bld/../src/physics/pumas/KBARF_tau_kernel.dat'
@@ -473,32 +441,12 @@
  iceopticsfile		= '/cluster/shared/noresm/inputdata/atm/cam/physprops/iceoptics_c080917.nc'
  liqcldoptics		= 'gammadist'
  liqopticsfile		= '/cluster/shared/noresm/inputdata/atm/cam/physprops/F_nwvl200_mu20_lam50_res64_t298_c080428.nc'
- mode_defs		= 'mam4_mode1:accum:=', 'A:num_a1:N:num_c1:num_mr:+',
-         'A:so4_a1:N:so4_c1:sulfate:/cluster/shared/noresm/inputdata/atm/cam/physprops/sulfate_rrtmg_c080918.nc:+', 'A:pom_a1:N:pom_c1:p-organic:/cluster/shared/noresm/inputdata/atm/cam/physprops/ocpho_rrtmg_c130709.nc:+',
-         'A:soa_a1:N:soa_c1:s-organic:/cluster/shared/noresm/inputdata/atm/cam/physprops/ocphi_rrtmg_c100508.nc:+', 'A:bc_a1:N:bc_c1:black-c:/cluster/shared/noresm/inputdata/atm/cam/physprops/bcpho_rrtmg_c100508.nc:+',
-         'A:dst_a1:N:dst_c1:dust:/cluster/shared/noresm/inputdata/atm/cam/physprops/dust_aeronet_rrtmg_c141106.nc:+', 'A:ncl_a1:N:ncl_c1:seasalt:/cluster/shared/noresm/inputdata/atm/cam/physprops/ssam_rrtmg_c100508.nc',
-         'mam4_mode2:aitken:=', 'A:num_a2:N:num_c2:num_mr:+',
-         'A:so4_a2:N:so4_c2:sulfate:/cluster/shared/noresm/inputdata/atm/cam/physprops/sulfate_rrtmg_c080918.nc:+', 'A:soa_a2:N:soa_c2:s-organic:/cluster/shared/noresm/inputdata/atm/cam/physprops/ocphi_rrtmg_c100508.nc:+',
-         'A:ncl_a2:N:ncl_c2:seasalt:/cluster/shared/noresm/inputdata/atm/cam/physprops/ssam_rrtmg_c100508.nc:+', 'A:dst_a2:N:dst_c2:dust:/cluster/shared/noresm/inputdata/atm/cam/physprops/dust_aeronet_rrtmg_c141106.nc',
-         'mam4_mode3:coarse:=', 'A:num_a3:N:num_c3:num_mr:+',
-         'A:dst_a3:N:dst_c3:dust:/cluster/shared/noresm/inputdata/atm/cam/physprops/dust_aeronet_rrtmg_c141106.nc:+', 'A:ncl_a3:N:ncl_c3:seasalt:/cluster/shared/noresm/inputdata/atm/cam/physprops/ssam_rrtmg_c100508.nc:+',
-         'A:so4_a3:N:so4_c3:sulfate:/cluster/shared/noresm/inputdata/atm/cam/physprops/sulfate_rrtmg_c080918.nc', 'mam4_mode4:primary_carbon:=',
-         'A:num_a4:N:num_c4:num_mr:+', 'A:pom_a4:N:pom_c4:p-organic:/cluster/shared/noresm/inputdata/atm/cam/physprops/ocpho_rrtmg_c130709.nc:+',
-         'A:bc_a4:N:bc_c4:black-c:/cluster/shared/noresm/inputdata/atm/cam/physprops/bcpho_rrtmg_c100508.nc'
- rad_climate		= 'A:Q:H2O', 'N:O2:O2',
-         'A:CO2:CO2', 'N:ozone:O3',
-         'A:N2O:N2O', 'A:CH4:CH4',
-         'N:CFC11STAR:CFC11', 'A:CFC12:CFC12',
-         'M:mam4_mode1:/cluster/shared/noresm/inputdata/atm/cam/physprops/mam4_mode1_rrtmg_aeronetdust_sig1.6_dgnh.48_c140304.nc', 'M:mam4_mode2:/cluster/shared/noresm/inputdata/atm/cam/physprops/mam4_mode2_rrtmg_aitkendust_c141106.nc',
-         'M:mam4_mode3:/cluster/shared/noresm/inputdata/atm/cam/physprops/mam4_mode3_rrtmg_aeronetdust_c141106.nc', 'M:mam4_mode4:/cluster/shared/noresm/inputdata/atm/cam/physprops/mam4_mode4_rrtmg_c130628.nc',
-         'N:VOLC_MMR1:/cluster/shared/noresm/inputdata/atm/cam/physprops/volc_camRRTMG_byradius_sigma1.6_mode1_c210211.nc', 'N:VOLC_MMR2:/cluster/shared/noresm/inputdata/atm/cam/physprops/volc_camRRTMG_byradius_sigma1.6_mode2_c210211.nc',
-         'N:VOLC_MMR3:/cluster/shared/noresm/inputdata/atm/cam/physprops/volc_camRRTMG_byradius_sigma1.2_mode3_c210211.nc'
+ rad_climate		= 'A:Q:H2O', 'N:O2:O2', 'N:CO2:CO2', 'N:ozone:O3', 'N:N2O:N2O', 'N:CH4:CH4', 'N:CFC11:CFC11', 'N:CFC12:CFC12'
 /
 &radiation_nl
  graupel_in_rad		=  .false. 
 /
 &ref_pres_nl
- clim_modal_aero_top_press		=  1.D-4 
  do_molec_press		=  0.1D0 
  molec_diff_bot_press		=  50.D0 
  trop_cloud_top_press		=       1.D2 
@@ -528,16 +476,16 @@
  do_iss		=  .true.  
 /
 &wetdep_inparm
- gas_wetdep_list		= 'DMS','H2O2','H2SO4','SO2','SOAG'
+ gas_wetdep_list		= 'DMS','H2O2','H2SO4','SO2'
  gas_wetdep_method		= 'NEU'
 /
 &zmconv_nl
- zmconv_c0_lnd		=  0.0075D0 
- zmconv_c0_ocn		=  0.0300D0 
+ zmconv_c0_lnd		=  0.0200D0 
+ zmconv_c0_ocn		=  0.0200D0 
  zmconv_capelmt		=  70.0    
  zmconv_dmpdz		=  -1.0E-3 
- zmconv_ke		=  5.0E-6 
- zmconv_ke_lnd		=  1.0E-5 
+ zmconv_ke		=      8.0E-6 
+ zmconv_ke_lnd		=  8.0E-6 
  zmconv_momcd		=  0.7000D0 
  zmconv_momcu		=  0.7000D0 
  zmconv_num_cin		=  1       

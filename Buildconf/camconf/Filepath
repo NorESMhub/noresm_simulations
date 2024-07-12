@@ -1,11 +1,13 @@
-/cluster/home/mvertens/noresm/test_ghgmam4/SourceMods/src.cam
+/cluster/home/mvertens/noresm/test_nf1850oslo/SourceMods/src.cam
 /SourceMods/src.cam
+/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/chemistry/oslo_aero/src
+/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/chemistry/oslo_aero/src_cam
+/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/physics/camnor_phys/physics
 /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/unit_drivers
 /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/unit_drivers/stub
 /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/physics/cam_dev
 /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/infrastructure
-/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/chemistry/pp_ghg_mam4
-/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/chemistry/modal_aero
+/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/chemistry/pp_trop_mam_oslo
 /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/chemistry/aerosol
 /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/ionosphere
 /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/src/chemistry/mozart

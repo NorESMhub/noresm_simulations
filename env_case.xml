@@ -178,7 +178,7 @@
       <type>char</type>
       <desc> path to buildlib script for the given library </desc>
     </entry>
-    <entry id="COMPSET" value="1850_CAM%DEV%LT%GHGMAM4_CLM51%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV_SESP">
+    <entry id="COMPSET" value="1850_CAM%DEV%LT%NORESM%CAMoslo_CLM51%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV_SESP">
       <type>char</type>
       <desc>Component set long name (for documentation only - DO NOT EDIT)</desc>
     </entry>
@@ -297,7 +297,7 @@
       <desc> main configuration file that specifies all relevant filenames
     and directories to configure a case</desc>
     </entry>
-    <entry id="CASEROOT" value="/cluster/home/mvertens/noresm/test_ghgmam4">
+    <entry id="CASEROOT" value="/cluster/home/mvertens/noresm/test_nf1850oslo">
       <type>char</type>
       <desc>full pathname of case</desc>
     </entry>
@@ -314,7 +314,7 @@
       <type>char</type>
       <desc>full pathname of source root directory</desc>
     </entry>
-    <entry id="CASE" value="test_ghgmam4">
+    <entry id="CASE" value="test_nf1850oslo">
       <type>char</type>
       <desc>case name</desc>
     </entry>
@@ -344,7 +344,7 @@
       <type>char</type>
       <desc>username of user who created case</desc>
     </entry>
-    <entry id="CASE_HASH" value="364d38135a981cbdec4d0f7a8ef4ce131868ff9ed6f58fcdf59b975f7a490341">
+    <entry id="CASE_HASH" value="22eea936a6a3c972601a396ca4f5ca768239c75c552c09924de5be393aa93ba0">
       <type>char</type>
       <desc>Unique identifier for case</desc>
     </entry>

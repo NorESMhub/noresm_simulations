@@ -1,52 +1,25 @@
-* Comments
-* User-given Tag Description: WACCM_SC_MAM4
-* Tag database identifier : MZ312_WACCM_SC_MAM4_20221214
-* Tag created by : lke
-* Tag created from branch : WACCM_SC_MAM4
-* Tag created on : 2022-12-14 15:17:17.723566-07
-* Comments for this tag follow:
-*     lke : 2022-12-14 : Specified chemistry (SC) WACCM mechanism, with updated simple SOA.
-* fvitt : 2023-03-17 : Copied from waccm_sc_mam4 to ghg_mam4 and add CO2 for CAM7 prognostic GHGs
-
-      SPECIES
+BEGSIM 
+  SPECIES
 
       Solution
- bc_a1 -> C,
- bc_a4 -> C,
- CFC11 -> CFCl3,
- CFC12 -> CF2Cl2,
- CH4,
- CO2,
- DMS -> CH3SCH3,
- dst_a1 -> AlSiO5,
- dst_a2 -> AlSiO5,
- dst_a3 -> AlSiO5,
- H2O2,
- H2SO4,
- N2O,
- ncl_a1 -> NaCl,
- ncl_a2 -> NaCl,
- ncl_a3 -> NaCl,
- num_a1 -> H,
- num_a2 -> H,
- num_a3 -> H,
- num_a4 -> H,
- pom_a1 -> C,
- pom_a4 -> C,
- SO2,
- so4_a1 -> NH4HSO4,
- so4_a2 -> NH4HSO4,
- so4_a3 -> NH4HSO4,
- soa_a1 -> C,
- soa_a2 -> C,
- SOAE -> C,
- SOAG -> C,
+ SO2, H2SO4
+ DMS -> CH3SCH3, H2O2
+ SO4_NA->H2SO4, SO4_A1->H2SO4, SO4_A2->NH4HSO4
+ SO4_AC->H2SO4, SO4_PR->H2SO4, BC_N->C
+ BC_AX->C, BC_NI->C, BC_A->C, BC_AI->C 
+ BC_AC->C, OM_NI->C, OM_AI->C, OM_AC->C
+ DST_A2->AlSiO5, DST_A3->AlSiO5
+ SS_A1->NaCl, SS_A2->NaCl, SS_A3->NaCl
+* Approximate soa species with those of monoterpene oxidation products
+* based on Paasonen et al. (2010); Taipale et al. (2008). 
+ SOA_NA->C10H16O2, SOA_A1->C10H16O2
+ SOA_LV ->C10H16O2, SOA_SV->C10H16O2
+ monoterp -> C10H16, isoprene -> C5H8
  H2O
-      End Solution
-
+   End Solution
 
       Fixed
- M, O2, N2, HO2, OH, NO3, O3, HALONS->CFCl3
+ M, N2, O2, O3, OH, NO3, HO2
       End Fixed
 
       Col-int
@@ -54,119 +27,75 @@
  O2 = 0.
       End Col-int
 
-      Not-Transported
+   End SPECIES
 
-      End Not-Transported
-
-   END Species
-
-
-   Solution classes
+   Solution Classes
       Explicit
- CO2
       End Explicit
-
       Implicit
- bc_a1
- bc_a4
- CFC11
- CFC12
- CH4
- DMS
- dst_a1
- dst_a2
- dst_a3
- H2O2
- H2SO4
- N2O
- ncl_a1
- ncl_a2
- ncl_a3
- num_a1
- num_a2
- num_a3
- num_a4
- pom_a1
- pom_a4
- SO2
- so4_a1
- so4_a2
- so4_a3
- soa_a1
- soa_a2
- SOAE
- SOAG
- H2O
+        DMS, SO2, H2O2
+        SO4_NA, SO4_A1, SO4_A2
+        SO4_AC, SO4_PR, BC_N
+        BC_AX, BC_NI, BC_A, BC_AI 
+        BC_AC, OM_NI, OM_AI, OM_AC
+        DST_A2, DST_A3
+        SS_A1, SS_A2, SS_A3 , H2SO4
+        SOA_NA, SOA_A1
+	SOA_LV,SOA_SV, monoterp, isoprene
+        H2O
       End Implicit
-
-   End Solution classes
-
+   End Solution Classes
 
  CHEMISTRY
       Photolysis
-*********************************
-*** odd-oxygen
-*********************************
-[jh2o2]                       H2O2 + hv -> 2*OH
-*********************************
-*** soa
-*********************************
-[jsoa_a1->,.0004*jno2]        soa_a1 + hv ->
-[jsoa_a2->,.0004*jno2]        soa_a2 + hv ->
+ [jh2o2]    H2O2 + hv ->
       End Photolysis
 
       Reactions
-*********************************
-*** odd-hydrogen
-*********************************
-[lyman_alpha]          H2O  ->
-[OH_H2O2]              OH + H2O2  -> H2O + HO2                                  ; 1.8e-12
-[usr_HO2_HO2] HO2 + HO2  -> H2O2 + O2
-*********************************
-*** odd-nitrogen
-*********************************
-[n2o_loss]             N2O  ->
-*********************************
-*** odd-chlorine
-*********************************
-[cfc11_loss]           CFC11  ->
-[cfc12_loss]           CFC12  ->
-*********************************
-*** C1
-*********************************
-[ch4_loss]             CH4  -> 2*H2O
-*********************************
-*** Sulfur
-*********************************
-[DMS_NO3]              DMS + NO3  -> SO2 + HNO3                                 ; 1.9e-13, 520
-[DMS_OHa]              DMS + OH  -> SO2                                         ; 1.1e-11, -280
-[SO2_OH_M]             SO2 + OH + M  -> H2SO4                                   ; 2.9e-31, 4.1, 1.7e-12, -0.2, 0.6
-[usr_DMS_OH]           DMS + OH  -> 0.5*SO2 + 0.5*HO2
-*********************************
-*** SOA
-*********************************
-[SOAE_tau]             SOAE  -> SOAG                                            ; 1.157e-05
+ [usr_HO2_HO2] HO2 + HO2 -> H2O2
+               H2O2 + OH -> H2O + HO2                                           ; 2.9e-12, -160
+               DMS + OH -> SO2                                                  ; 9.6e-12, -234.
+               DMS + NO3 -> SO2 + HNO3                                          ; 1.9e-13,  520.
+               SO2 + OH + M -> H2SO4 + M                                      ; 3.0e-31, 3.3, 1.5e-12, 0.0, 0.6
+* SOA has MW=168, and MSA=96, so to get correct MSA mass ==> factor of 96/168 = 0.57
+* Then account for 0.25 which is 0.25 MSA molec per DMS molec (the other 0.75 goes to SO2)
+* Then 0.2 assumed yield for SOA_LV and 0.8 assumed  yield for SOA_SV gives the coefficients below
+* reaction rate from Chin et al 1996, JGR, vol 101, no D13
+* 
+ [usr_DMS_OH]  DMS + OH -> .75 * SO2 + .5 * HO2 + 0.029*SOA_LV + 0.114*SOA_SV
+*
+*cka: added organic vapor oxidation with constants from IUPAC below
+*     Assume a  yield of 15% for SOA LV production from these reactions
+*     Assume a  yield of 15 % for monoterpene and 5% for isoprene SOA SV production reactions
+*     SOA_LV: very low volatility, can nucleate or grow small particles (oxidation products from O3+monoterp)
+*     SOA_SV: rest of SOA formed
+	       monoterp + O3 -> .15*SOA_LV 			; 8.05e-16, -640.
+	       monoterp + OH -> .15*SOA_SV			; 1.2e-11, 440.
+	       monoterp + NO3 -> .15*SOA_SV			; 1.2e-12, 490.
+	       isoprene + O3 -> .05*SOA_SV			; 1.03e-14, -1995.
+	       isoprene + OH -> .05*SOA_SV 			; 2.7e-11, 390.
+	       isoprene + NO3 -> .05*SOA_SV 			; 3.15e-12, -450.
       End Reactions
 
+      Heterogeneous
+          H2O2, SO2
+      End Heterogeneous
+
       Ext Forcing
- bc_a1 <- dataset
- bc_a4 <- dataset
- H2O <- dataset
- num_a1 <- dataset
- num_a2 <- dataset
- num_a4 <- dataset
- pom_a1 <- dataset
- pom_a4 <- dataset
- SO2 <- dataset
- so4_a1 <- dataset
- so4_a2 <- dataset
+          SO2 <- dataset
+          BC_NI <-dataset
+          BC_AX <-dataset
+          BC_N <-dataset
+          OM_NI <-dataset
+          SO4_PR <-dataset
+          H2O <- dataset
       End Ext Forcing
 
-      End Chemistry
+   END CHEMISTRY
 
-SIMULATION PARAMETERS
+   SIMULATION PARAMETERS
 
-      Version Options
+     Version Options
         model   = cam
         machine = intel
         architecture = hybrid
@@ -174,6 +103,7 @@ SIMULATION PARAMETERS
         multitask = on
         namemod = on
         modules = on
-      End Version Options
+     End Version Options
 
-End Simulation Parameters
+   END SIMULATION PARAMETERS
+ENDSIM

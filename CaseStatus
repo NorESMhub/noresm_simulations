@@ -1,120 +1,358 @@
-2024-06-10 14:21:27: case.setup starting 
+2024-06-11 20:44:04: case.setup starting 
  ---------------------------------------------------
-2024-06-10 14:21:40: case.setup success 
+2024-06-11 20:44:10: case.setup success 
  ---------------------------------------------------
-2024-06-10 14:21:59: case.build starting 
+2024-06-11 20:44:13: case.build starting 
  ---------------------------------------------------
-2024-06-10 14:34:39: case.build success 
+2024-06-11 20:44:16: case.build error 
+CAM's 'buildcpp' script failed to run properly.
  ---------------------------------------------------
-2024-06-10 14:35:05: case.submit starting 931856
+2024-06-11 20:44:46: case.setup starting 
  ---------------------------------------------------
-2024-06-10 14:35:05: case.submit success 931856
+2024-06-11 20:44:51: case.setup success 
  ---------------------------------------------------
-2024-06-10 14:35:09: case.run starting 931855
+2024-06-11 20:53:32: case.build starting 
  ---------------------------------------------------
-2024-06-10 14:35:16: model execution starting 931855
+2024-06-11 20:53:36: case.build error 
+ERROR: Command /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/cam/bld/build-namelist -ntasks 512 -csmdata /cluster/shared/noresm/inputdata -infile /cluster/home/mvertens/noresm/test_nf1850oslo/Buildconf/camconf/namelist -start_ymd 00010101 -ignore_ic_year -use_case 1850_camnor_lt_osloaero -inputdata /cluster/home/mvertens/noresm/test_nf1850oslo/Buildconf/cam.input_data_list -namelist " &atmexp  stream_ndep_year_first=1850 stream_ndep_year_last=1850 stream_ndep_year_align=1 stream_ndep_data_filename='/cluster/shared/noresm/inputdata/lnd/clm2/ndepdata/fndep_clm_WACCM6_CMIP6piControl001_y21-50avg_1850monthly_0.95x1.25_c180802.nc' stream_ndep_mesh_filename='/cluster/shared/noresm/inputdata/share/meshes/fv0.9x1.25_141008_polemod_ESMFmesh.nc'/"  -cmeps failed rc=255
+out=
+err=Cannot set both prescribed_volcaero_file and prescribed_strataero_file
  ---------------------------------------------------
-2024-06-10 14:43:45: model execution success 931855
+2024-06-12 10:22:11: case.build starting 
  ---------------------------------------------------
-2024-06-10 14:43:45: case.run success 931855
+2024-06-12 10:30:39: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/atm.bldlog.240612-102211
  ---------------------------------------------------
-2024-06-10 14:43:58: st_archive starting 931856
+2024-06-12 10:47:09: case.build starting 
  ---------------------------------------------------
-2024-06-10 14:47:14: st_archive success 931856
+2024-06-12 10:47:49: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/atm.bldlog.240612-104709
  ---------------------------------------------------
-2024-06-12 12:12:21: case.submit starting 934482
+2024-06-12 10:48:30: case.build starting 
  ---------------------------------------------------
-2024-06-12 12:12:21: case.submit success 934482
+2024-06-12 10:49:10: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/atm.bldlog.240612-104830
  ---------------------------------------------------
-2024-06-12 12:12:54: case.run starting 934479
+2024-06-12 10:51:15: case.build starting 
  ---------------------------------------------------
-2024-06-12 12:13:08: model execution starting 934479
+2024-06-12 10:53:47: case.build success 
  ---------------------------------------------------
-2024-06-12 12:22:20: model execution success 934479
+2024-06-12 11:13:16: case.submit starting 934382
  ---------------------------------------------------
-2024-06-12 12:22:20: case.run success 934479
+2024-06-12 11:13:16: case.submit success 934382
  ---------------------------------------------------
-2024-06-12 12:22:28: st_archive starting 934482
+2024-06-12 11:13:22: case.run starting 934381
  ---------------------------------------------------
-2024-06-12 12:23:07: st_archive success 934482
+2024-06-12 11:13:29: model execution starting 934381
  ---------------------------------------------------
-2024-06-12 16:03:57: xmlchange success <command> ./xmlchange STOP_N=5  </command>
+2024-06-12 11:15:00: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_nf1850oslo/run'
  ---------------------------------------------------
-2024-06-12 16:04:01: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
+2024-06-12 11:15:00: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_nf1850oslo/run/cesm.log.934381.240612-111322
  ---------------------------------------------------
-2024-06-12 16:04:48: xmlchange success <command> ./xmlchange NTASKS=2048  </command>
+2024-06-12 12:20:57: case.submit starting 934494
  ---------------------------------------------------
-2024-06-12 16:04:51: case.setup starting 
+2024-06-12 12:20:57: case.submit success 934494
  ---------------------------------------------------
-2024-06-12 16:04:58: case.setup success 
+2024-06-12 12:21:03: case.run starting 934493
  ---------------------------------------------------
-2024-06-12 16:05:04: case.build starting 
+2024-06-12 12:21:10: model execution starting 934493
  ---------------------------------------------------
-2024-06-12 16:07:07: case.build success 
+2024-06-12 12:22:06: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_nf1850oslo/run'
  ---------------------------------------------------
-2024-06-12 16:17:43: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
+2024-06-12 12:22:06: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_nf1850oslo/run/cesm.log.934493.240612-122103
  ---------------------------------------------------
-2024-06-12 16:18:06: case.submit starting 934855
+2024-06-12 12:33:32: case.build starting 
  ---------------------------------------------------
-2024-06-12 16:18:06: case.submit success 934855
+2024-06-12 12:34:08: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/atm.bldlog.240612-123333
  ---------------------------------------------------
-2024-06-12 16:18:10: case.run starting 934854
+2024-06-12 13:49:23: case.build starting 
  ---------------------------------------------------
-2024-06-12 16:18:16: model execution starting 934854
+2024-06-12 13:52:11: case.build success 
  ---------------------------------------------------
-2024-06-12 17:26:38: case.build starting 
+2024-06-12 13:52:31: case.submit starting 934606
  ---------------------------------------------------
-2024-06-12 17:28:11: case.build success 
+2024-06-12 13:52:31: case.submit success 934606
  ---------------------------------------------------
-2024-06-12 17:28:32: case.submit starting 934921
+2024-06-12 13:52:35: case.run starting 934604
  ---------------------------------------------------
-2024-06-12 17:28:32: case.submit success 934921
+2024-06-12 13:52:42: model execution starting 934604
  ---------------------------------------------------
-2024-06-12 17:28:36: case.run starting 934920
+2024-06-12 13:53:41: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_nf1850oslo/run'
  ---------------------------------------------------
-2024-06-12 17:28:45: model execution starting 934920
+2024-06-12 13:53:41: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_nf1850oslo/run/cesm.log.934604.240612-135235
  ---------------------------------------------------
-2024-06-12 17:31:44: xmlchange success <command> ./xmlchange NTASKS=1024  </command>
+2024-06-12 14:30:10: case.build starting 
  ---------------------------------------------------
-2024-06-12 17:31:48: case.setup starting 
+2024-06-12 14:30:42: case.build error 
+
  ---------------------------------------------------
-2024-06-12 17:31:52: case.setup success 
+2024-06-12 14:31:02: case.build starting 
  ---------------------------------------------------
-2024-06-12 17:31:54: case.build starting 
+2024-06-12 14:33:00: case.build success 
  ---------------------------------------------------
-2024-06-12 17:32:19: case.build success 
+2024-06-12 14:33:21: case.submit starting 934677
  ---------------------------------------------------
-2024-06-12 17:32:42: case.submit starting 934924
+2024-06-12 14:33:21: case.submit success 934677
  ---------------------------------------------------
-2024-06-12 17:32:42: case.submit success 934924
+2024-06-12 14:33:25: case.run starting 934676
  ---------------------------------------------------
-2024-06-12 17:32:47: case.run starting 934923
+2024-06-12 14:33:31: model execution starting 934676
  ---------------------------------------------------
-2024-06-12 17:32:53: model execution starting 934923
+2024-06-12 14:34:42: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_nf1850oslo/run'
  ---------------------------------------------------
-2024-06-13 14:56:40: model execution success 934923
+2024-06-12 14:34:42: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_nf1850oslo/run/cesm.log.934676.240612-143325
  ---------------------------------------------------
-2024-06-13 14:56:40: case.run success 934923
+2024-06-12 15:48:09: case.build starting 
  ---------------------------------------------------
-2024-06-13 14:56:54: st_archive starting 934924
+2024-06-12 15:50:53: case.build success 
  ---------------------------------------------------
-2024-06-13 14:57:16: st_archive success 934924
+2024-06-12 15:52:58: case.submit starting 934834
  ---------------------------------------------------
-2024-06-14 09:10:39: xmlchange success <command> ./xmlchange DOUT_S=FALSE  </command>
+2024-06-12 15:52:58: case.submit success 934834
  ---------------------------------------------------
-2024-06-14 09:10:53: xmlchange success <command> ./xmlchange STOP_OPTION=ndays  </command>
+2024-06-12 15:56:21: case.run starting 934833
  ---------------------------------------------------
-2024-06-14 09:10:59: xmlchange success <command> ./xmlchange REST_OPTION=none  </command>
+2024-06-12 15:56:27: model execution starting 934833
  ---------------------------------------------------
-2024-06-14 09:11:58: case.submit starting 937036
+2024-06-12 16:05:24: model execution success 934833
  ---------------------------------------------------
-2024-06-14 09:11:58: case.submit success 937036
+2024-06-12 16:05:24: case.run success 934833
  ---------------------------------------------------
-2024-06-14 09:12:11: case.run starting 937036
+2024-06-12 16:05:32: st_archive starting 934834
  ---------------------------------------------------
-2024-06-14 09:12:17: model execution starting 937036
+2024-06-12 16:05:45: st_archive success 934834
  ---------------------------------------------------
-2024-06-14 09:17:56: model execution success 937036
+2024-06-12 21:05:40: case.build starting 
  ---------------------------------------------------
-2024-06-14 09:17:56: case.run success 937036
+2024-06-12 21:06:19: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/atm.bldlog.240612-210540
+ ---------------------------------------------------
+2024-06-12 21:25:32: case.build starting 
+ ---------------------------------------------------
+2024-06-12 21:26:12: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/atm.bldlog.240612-212532
+ ---------------------------------------------------
+2024-06-12 21:29:46: case.build starting 
+ ---------------------------------------------------
+2024-06-12 21:32:09: case.build success 
+ ---------------------------------------------------
+2024-06-12 21:33:09: xmlchange success <command> ./xmlchange NTASKS=1024  </command>
+ ---------------------------------------------------
+2024-06-12 21:33:13: case.setup starting 
+ ---------------------------------------------------
+2024-06-12 21:33:19: case.setup success 
+ ---------------------------------------------------
+2024-06-12 21:33:22: case.build starting 
+ ---------------------------------------------------
+2024-06-12 21:34:43: case.build success 
+ ---------------------------------------------------
+2024-06-13 17:38:31: case.build starting 
+ ---------------------------------------------------
+2024-06-13 17:42:06: case.build success 
+ ---------------------------------------------------
+2024-06-13 17:56:20: case.submit starting 936214
+ ---------------------------------------------------
+2024-06-13 17:56:20: case.submit success 936214
+ ---------------------------------------------------
+2024-06-13 17:56:26: case.run starting 936213
+ ---------------------------------------------------
+2024-06-13 17:56:35: model execution starting 936213
+ ---------------------------------------------------
+2024-06-13 18:02:22: model execution success 936213
+ ---------------------------------------------------
+2024-06-13 18:02:22: case.run success 936213
+ ---------------------------------------------------
+2024-06-13 18:02:32: st_archive starting 936214
+ ---------------------------------------------------
+2024-06-13 18:02:48: st_archive success 936214
+ ---------------------------------------------------
+2024-06-13 19:21:30: xmlchange success <command> ./xmlchange NTASKS=1536  </command>
+ ---------------------------------------------------
+2024-06-13 19:21:32: case.setup starting 
+ ---------------------------------------------------
+2024-06-13 19:21:49: case.setup success 
+ ---------------------------------------------------
+2024-06-13 19:22:27: case.build starting 
+ ---------------------------------------------------
+2024-06-13 19:24:15: case.build success 
+ ---------------------------------------------------
+2024-06-13 19:24:38: case.submit starting 936292
+ ---------------------------------------------------
+2024-06-13 19:24:38: case.submit success 936292
+ ---------------------------------------------------
+2024-06-13 19:24:42: case.run starting 936291
+ ---------------------------------------------------
+2024-06-13 19:24:49: model execution starting 936291
+ ---------------------------------------------------
+2024-06-13 19:29:48: model execution success 936291
+ ---------------------------------------------------
+2024-06-13 19:29:48: case.run success 936291
+ ---------------------------------------------------
+2024-06-13 19:29:58: st_archive starting 936292
+ ---------------------------------------------------
+2024-06-13 19:30:13: st_archive success 936292
+ ---------------------------------------------------
+2024-06-14 09:04:35: xmlchange success <command> ./xmlchange NTASKS=1024  </command>
+ ---------------------------------------------------
+2024-06-14 09:04:39: case.setup starting 
+ ---------------------------------------------------
+2024-06-14 09:04:46: case.setup success 
+ ---------------------------------------------------
+2024-06-14 09:04:52: case.build starting 
+ ---------------------------------------------------
+2024-06-14 09:04:56: xmlchange success <command> ./xmlchange DOUT_S=FALSE  </command>
+ ---------------------------------------------------
+2024-06-14 09:05:29: xmlchange success <command> ./xmlchange REST_OPTION=never  </command>
+ ---------------------------------------------------
+2024-06-14 09:05:43: xmlchange success <command> ./xmlchange REST_OPTION=none  </command>
+ ---------------------------------------------------
+2024-06-14 09:07:01: case.build success 
+ ---------------------------------------------------
+2024-06-14 09:07:24: case.submit starting 937028
+ ---------------------------------------------------
+2024-06-14 09:07:24: case.submit success 937028
+ ---------------------------------------------------
+2024-06-14 09:07:41: case.run starting 937028
+ ---------------------------------------------------
+2024-06-14 09:07:47: model execution starting 937028
+ ---------------------------------------------------
+2024-06-14 09:13:18: model execution success 937028
+ ---------------------------------------------------
+2024-06-14 09:13:18: case.run success 937028
+ ---------------------------------------------------
+2024-06-14 09:18:09: xmlchange success <command> ./xmlchange TIMER_LEVEL=7  </command>
+ ---------------------------------------------------
+2024-06-14 09:18:13: case.build starting 
+ ---------------------------------------------------
+2024-06-14 09:20:29: case.build success 
+ ---------------------------------------------------
+2024-06-14 09:21:04: case.submit starting 937040
+ ---------------------------------------------------
+2024-06-14 09:21:04: case.submit success 937040
+ ---------------------------------------------------
+2024-06-14 09:21:12: case.run starting 937040
+ ---------------------------------------------------
+2024-06-14 09:21:19: model execution starting 937040
+ ---------------------------------------------------
+2024-06-14 09:26:51: model execution success 937040
+ ---------------------------------------------------
+2024-06-14 09:26:51: case.run success 937040
+ ---------------------------------------------------
+2024-06-14 09:41:03: case.build starting 
+ ---------------------------------------------------
+2024-06-14 09:43:43: case.build error 
+ERROR: BUILD FAIL: buildexe failed, cat /cluster/work/users/mvertens/noresm/test_nf1850oslo/bld/cesm.bldlog.240614-094103
+ ---------------------------------------------------
+2024-06-14 09:44:40: case.build starting 
+ ---------------------------------------------------
+2024-06-14 09:45:49: case.build success 
+ ---------------------------------------------------
+2024-06-14 09:46:31: case.submit starting 937060
+ ---------------------------------------------------
+2024-06-14 09:46:31: case.submit success 937060
+ ---------------------------------------------------
+2024-06-14 09:46:43: case.run starting 937060
+ ---------------------------------------------------
+2024-06-14 09:46:50: model execution starting 937060
+ ---------------------------------------------------
+2024-06-14 09:52:26: model execution success 937060
+ ---------------------------------------------------
+2024-06-14 09:52:26: case.run success 937060
+ ---------------------------------------------------
+2024-06-14 10:14:00: case.build starting 
+ ---------------------------------------------------
+2024-06-14 10:16:29: case.build success 
+ ---------------------------------------------------
+2024-06-14 10:17:01: case.submit starting 937080
+ ---------------------------------------------------
+2024-06-14 10:17:01: case.submit success 937080
+ ---------------------------------------------------
+2024-06-14 10:17:14: case.run starting 937080
+ ---------------------------------------------------
+2024-06-14 10:17:21: model execution starting 937080
+ ---------------------------------------------------
+2024-06-14 10:22:56: model execution success 937080
+ ---------------------------------------------------
+2024-06-14 10:22:56: case.run success 937080
+ ---------------------------------------------------
+2024-06-14 10:32:19: xmlchange success <command> ./xmlchange DOUT_S=TRUE  </command>
+ ---------------------------------------------------
+2024-06-14 10:32:24: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
+ ---------------------------------------------------
+2024-06-14 10:32:36: xmlchange success <command> ./xmlchange REST_OPTION=nyears  </command>
+ ---------------------------------------------------
+2024-06-14 10:32:43: xmlchange success <command> ./xmlchange REST_N=5  </command>
+ ---------------------------------------------------
+2024-06-14 10:33:43: xmlchange success <command> ./xmlchange NTASKS=1536  </command>
+ ---------------------------------------------------
+2024-06-14 10:33:51: case.setup starting 
+ ---------------------------------------------------
+2024-06-14 10:33:59: case.setup success 
+ ---------------------------------------------------
+2024-06-14 10:34:06: case.build starting 
+ ---------------------------------------------------
+2024-06-14 10:35:23: case.build success 
+ ---------------------------------------------------
+2024-06-14 10:37:37: case.submit starting 937115
+ ---------------------------------------------------
+2024-06-14 10:37:37: case.submit success 937115
+ ---------------------------------------------------
+2024-06-14 10:37:43: case.run starting 937114
+ ---------------------------------------------------
+2024-06-14 10:37:49: model execution starting 937114
+ ---------------------------------------------------
+2024-06-14 10:41:19: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
+ ---------------------------------------------------
+2024-06-14 10:41:39: case.submit starting 937126
+ ---------------------------------------------------
+2024-06-14 10:41:39: case.submit success 937126
+ ---------------------------------------------------
+2024-06-14 10:41:48: case.run starting 937125
+ ---------------------------------------------------
+2024-06-14 10:41:57: model execution starting 937125
+ ---------------------------------------------------
+2024-06-15 05:02:58: model execution success 937125
+ ---------------------------------------------------
+2024-06-15 05:02:58: case.run success 937125
+ ---------------------------------------------------
+2024-06-15 05:03:18: st_archive starting 937126
+ ---------------------------------------------------
+2024-06-15 05:03:38: st_archive success 937126
+ ---------------------------------------------------
+2024-06-17 15:00:08: case.build starting 
+ ---------------------------------------------------
+2024-06-17 15:08:44: case.build success 
+ ---------------------------------------------------
+2024-06-17 15:09:35: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
+ ---------------------------------------------------
+2024-06-17 15:10:18: case.submit starting 941039
+ ---------------------------------------------------
+2024-06-17 15:10:18: case.submit success 941039
+ ---------------------------------------------------
+2024-06-17 15:10:24: case.run starting 941038
+ ---------------------------------------------------
+2024-06-17 15:10:30: model execution starting 941038
+ ---------------------------------------------------
+2024-06-18 13:14:49: model execution success 941038
+ ---------------------------------------------------
+2024-06-18 13:14:49: case.run success 941038
+ ---------------------------------------------------
+2024-06-18 13:15:02: st_archive starting 941039
+ ---------------------------------------------------
+2024-06-18 13:15:20: st_archive success 941039
+ ---------------------------------------------------
+2024-06-19 14:16:35: xmlchange success <command> ./xmlchange TIMER_LEVEL=9  </command>
  ---------------------------------------------------

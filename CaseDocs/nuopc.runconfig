@@ -27,43 +27,43 @@ DRIVER_attributes::
 ::
 
 PELAYOUT_attributes::
-     atm_ntasks = 1024
+     atm_ntasks = 1536
      atm_nthreads = 1
      atm_pestride = 1
      atm_rootpe = 0
-     cpl_ntasks = 1024
+     cpl_ntasks = 1536
      cpl_nthreads = 1
      cpl_pestride = 1
      cpl_rootpe = 0
-     esp_ntasks = 1024
+     esp_ntasks = 1536
      esp_nthreads = 1
      esp_pestride = 1
      esp_rootpe = 0
-     glc_ntasks = 1024
+     glc_ntasks = 1536
      glc_nthreads = 1
      glc_pestride = 1
      glc_rootpe = 0
-     ice_ntasks = 1024
+     ice_ntasks = 1536
      ice_nthreads = 1
      ice_pestride = 1
      ice_rootpe = 0
-     lnd_ntasks = 1024
+     lnd_ntasks = 1536
      lnd_nthreads = 1
      lnd_pestride = 1
      lnd_rootpe = 0
      ninst = 1
-     ocn_ntasks = 1024
+     ocn_ntasks = 1536
      ocn_nthreads = 1
      ocn_pestride = 1
      ocn_rootpe = 0
      pio_asyncio_ntasks = 0
      pio_asyncio_rootpe = 1
      pio_asyncio_stride = 0
-     rof_ntasks = 1024
+     rof_ntasks = 1536
      rof_nthreads = 1
      rof_pestride = 1
      rof_rootpe = 0
-     wav_ntasks = 1024
+     wav_ntasks = 1536
      wav_nthreads = 1
      wav_pestride = 1
      wav_rootpe = 0
@@ -88,7 +88,7 @@ ALLCOMP_attributes::
      WAV_model = swav
      brnch_retain_casename = .false.
      case_desc = UNSET
-     case_name = test_ghgmam4
+     case_name = test_nf1850oslo
      cism_evolve = .false.
      coldair_outbreak_mod = .true.
      data_assimilation_atm = .false.
@@ -124,7 +124,6 @@ ALLCOMP_attributes::
      mesh_ocn = /cluster/shared/noresm/inputdata/share/meshes/ne30pg3_ESMFmesh_cdf5_c20211018.nc
      model_version = unknown
      ocn2glc_coupling = .false.
-     ocn2glc_levels = 1:10:19:26:30:33:35
      orb_eccen = 1.e36
      orb_iyear = 1850
      orb_iyear_align = 1850
@@ -162,9 +161,6 @@ MED_attributes::
      coupling_mode = cesm
      do_budgets = .false.
      flux_albav = .false.
-     glc2ice_rmapname = idmap
-     glc2ocn_ice_rmapname = idmap
-     glc2ocn_liq_rmapname = idmap
      glc_renormalize_smb = on_if_glc_coupled_fluxes
      gust_fac = 0.0D0
      histaux_atm2med_file1_auxname = atm.1h.inst
@@ -260,7 +256,6 @@ MED_attributes::
      history_option_wav_avg = never
      history_option_wav_inst = never
      ice2atm_map = idmap
-     ice2wav_smapname = unset
      ice_nx = 48600
      ice_ny = 1
      info_debug = 1
@@ -270,17 +265,14 @@ MED_attributes::
      lnd_ny = 1
      mapuv_with_cart3d = .false.
      ocn2atm_map = idmap
-     ocn2wav_smapname = unset
      ocn_nx = 48600
      ocn_ny = 1
      ocn_surface_flux_scheme = 0
      rof2lnd_map = unset
-     rof2ocn_fmapname = unset
      rof2ocn_ice_rmapname = unset
      rof2ocn_liq_rmapname = unset
      rof_nx = 720
      rof_ny = 360
-     wav2ocn_smapname = unset
      wav_nx = 0
      wav_ny = 0
 ::
@@ -296,13 +288,13 @@ CLOCK_attributes::
      lnd_cpl_dt = 1800
      ocn_cpl_dt = 1800
      restart_n = 5
-     restart_option = none
+     restart_option = nyears
      restart_ymd = -999
      rof_cpl_dt = 10800
      start_tod = 0
      start_ymd = 00010101
      stop_n = 5
-     stop_option = ndays
+     stop_option = nyears
      stop_tod = 0
      stop_ymd = -999
      tprof_n = -999
@@ -345,8 +337,8 @@ WAV_attributes::
 ::
 
 MED_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = med.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = med.log.941038.240617-151024
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -357,8 +349,8 @@ MED_modelio::
 ::
 
 ATM_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = atm.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = atm.log.941038.240617-151024
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -369,8 +361,8 @@ ATM_modelio::
 ::
 
 LND_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = lnd.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = lnd.log.941038.240617-151024
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -381,8 +373,8 @@ LND_modelio::
 ::
 
 ICE_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = ice.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = ice.log.941038.240617-151024
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -393,8 +385,8 @@ ICE_modelio::
 ::
 
 OCN_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = ocn.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = ocn.log.941038.240617-151024
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -405,8 +397,8 @@ OCN_modelio::
 ::
 
 ROF_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = rof.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = rof.log.941038.240617-151024
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -417,8 +409,8 @@ ROF_modelio::
 ::
 
 GLC_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = glc.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = glc.log.941038.240617-151024
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -429,8 +421,8 @@ GLC_modelio::
 ::
 
 WAV_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = wav.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = wav.log.941038.240617-151024
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -441,8 +433,8 @@ WAV_modelio::
 ::
 
 ESP_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = esp.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = esp.log.941038.240617-151024
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -453,7 +445,7 @@ ESP_modelio::
 ::
 
 DRV_modelio::
-     diro = /cluster/work/users/mvertens/noresm/test_ghgmam4/run
-     logfile = drv.log.937036.240614-091211
+     diro = /cluster/work/users/mvertens/noresm/test_nf1850oslo/run
+     logfile = drv.log.941038.240617-151024
 ::
 

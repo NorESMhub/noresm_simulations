@@ -42,29 +42,29 @@
     <entry id="NTASKS">
       <type>integer</type>
       <values>
-        <value compclass="ATM">1024</value>
-        <value compclass="CPL">1024</value>
-        <value compclass="OCN">1024</value>
-        <value compclass="WAV">1024</value>
-        <value compclass="GLC">1024</value>
-        <value compclass="ICE">1024</value>
-        <value compclass="ROF">1024</value>
-        <value compclass="LND">1024</value>
-        <value compclass="ESP">1024</value>
+        <value compclass="ATM">1536</value>
+        <value compclass="CPL">1536</value>
+        <value compclass="OCN">1536</value>
+        <value compclass="WAV">1536</value>
+        <value compclass="GLC">1536</value>
+        <value compclass="ICE">1536</value>
+        <value compclass="ROF">1536</value>
+        <value compclass="LND">1536</value>
+        <value compclass="ESP">1536</value>
       </values>
       <desc>number of tasks for each component</desc>
     </entry>
     <entry id="NTASKS_PER_INST">
       <type>integer</type>
       <values>
-        <value compclass="ATM">1024</value>
-        <value compclass="OCN">1024</value>
-        <value compclass="WAV">1024</value>
-        <value compclass="GLC">1024</value>
-        <value compclass="ICE">1024</value>
-        <value compclass="ROF">1024</value>
-        <value compclass="LND">1024</value>
-        <value compclass="ESP">1024</value>
+        <value compclass="ATM">1536</value>
+        <value compclass="OCN">1536</value>
+        <value compclass="WAV">1536</value>
+        <value compclass="GLC">1536</value>
+        <value compclass="ICE">1536</value>
+        <value compclass="ROF">1536</value>
+        <value compclass="LND">1536</value>
+        <value compclass="ESP">1536</value>
       </values>
       <desc>Number of tasks per instance for each component. DO NOT EDIT: Set automatically by case.setup based on NTASKS, NINST and MULTI_DRIVER</desc>
     </entry>
@@ -131,11 +131,11 @@
     </entry>
   </group>
   <group id="mach_pes_last">
-    <entry id="COST_PES" value="1024">
+    <entry id="COST_PES" value="1536">
       <type>integer</type>
       <desc>pes or cores used relative to MAX_MPITASKS_PER_NODE for accounting (0 means TOTALPES is valid)</desc>
     </entry>
-    <entry id="TOTALPES" value="1024">
+    <entry id="TOTALPES" value="1536">
       <type>integer</type>
       <desc>total number of MPI tasks (setup automatically - DO NOT EDIT)</desc>
     </entry>
