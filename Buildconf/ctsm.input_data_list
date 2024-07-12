@@ -1,0 +1,7 @@
+fsnowaging = /cluster/shared/noresm/inputdata/lnd/clm2/snicardata/snicar_drdt_bst_fit_60_c070416.nc
+fsnowoptics = /cluster/shared/noresm/inputdata/lnd/clm2/snicardata/snicar_optics_5bnd_c013122.nc
+finidat = /cluster/shared/noresm/inputdata/lnd/clm2/initdata_esmf/ctsm5.2/clmi.I1850Clm60BgcCrop-ciso.1361-01-01.ne30pg3_mg17_c240317.nc
+fsurdat = /cluster/shared/noresm/inputdata/lnd/clm2/surfdata_esmf/ctsm5.2.0/surfdata_ne30np4.pg3_hist_1850_78pfts_c240216.nc
+paramfile = /cluster/shared/noresm/inputdata/lnd/clm2/paramdata/ctsm51_params.c240208.nc
+stream_meshfile_urbantv = /cluster/shared/noresm/inputdata/lnd/clm2/urbandata/CLM50_tbuildmax_Oleson_2016_0.9x1_ESMFmesh_cdf5_100621.nc
+stream_fldfilename_urbantv = /cluster/shared/noresm/inputdata/lnd/clm2/urbandata/CTSM52_tbuildmax_OlesonFeddema_2020_0.9x1.25_simyr1849-2106_c200605.nc

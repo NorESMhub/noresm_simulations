@@ -1,0 +1,6 @@
+!----------------------------------------------------------------------------------
+! Users should add all user specific namelist changes below in the form of
+!   namelist_var = new_namelist_value
+! Note - that it does not matter what namelist group the namelist_var belongs to
+!----------------------------------------------------------------------------------
+ice_ic="/cluster/work/users/matsbn/archive/NOIIAJRAOC20TR_TL319_tn14_ppm_notz_20240115/rest/1775-01-01-00000/NOIIAJRAOC20TR_TL319_tn14_ppm_notz_20240115.cice.r.1775-01-01-00000.nc"

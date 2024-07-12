@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<file id="env_batch.xml" version="2.0">
+  <header>
+      These variables may be changed anytime during a run, they
+      control arguments to the batch submit command.
+    </header>
+  <group id="config_batch">
+    <entry id="BATCH_SYSTEM" value="slurm">
+      <type>char</type>
+      <valid_values>nersc_slurm,lc_slurm,moab,pbs,lsf,slurm,cobalt,cobalt_theta,none</valid_values>
+      <desc>The batch system type to use for this machine.</desc>
+    </entry>
+  </group>
+  <batch_system type="slurm">
+    <batch_query per_job_arg="-j">squeue</batch_query>
+    <batch_cancel>scancel</batch_cancel>
+    <batch_directive>#SBATCH</batch_directive>
+    <jobid_pattern>(\d+)$</jobid_pattern>
+    <depend_string> --dependency=afterok:jobid</depend_string>
+    <depend_allow_string> --dependency=afterany:jobid</depend_allow_string>
+    <depend_separator>,</depend_separator>
+    <walltime_format>%H:%M:%S</walltime_format>
+    <batch_mail_flag>--mail-user</batch_mail_flag>
+    <batch_mail_type_flag>--mail-type</batch_mail_type_flag>
+    <batch_mail_type>none, all, begin, end, fail</batch_mail_type>
+    <directives>
+      <directive> --job-name={{ job_id }}</directive>
+      <directive> --nodes={{ num_nodes }}</directive>
+      <directive> --ntasks-per-node={{ tasks_per_node }}</directive>
+      <directive> --output={{ job_id }}   </directive>
+    </directives>
+  </batch_system>
+  <batch_system MACH="betzy" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <argument> --time $JOB_WALLCLOCK_TIME </argument>
+      <argument> --account $PROJECT </argument>
+    </submit_args>
+    <directives>
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <directives queue="normal">
+      <directive> --partition=normal</directive>
+    </directives>
+    <directives queue="devel">
+      <directive> --partition=normal</directive>
+      <directive> --qos=devel</directive>
+    </directives>
+    <directives queue="preproc">
+      <directive> --partition=preproc</directive>
+      <directive> --mem=16G</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:59:00" nodemin="4" nodemax="1024" default="true">normal</queue>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="1">preproc</queue>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="4">devel</queue>
+    </queues>
+  </batch_system>
+</file>

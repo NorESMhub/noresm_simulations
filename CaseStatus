@@ -1,0 +1,244 @@
+2024-06-17 16:45:36: xmlchange success <command> ./xmlchange NTASKS_ATM=1536  </command>
+ ---------------------------------------------------
+2024-06-17 16:46:15: xmlchange success <command> ./xmlchange NTASKS_LND=1024  </command>
+ ---------------------------------------------------
+2024-06-17 16:49:42: xmlchange success <command> ./xmlchange NTASKS_ATM=1920  </command>
+ ---------------------------------------------------
+2024-06-17 16:49:49: xmlchange success <command> ./xmlchange NTASKS_CPL=1029  </command>
+ ---------------------------------------------------
+2024-06-17 16:49:54: xmlchange success <command> ./xmlchange NTASKS_LND=640  </command>
+ ---------------------------------------------------
+2024-06-17 16:50:00: xmlchange success <command> ./xmlchange NTASKS_ICE=1152  </command>
+ ---------------------------------------------------
+2024-06-17 16:50:05: xmlchange success <command> ./xmlchange NTASKS_OCN=384  </command>
+ ---------------------------------------------------
+2024-06-17 16:50:10: xmlchange success <command> ./xmlchange NTASKS_ROF=512  </command>
+ ---------------------------------------------------
+2024-06-17 16:50:17: xmlchange success <command> ./xmlchange NTASKS_GLC=64  </command>
+ ---------------------------------------------------
+2024-06-17 16:50:27: xmlchange success <command> ./xmlchange NTASKS_WAV=64  </command>
+ ---------------------------------------------------
+2024-06-17 16:50:42: xmlchange success <command> ./xmlchange ROOTPE_ICE=704  </command>
+ ---------------------------------------------------
+2024-06-17 16:50:47: xmlchange success <command> ./xmlchange ROOTPE_OCN=1920  </command>
+ ---------------------------------------------------
+2024-06-17 16:50:54: xmlchange success <command> ./xmlchange ROOTPE_GLC=1856  </command>
+ ---------------------------------------------------
+2024-06-17 16:51:02: xmlchange success <command> ./xmlchange ROOTPE_WAV=1792  </command>
+ ---------------------------------------------------
+2024-06-17 16:51:15: case.setup starting 
+ ---------------------------------------------------
+2024-06-17 16:51:21: case.setup success 
+ ---------------------------------------------------
+2024-06-17 16:51:34: case.build starting 
+ ---------------------------------------------------
+2024-06-17 16:59:50: case.build error 
+ERROR: BUILD FAIL: blom.buildlib failed, cat /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/ocn.bldlog.240617-165134
+ ---------------------------------------------------
+2024-06-17 17:10:33: xmlchange success <command> ./xmlchange NTASKS_OCN=354  </command>
+ ---------------------------------------------------
+2024-06-17 17:10:37: case.setup starting 
+ ---------------------------------------------------
+2024-06-17 17:10:44: case.setup success 
+ ---------------------------------------------------
+2024-06-17 17:11:17: xmlchange success <command> ./xmlchange BLOM_VCOORD=cntiso_hybrid,BLOM_TURBULENT_CLOSURE=  </command>
+ ---------------------------------------------------
+2024-06-17 17:12:36: case.build starting 
+ ---------------------------------------------------
+2024-06-17 17:16:50: case.build success 
+ ---------------------------------------------------
+2024-06-17 17:48:08: case.submit starting 941188
+ ---------------------------------------------------
+2024-06-17 17:48:08: case.submit success 941188
+ ---------------------------------------------------
+2024-06-17 17:48:13: case.run starting 941187
+ ---------------------------------------------------
+2024-06-17 17:48:19: model execution starting 941187
+ ---------------------------------------------------
+2024-06-17 17:49:08: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run'
+ ---------------------------------------------------
+2024-06-17 17:49:08: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run/cesm.log.941187.240617-174813
+ ---------------------------------------------------
+2024-06-17 17:50:42: xmlchange success <command> ./xmlchange OCN_NCPL=24  </command>
+ ---------------------------------------------------
+2024-06-17 17:53:04: xmlchange success <command> ./xmlchange CPL_SEQ_OPTION=OPTION1  </command>
+ ---------------------------------------------------
+2024-06-17 17:54:19: case.submit starting 941196
+ ---------------------------------------------------
+2024-06-17 17:54:19: case.submit success 941196
+ ---------------------------------------------------
+2024-06-17 17:54:26: case.run starting 941195
+ ---------------------------------------------------
+2024-06-17 17:54:32: model execution starting 941195
+ ---------------------------------------------------
+2024-06-17 17:56:06: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run'
+ ---------------------------------------------------
+2024-06-17 17:56:06: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run/cesm.log.941195.240617-175426
+ ---------------------------------------------------
+2024-06-17 18:02:23: xmlchange success <command> ./xmlchange PIO_TYPENAME=netcdf  </command>
+ ---------------------------------------------------
+2024-06-17 18:02:52: case.submit starting 941213
+ ---------------------------------------------------
+2024-06-17 18:02:52: case.submit success 941213
+ ---------------------------------------------------
+2024-06-17 18:02:57: case.run starting 941212
+ ---------------------------------------------------
+2024-06-17 18:03:05: model execution starting 941212
+ ---------------------------------------------------
+2024-06-17 18:04:04: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run'
+ ---------------------------------------------------
+2024-06-17 18:04:04: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run/cesm.log.941212.240617-180257
+ ---------------------------------------------------
+2024-06-17 18:49:36: case.build starting 
+ ---------------------------------------------------
+2024-06-17 18:51:04: case.build success 
+ ---------------------------------------------------
+2024-06-17 18:51:24: case.submit starting 941273
+ ---------------------------------------------------
+2024-06-17 18:51:24: case.submit success 941273
+ ---------------------------------------------------
+2024-06-17 18:51:29: case.run starting 941272
+ ---------------------------------------------------
+2024-06-17 18:51:35: model execution starting 941272
+ ---------------------------------------------------
+2024-06-17 18:52:39: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run'
+ ---------------------------------------------------
+2024-06-17 18:52:39: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run/cesm.log.941272.240617-185129
+ ---------------------------------------------------
+2024-06-21 15:38:51: case.submit starting 945337
+ ---------------------------------------------------
+2024-06-21 15:38:51: case.submit success 945337
+ ---------------------------------------------------
+2024-06-21 15:38:55: case.run starting 945336
+ ---------------------------------------------------
+2024-06-21 15:38:58: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
+ ---------------------------------------------------
+2024-06-21 15:39:01: model execution starting 945336
+ ---------------------------------------------------
+2024-06-21 15:39:04: xmlchange success <command> ./xmlchange STOP_N=10  </command>
+ ---------------------------------------------------
+2024-06-21 15:44:36: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run'
+ ---------------------------------------------------
+2024-06-21 15:44:36: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run/cesm.log.945336.240621-153855
+ ---------------------------------------------------
+2024-06-21 15:56:29: xmlchange success <command> ./xmlchange ROOTPE_ICE=640  </command>
+ ---------------------------------------------------
+2024-06-21 15:57:16: case.setup starting 
+ ---------------------------------------------------
+2024-06-21 15:57:23: case.setup success 
+ ---------------------------------------------------
+2024-06-21 15:57:41: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
+ ---------------------------------------------------
+2024-06-21 15:57:47: case.build starting 
+ ---------------------------------------------------
+2024-06-21 15:58:16: case.build error 
+ERROR: BUILD FAIL: blom.buildlib failed, cat /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/ocn.bldlog.240621-155747
+ ---------------------------------------------------
+2024-06-21 16:23:28: case.build starting 
+ ---------------------------------------------------
+2024-06-21 16:27:30: case.build success 
+ ---------------------------------------------------
+2024-06-21 16:28:29: case.submit starting 945377
+ ---------------------------------------------------
+2024-06-21 16:28:29: case.submit success 945377
+ ---------------------------------------------------
+2024-06-21 16:28:34: case.run starting 945376
+ ---------------------------------------------------
+2024-06-21 16:28:41: model execution starting 945376
+ ---------------------------------------------------
+2024-06-21 16:35:54: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run'
+ ---------------------------------------------------
+2024-06-21 16:35:54: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/test_b1850_ghgmam4/run/cesm.log.945376.240621-162834
+ ---------------------------------------------------
+2024-06-21 16:41:12: xmlchange success <command> ./xmlchange NTASKS=1920  </command>
+ ---------------------------------------------------
+2024-06-21 16:41:20: xmlchange success <command> ./xmlchange NTASKS_OCN=354  </command>
+ ---------------------------------------------------
+2024-06-21 16:41:27: xmlchange success <command> ./xmlchange ROOTPE_OCN=0  </command>
+ ---------------------------------------------------
+2024-06-21 16:41:35: xmlchange success <command> ./xmlchange ROOTPE_OCN=1920  </command>
+ ---------------------------------------------------
+2024-06-21 16:43:13: case.setup starting 
+ ---------------------------------------------------
+2024-06-21 16:43:21: case.setup success 
+ ---------------------------------------------------
+2024-06-21 16:43:22: case.build starting 
+ ---------------------------------------------------
+2024-06-21 16:49:45: case.build success 
+ ---------------------------------------------------
+2024-06-21 18:30:30: case.submit starting 945503
+ ---------------------------------------------------
+2024-06-21 18:30:30: case.submit success 945503
+ ---------------------------------------------------
+2024-06-21 18:30:38: case.run starting 945502
+ ---------------------------------------------------
+2024-06-21 18:30:45: model execution starting 945502
+ ---------------------------------------------------
+2024-06-21 19:20:00: xmlchange success <command> ./xmlchange REST_N=1  </command>
+ ---------------------------------------------------
+2024-06-21 19:21:42: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=48:00:00  </command>
+ ---------------------------------------------------
+2024-06-21 19:22:05: case.submit starting 
+ ---------------------------------------------------
+2024-06-21 19:22:05: case.submit error 
+ERROR: Command: 'sbatch --time 48:00:00 --account nn9039k  --dependency=afterok:945536 case.st_archive --resubmit' failed with error 'sbatch: error: Batch job submission failed: Requested time limit is invalid (missing or exceeds some limit)' from dir '/cluster/work/users/mvertens/noresm/test_b1850_ghgmam4'
+ ---------------------------------------------------
+2024-06-21 19:22:13: case.run starting 945536
+ ---------------------------------------------------
+2024-06-21 19:22:20: model execution starting 945536
+ ---------------------------------------------------
+2024-06-21 19:23:48: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=36:00:00  </command>
+ ---------------------------------------------------
+2024-06-21 19:24:07: case.submit starting 
+ ---------------------------------------------------
+2024-06-21 19:24:07: case.submit error 
+ERROR: Command: 'sbatch --time 36:00:00 --account nn9039k  --dependency=afterok:945538 case.st_archive --resubmit' failed with error 'sbatch: error: Batch job submission failed: Requested time limit is invalid (missing or exceeds some limit)' from dir '/cluster/work/users/mvertens/noresm/test_b1850_ghgmam4'
+ ---------------------------------------------------
+2024-06-21 19:24:13: case.run starting 945538
+ ---------------------------------------------------
+2024-06-21 19:24:20: model execution starting 945538
+ ---------------------------------------------------
+2024-06-21 21:31:13: xmlchange success <command> ./xmlchange STOP_N=6  </command>
+ ---------------------------------------------------
+2024-06-21 21:31:24: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
+ ---------------------------------------------------
+2024-06-21 21:31:48: case.submit starting 945619
+ ---------------------------------------------------
+2024-06-21 21:31:48: case.submit success 945619
+ ---------------------------------------------------
+2024-06-21 21:31:57: case.run starting 945618
+ ---------------------------------------------------
+2024-06-21 21:32:03: model execution starting 945618
+ ---------------------------------------------------
+2024-06-22 18:00:43: model execution success 945618
+ ---------------------------------------------------
+2024-06-22 18:00:44: case.run success 945618
+ ---------------------------------------------------
+2024-06-22 18:01:29: st_archive starting 945619
+ ---------------------------------------------------
+2024-06-22 18:05:23: st_archive success 945619
+ ---------------------------------------------------
+2024-06-23 14:16:59: xmlchange success <command> ./xmlchange CONTINUE_RUN=TRUE  </command>
+ ---------------------------------------------------
+2024-06-23 14:18:23: st_archive starting 
+ ---------------------------------------------------
+2024-06-23 14:19:04: st_archive success 
+ ---------------------------------------------------
