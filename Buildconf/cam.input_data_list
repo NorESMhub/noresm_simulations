@@ -2,6 +2,7 @@ depvel_lnd_file = /cluster/shared/noresm/inputdata/atm/cam/chem/trop_mozart/dvel
 tracer_cnst_datapath = /cluster/shared/noresm/inputdata/atm/cam/tracer_cnst
 xs_long_file = /cluster/shared/noresm/inputdata/atm/waccm/phot/temp_prs_GT200nm_c221005mm.nc
 rsf_file = /cluster/shared/noresm/inputdata/atm/waccm/phot/RSF_GT200nm_v3.0_c080811.nc
+bndtvg = /cluster/shared/noresm/inputdata/atm/cam/ggas/noaamisc.r8.nc
 drydep_srf_file = /cluster/shared/noresm/inputdata/atm/cam/chem/trop_mam/atmsrf_ne30pg3_cdf5_180522.nc
 exo_coldens_file = /cluster/shared/noresm/inputdata/atm/cam/chem/trop_mozart/phot/exo_coldens.nc
 tracer_cnst_file = /cluster/shared/noresm/inputdata/atm/cam/tracer_cnst/tracer_cnst_WACCM6_halons_3DmonthlyL70_1850climoCMIP6piControl001_y21-50avg_c180802.nc

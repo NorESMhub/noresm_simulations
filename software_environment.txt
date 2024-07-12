@@ -1,11 +1,12 @@
 Currently Loaded Modules:
-  1) StdEnv                        (S)   8) libxml2/2.9.10-GCCcore-11.2.0          (H)  15) imkl-FFTW/2021.4.0-iompi-2021b      22) netCDF-Fortran/4.5.3-iompi-2021b              29) libarchive/3.5.1-GCCcore-11.2.0 (H)  36) Python/3.9.6-GCCcore-11.2.0
-  2) GCCcore/11.2.0                      9) libpciaccess/0.16-GCCcore-11.2.0       (H)  16) iomkl/2021b                         23) netCDF-C++4/4.3.1-iompi-2021b                 30) CMake/3.21.1-GCCcore-11.2.0     (H)  37) ParMETIS/4.0.3-iompi-2021b
-  3) zlib/1.2.11-GCCcore-11.2.0    (H)  10) hwloc/2.5.0-GCCcore-11.2.0             (H)  17) Szip/2.1.1-GCCcore-11.2.0      (H)  24) PnetCDF/1.12.3-iompi-2021b                    31) libreadline/8.1-GCCcore-11.2.0  (H)
-  4) binutils/2.37-GCCcore-11.2.0  (H)  11) hpcx/2.10                                   18) HDF5/1.12.1-iompi-2021b             25) ParallelIO/2.5.10-iompi-2021b                 32) Tcl/8.6.11-GCCcore-11.2.0       (H)
-  5) intel-compilers/2021.4.0           12) OpenMPI/4.1.1-intel-compilers-2021.4.0      19) OpenSSL/1.1                    (H)  26) ESMF/8.4.1-iomkl-2021b-ParallelIO-2.5.10      33) SQLite/3.36-GCCcore-11.2.0      (H)
-  6) numactl/2.0.14-GCCcore-11.2.0 (H)  13) imkl/2021.4.0                               20) cURL/7.78.0-GCCcore-11.2.0     (H)  27) ncurses/6.2-GCCcore-11.2.0               (H)  34) GMP/6.2.1-GCCcore-11.2.0        (H)
-  7) XZ/5.2.5-GCCcore-11.2.0       (H)  14) iompi/2021b                                 21) netCDF/4.8.1-iompi-2021b            28) bzip2/1.0.8-GCCcore-11.2.0               (H)  35) libffi/3.4.2-GCCcore-11.2.0     (H)
+  1) StdEnv                        (S)   9) libpciaccess/0.16-GCCcore-11.2.0       (H)  17) Szip/2.1.1-GCCcore-11.2.0        (H)  25) ParallelIO/2.5.10-iompi-2021b                 33) SQLite/3.36-GCCcore-11.2.0  (H)
+  2) GCCcore/11.2.0                     10) hwloc/2.5.0-GCCcore-11.2.0             (H)  18) HDF5/1.12.1-iompi-2021b               26) ESMF/8.4.1-iomkl-2021b-ParallelIO-2.5.10      34) GMP/6.2.1-GCCcore-11.2.0    (H)
+  3) zlib/1.2.11-GCCcore-11.2.0    (H)  11) hpcx/2.10                                   19) OpenSSL/1.1                      (H)  27) ncurses/6.2-GCCcore-11.2.0               (H)  35) libffi/3.4.2-GCCcore-11.2.0 (H)
+  4) binutils/2.37-GCCcore-11.2.0  (H)  12) OpenMPI/4.1.1-intel-compilers-2021.4.0      20) cURL/7.78.0-GCCcore-11.2.0       (H)  28) bzip2/1.0.8-GCCcore-11.2.0               (H)  36) Python/3.9.6-GCCcore-11.2.0
+  5) intel-compilers/2021.4.0           13) imkl/2021.4.0                               21) netCDF/4.8.1-iompi-2021b              29) libarchive/3.5.1-GCCcore-11.2.0          (H)  37) ParMETIS/4.0.3-iompi-2021b
+  6) numactl/2.0.14-GCCcore-11.2.0 (H)  14) iompi/2021b                                 22) netCDF-Fortran/4.5.3-iompi-2021b      30) CMake/3.21.1-GCCcore-11.2.0              (H)
+  7) XZ/5.2.5-GCCcore-11.2.0       (H)  15) imkl-FFTW/2021.4.0-iompi-2021b              23) netCDF-C++4/4.3.1-iompi-2021b         31) libreadline/8.1-GCCcore-11.2.0           (H)
+  8) libxml2/2.9.10-GCCcore-11.2.0 (H)  16) iomkl/2021b                                 24) PnetCDF/1.12.3-iompi-2021b            32) Tcl/8.6.11-GCCcore-11.2.0                (H)
 
   Where:
    H:  Hidden Module
@@ -133,7 +134,7 @@ LC_COLLATE=C
 EBROOTOPENSSL=/cluster/software/OpenSSL/1.1
 EBROOTINTELMINCOMPILERS=/cluster/software/intel-compilers/2021.4.0
 EBDEVELPNETCDF=/cluster/shared/noresm/eb_mods/software/PnetCDF/1.12.3-iompi-2021b/easybuild/PnetCDF-1.12.3-iompi-2021b-easybuild-devel
-PWD=/cluster/home/mvertens/noresm/test_nf1850oslo_trigrid
+PWD=/cluster/home/mvertens/noresm/test_nf1850oslo_zm
 PNETCDF=/cluster/shared/noresm/eb_mods/software/PnetCDF/1.12.3-iompi-2021b
 MKL_EXAMPLES=/cluster/software/imkl/2021.4.0/mkl/2021.4.0/examples
 EBVERSIONPARALLELIO=2.5.10

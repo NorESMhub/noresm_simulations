@@ -16,7 +16,7 @@
  for_testing_use_second_grain_pool = .false.
  fsnowaging = '/cluster/shared/noresm/inputdata/lnd/clm2/snicardata/snicar_drdt_bst_fit_60_c070416.nc'
  fsnowoptics = '/cluster/shared/noresm/inputdata/lnd/clm2/snicardata/snicar_optics_5bnd_c013122.nc'
- fsurdat = '/cluster/shared/noresm/inputdata/lnd/clm2/surfdata_esmf/ctsm5.2.0/surfdata_0.9x1.25_hist_1850_78pfts_c240216.nc'
+ fsurdat = '/cluster/shared/noresm/inputdata/lnd/clm2/surfdata_esmf/ctsm5.2.0/surfdata_ne30np4.pg3_hist_1850_78pfts_c240216.nc'
  glc_do_dynglacier = .false.
  glc_snow_persistence_max_days = 0
  h2osno_max = 10000.0
@@ -275,7 +275,7 @@
 !#--------------------------------------------------------------------------------------------------------------------------
 !# lnd_in:: Comment:
 !# This namelist was created using the following command-line:
-!#     /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/clm/bld/CLM build-namelist -cimeroot /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/cime -infile /cluster/home/mvertens/noresm/test_nf1850oslo_trigrid/Buildconf/clmconf/namelist -csmdata /cluster/shared/noresm/inputdata -inputdata /cluster/home/mvertens/noresm/test_nf1850oslo_trigrid/Buildconf/ctsm.input_data_list -ignore_ic_year -namelist &clm_inparm  start_ymd=00010101 /  -no-megan -use_case 1850_control -res 0.9x1.25 -clm_start_type default -envxml_dir /cluster/home/mvertens/noresm/test_nf1850oslo_trigrid -configuration clm -structure standard -glc_nec 10 -co2_ppmv 284.7 -co2_type diagnostic -config /cluster/home/mvertens/noresm/test_nf1850oslo_trigrid/Buildconf/clmconf/config_cache.xml -driver nuopc -bgc sp -clm_accelerated_spinup off -lnd_tuning_mode clm5_1_cam6.0 -mask tnx1v4
+!#     /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/clm/bld/CLM build-namelist -cimeroot /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/cime -infile /cluster/home/mvertens/noresm/test_nf1850oslo_zm/Buildconf/clmconf/namelist -csmdata /cluster/shared/noresm/inputdata -inputdata /cluster/home/mvertens/noresm/test_nf1850oslo_zm/Buildconf/ctsm.input_data_list -ignore_ic_year -namelist &clm_inparm  start_ymd=00010101 /  -no-megan -use_case 1850_control -res ne30np4.pg3 -clm_start_type default -envxml_dir /cluster/home/mvertens/noresm/test_nf1850oslo_zm -configuration clm -structure standard -glc_nec 10 -co2_ppmv 284.7 -co2_type diagnostic -config /cluster/home/mvertens/noresm/test_nf1850oslo_zm/Buildconf/clmconf/config_cache.xml -driver nuopc -bgc sp -clm_accelerated_spinup off -lnd_tuning_mode clm5_1_cam6.0 -mask tnx1v4
 !# 
 !# For help on options use: /cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/components/clm/bld/CLM build-namelist -help
 !#--------------------------------------------------------------------------------------------------------------------------

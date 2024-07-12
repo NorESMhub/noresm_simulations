@@ -297,7 +297,7 @@
       <desc> main configuration file that specifies all relevant filenames
     and directories to configure a case</desc>
     </entry>
-    <entry id="CASEROOT" value="/cluster/home/mvertens/noresm/test_nf1850oslo_trigrid">
+    <entry id="CASEROOT" value="/cluster/home/mvertens/noresm/test_nf1850oslo_zm">
       <type>char</type>
       <desc>full pathname of case</desc>
     </entry>
@@ -314,7 +314,7 @@
       <type>char</type>
       <desc>full pathname of source root directory</desc>
     </entry>
-    <entry id="CASE" value="test_nf1850oslo_trigrid">
+    <entry id="CASE" value="test_nf1850oslo_zm">
       <type>char</type>
       <desc>case name</desc>
     </entry>
@@ -344,7 +344,7 @@
       <type>char</type>
       <desc>username of user who created case</desc>
     </entry>
-    <entry id="CASE_HASH" value="baaa41398f15f9920282684950707b8161c9c4a56864e871f1d3f64a9081c445">
+    <entry id="CASE_HASH" value="dce5f3f1c6f862f0a9792f94461f9c31c03b3168261885d798cbe39265d1ca07">
       <type>char</type>
       <desc>Unique identifier for case</desc>
     </entry>

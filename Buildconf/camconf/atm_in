@@ -30,6 +30,7 @@
  print_energy_errors		= .false.
 /
 &chem_inparm
+ bndtvg		= '/cluster/shared/noresm/inputdata/atm/cam/ggas/noaamisc.r8.nc'
  chem_use_chemtrop		= .true.
  depvel_lnd_file		= '/cluster/shared/noresm/inputdata/atm/cam/chem/trop_mozart/dvel/regrid_vegetation.nc'
  drydep_srf_file		= '/cluster/shared/noresm/inputdata/atm/cam/chem/trop_mam/atmsrf_ne30pg3_cdf5_180522.nc'
@@ -447,6 +448,7 @@
  graupel_in_rad		=  .false. 
 /
 &ref_pres_nl
+ clim_modal_aero_top_press		= 1.D-4
  do_molec_press		=  0.1D0 
  molec_diff_bot_press		=  50.D0 
  trop_cloud_top_press		=       1.D2 
@@ -480,12 +482,12 @@
  gas_wetdep_method		= 'NEU'
 /
 &zmconv_nl
- zmconv_c0_lnd		=  0.0200D0 
- zmconv_c0_ocn		=  0.0200D0 
+ zmconv_c0_lnd		= 0.0075D0
+ zmconv_c0_ocn		= 0.0300D0
  zmconv_capelmt		=  70.0    
  zmconv_dmpdz		=  -1.0E-3 
- zmconv_ke		=      8.0E-6 
- zmconv_ke_lnd		=  8.0E-6 
+ zmconv_ke		= 5.0E-6
+ zmconv_ke_lnd		= 1.0E-5
  zmconv_momcd		=  0.7000D0 
  zmconv_momcu		=  0.7000D0 
  zmconv_num_cin		=  1       

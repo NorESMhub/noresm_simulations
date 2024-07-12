@@ -1,125 +1,30 @@
-2024-06-17 15:03:05: xmlchange success <command> ./xmlchange NTASKS=1536  </command>
+2024-06-20 13:12:33: xmlchange success <command> ./xmlchange NTASKS=1536  </command>
  ---------------------------------------------------
-2024-06-17 15:03:08: case.setup starting 
+2024-06-20 13:13:23: case.setup starting 
  ---------------------------------------------------
-2024-06-17 15:03:12: case.setup success 
+2024-06-20 13:13:36: case.setup success 
  ---------------------------------------------------
-2024-06-17 15:04:35: case.build starting 
+2024-06-20 13:51:50: case.build starting 
  ---------------------------------------------------
-2024-06-17 15:12:48: case.build success 
+2024-06-20 14:01:57: case.build success 
  ---------------------------------------------------
-2024-06-17 15:13:23: case.submit starting 941041
+2024-06-20 14:07:26: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
  ---------------------------------------------------
-2024-06-17 15:13:23: case.submit success 941041
+2024-06-20 16:22:42: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
  ---------------------------------------------------
-2024-06-17 15:13:27: case.run starting 941040
+2024-06-20 16:23:03: case.submit starting 944329
  ---------------------------------------------------
-2024-06-17 15:13:32: model execution starting 941040
+2024-06-20 16:23:03: case.submit success 944329
  ---------------------------------------------------
-2024-06-17 15:18:45: model execution success 941040
+2024-06-20 16:23:09: case.run starting 944328
  ---------------------------------------------------
-2024-06-17 15:18:45: case.run success 941040
+2024-06-20 16:23:16: model execution starting 944328
  ---------------------------------------------------
-2024-06-17 15:18:53: st_archive starting 941041
+2024-06-21 11:55:04: model execution success 944328
  ---------------------------------------------------
-2024-06-17 15:19:11: st_archive success 941041
+2024-06-21 11:55:04: case.run success 944328
  ---------------------------------------------------
-2024-06-17 16:23:22: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
+2024-06-21 11:55:17: st_archive starting 944329
  ---------------------------------------------------
-2024-06-17 16:23:34: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
- ---------------------------------------------------
-2024-06-17 16:24:14: case.run starting 941106
- ---------------------------------------------------
-2024-06-17 16:24:20: model execution starting 941106
- ---------------------------------------------------
-2024-06-17 16:24:30: case.submit starting 941109
- ---------------------------------------------------
-2024-06-17 16:24:30: case.submit success 941109
- ---------------------------------------------------
-2024-06-17 17:13:59: model execution error 
-ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/run'
- ---------------------------------------------------
-2024-06-17 17:13:59: case.run error 
-ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
-See log file for details: /cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/run/cesm.log.941106.240617-162414
- ---------------------------------------------------
-2024-06-18 15:37:46: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
- ---------------------------------------------------
-2024-06-18 15:48:26: xmlchange success <command> ./xmlchange DEBUG=TRUE  </command>
- ---------------------------------------------------
-2024-06-18 15:48:33: build.clean starting 
- ---------------------------------------------------
-2024-06-18 15:48:38: build.clean success 
- ---------------------------------------------------
-2024-06-18 15:49:45: case.build starting 
- ---------------------------------------------------
-2024-06-18 15:53:41: xmlchange success <command> ./xmlchange HIST_N=1  </command>
- ---------------------------------------------------
-2024-06-18 15:53:47: xmlchange success <command> ./xmlchange HIST_OPTION=ndays  </command>
- ---------------------------------------------------
-2024-06-18 15:54:48: case.build success 
- ---------------------------------------------------
-2024-06-18 15:55:28: case.submit starting 942196
- ---------------------------------------------------
-2024-06-18 15:55:28: case.submit success 942196
- ---------------------------------------------------
-2024-06-18 15:55:33: case.run starting 942190
- ---------------------------------------------------
-2024-06-18 15:55:39: model execution starting 942190
- ---------------------------------------------------
-2024-06-18 15:58:54: model execution error 
-ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/run'
- ---------------------------------------------------
-2024-06-18 15:58:54: case.run error 
-ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
-See log file for details: /cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/run/cesm.log.942190.240618-155533
- ---------------------------------------------------
-2024-06-18 16:01:46: xmlchange success <command> ./xmlchange HIST_OPTION=nmonths  </command>
- ---------------------------------------------------
-2024-06-18 16:01:52: xmlchange success <command> ./xmlchange HIST_N=1  </command>
- ---------------------------------------------------
-2024-06-18 16:02:09: xmlchange success <command> ./xmlchange DEBUG=FALSE  </command>
- ---------------------------------------------------
-2024-06-18 16:02:18: build.clean starting 
- ---------------------------------------------------
-2024-06-18 16:02:22: build.clean success 
- ---------------------------------------------------
-2024-06-18 16:02:23: case.build starting 
- ---------------------------------------------------
-2024-06-18 16:11:07: case.build success 
- ---------------------------------------------------
-2024-06-18 16:53:45: case.submit starting 942261
- ---------------------------------------------------
-2024-06-18 16:53:45: case.submit success 942261
- ---------------------------------------------------
-2024-06-18 16:53:53: case.run starting 942260
- ---------------------------------------------------
-2024-06-18 16:53:59: model execution starting 942260
- ---------------------------------------------------
-2024-06-18 17:02:59: case.build starting 
- ---------------------------------------------------
-2024-06-18 17:05:16: case.build success 
- ---------------------------------------------------
-2024-06-18 17:05:40: case.submit starting 942274
- ---------------------------------------------------
-2024-06-18 17:05:40: case.submit success 942274
- ---------------------------------------------------
-2024-06-18 17:05:44: case.run starting 942273
- ---------------------------------------------------
-2024-06-18 17:05:52: model execution starting 942273
- ---------------------------------------------------
-2024-06-18 17:38:43: model execution error 
-ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/run'
- ---------------------------------------------------
-2024-06-18 17:38:44: case.run error 
-ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
-See log file for details: /cluster/work/users/mvertens/noresm/test_nf1850oslo_trigrid/run/cesm.log.942260.240618-165353
- ---------------------------------------------------
-2024-06-19 12:19:46: model execution success 942273
- ---------------------------------------------------
-2024-06-19 12:19:46: case.run success 942273
- ---------------------------------------------------
-2024-06-19 12:19:58: st_archive starting 942274
- ---------------------------------------------------
-2024-06-19 12:20:19: st_archive success 942274
+2024-06-21 11:55:34: st_archive success 944329
  ---------------------------------------------------
