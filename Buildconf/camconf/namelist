@@ -1,0 +1,10 @@
+&comp_inparm 
+
+ dtime = 1800
+ interpolate_nlat   = 192
+
+ interpolate_nlon   = 288
+
+ interpolate_output = .true.
+
+/ 

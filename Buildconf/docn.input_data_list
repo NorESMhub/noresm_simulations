@@ -1,0 +1,4 @@
+model_meshfile = /cluster/shared/noresm/inputdata/share/meshes/ne30pg3_ESMFmesh_cdf5_c20211018.nc
+model_maskfile = /cluster/shared/noresm/inputdata/share/meshes/tnx1v4_20170601_cdf5_ESMFmesh.nc
+mesh = /cluster/shared/noresm/inputdata/atm/cam/sst/sst_HadOIBl_bc_1x1_clim_c101029_ESMFmesh_120520.nc
+file1 = /cluster/shared/noresm/inputdata/atm/cam/sst/sst_HadOIBl_bc_1x1_clim_pi_c101029.nc

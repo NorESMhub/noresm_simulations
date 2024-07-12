@@ -1,0 +1,597 @@
+Region                                                                    PETs   PEs    Count    Mean (s)    Min (s)     Min PET Max (s)     Max PET
+  [ESMF]                                                                  512    512    1        514.9078    514.8843    462     514.9545    80     
+    [ensemble] RunPhase1                                                  512    512    1        455.9528    455.9526    164     455.9530    0      
+      [ESM0001] RunPhase1                                                 512    512    1        455.9516    455.9506    369     455.9529    0      
+        [ATM] RunPhase1                                                   512    512    240      436.9413    435.5336    459     439.5454    0      
+          CAM_run3                                                        512    512    241      232.0713    178.5281    187     257.3167    442    
+            stepon_run3                                                   512    512    241      232.0702    178.5258    187     257.3157    442    
+              dyn_run                                                     512    512    241      230.8585    177.0553    187     255.9896    442    
+                prim_advance_exp                                          512    512    1446     104.7354    44.6580     164     133.5900    491    
+                prim_advec_tracers_fvm                                    512    512    482      90.9216     76.3844     466     108.2995    164    
+                cslam2gll                                                 512    512    482      14.4156     6.2714      337     65.3567     181    
+                vertical_remap                                            512    512    482      7.9164      6.5803      399     11.6351     164    
+                applyCAMforc                                              512    512    482      0.6532      0.2306      307     1.7906      213    
+              comp_adv_tends2                                             512    512    241      0.7384      0.1267      111     1.1571      164    
+              comp_adv_tends1                                             512    512    241      0.4698      0.1916      291     1.1693      212    
+          CAM_run2                                                        512    512    241      175.6893    153.6362    442     232.4616    187    
+            phys_run2                                                     512    512    241      155.7574    136.4397    487     225.5345    164    
+              ac_physics                                                  512    512    241      155.7347    136.4185    487     225.5079    164    
+                macrop_tend                                               512    512    MULTIPLE 40.3606     35.2386     349     53.8940     164    
+                radiation                                                 512    512    MULTIPLE 28.9194     21.9688     227     38.8014     164    
+                microp_aero_run                                           512    512    MULTIPLE 28.6701     21.7980     446     55.9047     164    
+                microp_tend                                               512    512    MULTIPLE 16.2089     13.5786     348     19.5794     138    
+                gw_tend                                                   512    512    MULTIPLE 11.6380     9.7447      347     16.2242     164    
+                adv_tracer_src_snk                                        512    512    MULTIPLE 10.6504     9.5500      489     14.8532     164    
+                bc_aerosols                                               512    512    MULTIPLE 9.7372      8.4286      373     12.6100     164    
+                aero_drydep                                               512    512    MULTIPLE 6.1887      5.6102      321     10.0361     164    
+                vertical_diffusion_tend                                   512    512    MULTIPLE 1.0995      0.9552      333     1.4645      164    
+                tropopause                                                512    512    MULTIPLE 0.6198      0.4438      379     0.7450      12     
+                bc_history_write                                          512    512    MULTIPLE 0.3019      0.2492      333     0.4048      142    
+                clubb_emissions_tend                                      512    512    MULTIPLE 0.2723      0.2273      399     0.3596      66     
+                tphysac_init                                              512    512    MULTIPLE 0.2354      0.1602      402     0.3223      128    
+                bc_cld_diag_history_write                                 512    512    MULTIPLE 0.1904      0.1609      388     0.2604      74     
+                diag_surf                                                 512    512    MULTIPLE 0.0686      0.0558      447     0.0891      128    
+                rayleigh_friction                                         512    512    MULTIPLE 0.0462      0.0416      345     0.0664      164    
+                carma_timestep_tend                                       512    512    MULTIPLE 0.0384      0.0307      327     0.0563      164    
+                iondrag                                                   512    512    MULTIPLE 0.0294      0.0262      327     0.0448      164    
+                qneg3                                                     512    512    MULTIPLE 0.0056      0.0046      320     0.0086      164    
+              lightning_no_prod                                           512    512    241      0.0175      0.0077      511     0.0274      66     
+              physpkg_st2                                                 512    512    241      0.0027      0.0017      462     0.0044      79     
+              carma_accumulate_stats                                      512    512    241      0.0001      0.0001      66      0.0001      465    
+            stepon_run2                                                   512    512    241      19.9301     3.4496      164     81.4886     458    
+              p_d_coupling                                                512    512    241      19.9285     3.4476      164     81.4870     458    
+                phys2dyn                                                  512    512    241      11.1398     2.3635      138     70.2938     188    
+                p_d_coupling:bndry_exchange                               512    512    241      7.9191      0.0853      164     66.0437     186    
+                pd_copy                                                   512    512    241      0.3229      0.2423      459     0.5522      75     
+            ionosphere_run2                                               512    512    241      0.0001      0.0001      162     0.0002      196    
+          CAM_run1                                                        512    512    241      14.3292     9.6430      166     21.6640     35     
+            phys_run1                                                     512    512    241      10.5833     6.1471      163     17.9059     38     
+              physpkg_st1                                                 512    512    241      5.5856      1.5320      204     12.0418     38     
+                chk_en_gmean                                              512    512    241      3.8014      0.1636      164     9.7412      376    
+                advance_trcdata                                           512    512    10122    0.6651      0.6019      329     1.1612      164    
+                gmean_arr                                                 512    512    1205     0.1257      0.0300      0       0.1334      413    
+              bc_physics                                                  512    512    241      4.9952      3.9970      459     6.4152      57     
+                moist_convection                                          512    512    MULTIPLE 4.2776      3.5581      459     5.1688      145    
+                dry_adjustment                                            512    512    MULTIPLE 0.2802      0.0868      306     0.8204      76     
+                bc_init                                                   512    512    MULTIPLE 0.2204      0.1339      473     0.3344      185    
+                energy_fixer                                              512    512    MULTIPLE 0.1601      0.1360      391     0.2124      187    
+                cam_export                                                512    512    MULTIPLE 0.0298      0.0246      459     0.0437      164    
+                diag_export                                               512    512    MULTIPLE 0.0091      0.0070      456     0.0128      185    
+                diag_physvar_ic                                           512    512    MULTIPLE 0.0041      0.0029      89      0.0061      185    
+            stepon_run1                                                   512    512    241      3.7444      2.0928      511     6.4303      111    
+              d_p_coupling                                                512    512    241      3.7386      2.0872      511     6.4254      111    
+                dyn2phys                                                  512    512    241      1.1903      0.6339      283     1.7825      164    
+                dpcopy                                                    512    512    241      0.4710      0.1567      417     0.8185      207    
+                derived_phys                                              512    512    241      0.3196      0.2152      408     0.4797      80     
+          CAM_run4                                                        512    512    241      14.2309     14.1476     153     14.3946     35     
+            cam_write_restart                                             512    512    1        6.7162      6.7134      45      6.7369      0      
+              get_decomp                                                  512    512    141      0.6588      0.6079      389     0.7063      257    
+                newdecomp                                                 512    512    7        0.6571      0.6064      389     0.7046      257    
+                get_filemap                                               512    512    7        0.0011      0.0009      391     0.0017      164    
+            cam_run4_wrapup                                               512    512    241      6.6257      6.6038      0       6.6265      214    
+            wshist                                                        512    512    241      0.8847      0.8018      153     1.0501      35     
+              dump_field                                                  512    512    5        0.3044      0.3006      143     0.3104      381    
+                get_decomp                                                512    512    1750     0.1562      0.1447      392     0.1682      385    
+              h_zero                                                      512    512    2100     0.0274      0.0219      112     0.0327      203    
+              h_normalize                                                 512    512    1745     0.0236      0.0176      381     0.0275      143    
+              h_global                                                    512    512    1750     0.0002      0.0001      100     0.0005      164    
+          CAM_import                                                      512    512    240      0.2154      0.2101      360     0.3543      164    
+          CAM_export                                                      512    512    240      0.0391      0.0319      66      0.0570      188    
+            ndepdyn_strd_adv_total                                        512    512    240      0.0124      0.0095      255     0.0195      188    
+              ndepdyn_strd_adv_tint                                       512    512    240      0.0095      0.0072      255     0.0155      188    
+              ndepdyn_strd_adv_readLBUB                                   512    512    240      0.0017      0.0013      254     0.0025      188    
+                ndepdyn_readLBUB_setup                                    512    512    240      0.0006      0.0004      255     0.0011      188    
+                ndepdyn_readLBUB_filemgt                                  512    512    240      0.0001      0.0001      450     0.0002      417    
+          CAM_adv_timestep                                                512    512    241      0.0007      0.0004      184     0.0018      484    
+        [LND] RunPhase1                                                   512    512    240      7.9203      7.3520      380     9.3735      164    
+          ctsm_run                                                        512    512    241      7.6319      7.0762      397     9.1755      164    
+            clm_drv_io                                                    512    512    241      3.8630      3.8576      164     3.8712      0      
+              clm_drv_io_wrest                                            512    512    1        3.8610      3.7917      0       3.8633      466    
+              clm_drv_io_htapes                                           512    512    241      0.0017      0.0012      381     0.0790      0      
+            bgp_fluxes                                                    512    512    241      1.3395      1.0821      397     2.0954      164    
+              canflux                                                     512    512    241      1.2777      1.0281      397     2.0272      164    
+                can_iter                                                  512    512    241      1.1792      0.9428      407     1.8962      164    
+                LUNA                                                      512    512    6        0.0008      0.0005      239     0.0012      164    
+              bgflux                                                      512    512    241      0.0358      0.0240      80      0.0511      187    
+              uflux                                                       512    512    241      0.0194      0.0064      465     0.0318      146    
+              bgplake                                                     512    512    241      0.0054      0.0009      506     0.0122      146    
+            soiltemperature                                               512    512    241      0.6692      0.5627      465     0.7864      164    
+              SoilTempBandDiag                                            512    512    241      0.4290      0.3838      465     0.4801      88     
+              SoilThermProp                                               512    512    241      0.0483      0.0321      459     0.0715      164    
+              PhaseChangebeta                                             512    512    241      0.0244      0.0152      272     0.0340      164    
+              PhaseChangeH2osfc                                           512    512    241      0.0009      0.0006      268     0.0012      190    
+            bgc                                                           512    512    241      0.5570      0.4578      215     0.7826      164    
+            surfalb                                                       512    512    119      0.2720      0.1034      31      0.4885      260    
+            hbuf                                                          512    512    241      0.2163      0.1723      459     0.2955      164    
+            hydro_without_drainage                                        512    512    241      0.2001      0.1349      465     0.2921      0      
+            bgp1                                                          512    512    241      0.0804      0.0500      459     0.1104      164    
+            dyn_subgrid                                                   512    512    241      0.0678      0.0481      382     0.0914      135    
+            depvel                                                        512    512    241      0.0610      0.0453      459     0.1001      164    
+            surfrad                                                       512    512    241      0.0605      0.0473      459     0.0768      164    
+            begwbal                                                       512    512    482      0.0287      0.0186      383     0.0403      139    
+            lnd2atm                                                       512    512    241      0.0243      0.0181      464     0.0345      164    
+            hydro1                                                        512    512    241      0.0225      0.0185      154     0.0283      76     
+            bgp2                                                          512    512    241      0.0222      0.0167      459     0.0350      164    
+              bgp2_loop_3                                                 512    512    241      0.0104      0.0070      459     0.0165      164    
+              bgp2_loop_2                                                 512    512    241      0.0041      0.0032      397     0.0071      164    
+              bgp2_loop_4                                                 512    512    241      0.0033      0.0027      397     0.0060      164    
+              bgp2_loop_1                                                 512    512    241      0.0027      0.0019      272     0.0040      40     
+            hydro2_drainage                                               512    512    241      0.0206      0.0145      465     0.0297      164    
+            drvinit                                                       512    512    241      0.0195      0.0096      82      0.0307      78     
+            lakeTemp                                                      512    512    241      0.0178      0.0055      506     0.0309      137    
+            balchk                                                        512    512    241      0.0150      0.0104      464     0.0208      197    
+            accum                                                         512    512    240      0.0150      0.0115      468     0.0192      313    
+            hdmdyn_strd_adv_total                                         512    512    241      0.0106      0.0090      320     0.0178      139    
+              hdmdyn_strd_adv_tint                                        512    512    241      0.0086      0.0073      320     0.0147      139    
+              hdmdyn_strd_adv_readLBUB                                    512    512    241      0.0010      0.0008      221     0.0017      73     
+                hdmdyn_readLBUB_setup                                     512    512    241      0.0002      0.0002      463     0.0005      73     
+                hdmdyn_readLBUB_filemgt                                   512    512    241      0.0001      0.0001      237     0.0001      76     
+            hylake                                                        512    512    241      0.0092      0.0054      396     0.0143      140    
+            snow_init                                                     512    512    241      0.0077      0.0037      272     0.0140      110    
+            urbalb                                                        512    512    119      0.0031      0.0012      455     0.0054      41     
+            patch2col                                                     512    512    241      0.0031      0.0021      459     0.0043      164    
+            decomp_vert                                                   512    512    241      0.0018      0.0012      376     0.0032      78     
+            lnd2glc                                                       512    512    241      0.0011      0.0007      268     0.0015      110    
+            SatellitePhenology                                            512    512    119      0.0011      0.0008      384     0.0016      129    
+            interpMonthlyVeg                                              512    512    241      0.0011      0.0007      408     0.0020      2      
+            begcnbal_grc                                                  512    512    241      0.0001      0.0000      255     0.0001      164    
+            begcnbal_col                                                  512    512    241      0.0000      0.0000      369     0.0001      417    
+          lc_lnd_export                                                   512    512    241      0.0295      0.0245      372     0.0369      203    
+          lc_lnd_import                                                   512    512    240      0.0204      0.0179      385     0.0269      423    
+          shr_orb_decl                                                    512    512    241      0.0019      0.0015      191     0.0030      24     
+          lc_ctsm2_adv_timestep                                           512    512    241      0.0007      0.0004      381     0.0012      357    
+        [ATM-TO-MED] RunPhase1                                            512    512    240      2.3774      0.0582      0       4.5504      166    
+        [ICE] RunPhase1                                                   512    512    240      2.2998      1.9430      82      2.7132      424    
+          cice_run_total                                                  512    512    240      2.1958      1.7837      82      2.6278      424    
+            cice_run_export                                               512    512    240      0.2267      0.2181      368     0.3446      164    
+            cice_run_presc                                                512    512    240      0.0546      0.0362      160     0.0883      430    
+              cice_pice_strd_adv_total                                    512    512    240      0.0291      0.0252      384     0.0409      430    
+                cice_pice_strd_adv_readLBUB                               512    512    240      0.0163      0.0154      384     0.0183      430    
+                  cice_pice_readLBUB_UB_readpio                           512    512    1        0.0065      0.0060      129     0.0074      406    
+                  cice_pice_readLBUB_LB_readpio                           512    512    1        0.0029      0.0020      403     0.0036      45     
+                  cice_pice_readLBUB_fbound                               512    512    1        0.0025      0.0017      425     0.0036      185    
+                  cice_pice_readLBUB_setup                                512    512    240      0.0005      0.0004      160     0.0010      422    
+                  cice_pice_readLBUB_filemgt                              512    512    240      0.0001      0.0001      1       0.0001      134    
+                cice_pice_strd_adv_tint                                   512    512    240      0.0108      0.0080      256     0.0204      361    
+            cice_run_import                                               512    512    240      0.0330      0.0276      336     0.0472      10     
+              cice_imp_ocn                                                512    512    240      0.0017      0.0011      84      0.0028      302    
+              cice_imp_atm                                                512    512    240      0.0009      0.0006      177     0.0016      0      
+        [MED] med_phases_post_atm                                         512    512    240      1.1348      0.3005      259     3.7802      509    
+          MED:(med_phases_post_atm)                                       512    512    240      1.1045      0.2688      259     3.7505      509    
+            MED:(med_phases_post_atm) map_atm2ocn                         512    512    240      0.7600      0.0553      215     3.5422      510    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    240      0.7595      0.0548      215     3.5416      510    
+                MED: (med_map_mod:med_map_field_packed) map               512    512    240      0.7160      0.0126      164     3.5000      510    
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    240      0.0047      0.0036      497     0.0065      303    
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    240      0.0046      0.0038      34      0.0056      164    
+            MED:(med_phases_post_atm) map_atm2ice                         512    512    240      0.1714      0.0542      160     2.5820      394    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    240      0.1711      0.0539      160     2.5817      394    
+                MED: (med_map_mod:med_map_field_packed) map               512    512    240      0.1322      0.0161      440     2.5437      394    
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    240      0.0075      0.0059      30      0.0101      301    
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    240      0.0063      0.0055      40      0.0084      164    
+            MED:(med_phases_post_atm) map_atm2lnd                         512    512    240      0.1681      0.0955      270     0.4556      69     
+              MED: (med_map_mod:med_map_field_packed)                     512    512    240      0.1678      0.0953      270     0.4553      69     
+                MED: (med_map_mod:med_map_field_packed) map               512    512    240      0.1294      0.0581      270     0.4163      69     
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    240      0.0083      0.0067      327     0.0106      164    
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    240      0.0053      0.0046      101     0.0080      164    
+            MED:(med_phases_history_write_comp_aux)                       512    512    240      0.0004      0.0003      302     0.0006      232    
+            MED:(med_phases_history_write_inst_comp)                      512    512    240      0.0002      0.0002      332     0.0004      455    
+            MED:(med_phases_history_write_comp_avg)                       512    512    240      0.0002      0.0001      114     0.0003      384    
+        [MED] med_phases_post_lnd                                         512    512    240      0.5807      0.0864      272     1.4610      5      
+          MED:(med_phases_post_lnd)                                       512    512    240      0.5606      0.0670      272     1.4410      5      
+            MED: (med_map_mod:med_map_field_packed)                       512    512    240      0.5539      0.0601      272     1.4345      5      
+              MED: (med_map_mod:med_map_field_packed) map                 512    512    240      0.5130      0.0231      272     1.3946      5      
+              MED: (med_map_mod:med_map_field_packed) copy from src       512    512    240      0.0071      0.0058      160     0.0088      139    
+              MED: (med_map_mod:med_map_field_packed) copy to dest        512    512    240      0.0062      0.0050      21      0.0082      196    
+            MED:(med_phases_prep_rof_mod: med_phases_prep_rof_accum)      512    512    240      0.0043      0.0037      68      0.0053      269    
+            MED:(med_phases_history_write_comp_aux)                       512    512    240      0.0002      0.0002      495     0.0003      258    
+            MED:(med_phases_history_write_inst_comp)                      512    512    240      0.0001      0.0001      452     0.0002      164    
+            MED:(med_phases_history_write_comp_avg)                       512    512    240      0.0001      0.0001      460     0.0002      184    
+        [MED] med_phases_prep_atm                                         512    512    240      0.5134      0.4907      347     0.7485      164    
+          MED:(med_phases_prep_atm)                                       512    512    240      0.4942      0.4721      347     0.7230      164    
+            MED: (med_map_mod:med_map_field_packed)                       512    512    960      0.1578      0.1354      82      0.2009      86     
+              MED: (med_map_mod:med_map_field_packed) map                 512    512    960      0.0497      0.0197      164     0.0966      86     
+              MED: (med_map_mod:med_map_field_packed) copy from src       512    512    960      0.0107      0.0093      161     0.0130      138    
+              MED: (med_map_mod:med_map_field_packed) copy to dest        512    512    960      0.0099      0.0087      161     0.0128      131    
+            MED: (module_med_merge_mod: med_merge_auto)                   512    512    240      0.0656      0.0631      86      0.0918      164    
+        [LND-TO-MED] RunPhase1                                            512    512    240      0.4495      0.0456      509     1.4167      256    
+        [ICE-TO-MED] RunPhase1                                            512    512    240      0.4383      0.0617      0       1.2032      323    
+        [MED] med_phases_prep_lnd                                         512    512    240      0.3912      0.3096      390     0.6144      164    
+          MED:(med_phases_prep_lnd)                                       512    512    240      0.2946      0.2868      351     0.4767      164    
+            MED:(med_phases_prep_lnd) merge                               512    512    240      0.0388      0.0375      335     0.0550      164    
+              MED: (module_med_merge_mod: med_merge_auto)                 512    512    240      0.0383      0.0370      335     0.0543      164    
+        [ROF] RunPhase1                                                   512    512    40       0.3783      0.3725      429     0.3844      262    
+          mosartr_tot                                                     512    512    40       0.3670      0.3610      124     0.3741      262    
+            mosartr_rest                                                  512    512    1        0.1996      0.1979      52      0.2030      0      
+            mosartr_subcycling                                            512    512    40       0.1229      0.1116      445     0.1368      354    
+              mosartr_euler                                               512    512    40       0.1214      0.1104      445     0.1348      354    
+                mosartr_chanroute                                         512    512    600      0.0548      0.0476      161     0.0729      164    
+                mosartr_SMeroutUp                                         512    512    600      0.0374      0.0163      164     0.0548      163    
+                mosartr_subnetwork                                        512    512    600      0.0235      0.0218      287     0.0284      164    
+                mosartr_hillslope                                         512    512    120      0.0013      0.0012      271     0.0017      56     
+            mosartr_SMdirect                                              512    512    40       0.0363      0.0257      36      0.0466      498    
+            mosartr_budgetcheck                                           512    512    5        0.0029      0.0015      67      0.0038      332    
+            mosartr_hbuf                                                  512    512    40       0.0021      0.0011      174     0.0041      104    
+            mosartr_budgetset                                             512    512    5        0.0018      0.0001      0       0.0028      55     
+            mosartr_htapes                                                512    512    40       0.0004      0.0003      374     0.0010      429    
+            mosartr_flood                                                 512    512    40       0.0002      0.0001      495     0.0002      229    
+            mosartr_irrig                                                 512    512    40       0.0002      0.0001      494     0.0002      132    
+          lc_rof_export                                                   512    512    40       0.0024      0.0019      369     0.0038      22     
+          lc_mosart_import                                                512    512    40       0.0014      0.0012      395     0.0024      92     
+        [MED] med_phases_prep_rof                                         512    512    40       0.3464      0.3435      280     0.3495      419    
+          MED:(med_phases_prep_rof_mod: med_phases_prep_rof)              512    512    40       0.3418      0.3390      164     0.3445      338    
+            MED:(med_phases_prep_rof_mod: med_phases_prep_rof_irrig)      512    512    40       0.2074      0.2069      164     0.2075      470    
+            MED: (med_map_mod:med_map_field_packed)                       512    512    40       0.1220      0.1161      164     0.1254      339    
+              MED: (med_map_mod:med_map_field_packed) map                 512    512    40       0.1178      0.1098      164     0.1213      339    
+              MED: (med_map_mod:med_map_field_packed) copy to dest        512    512    40       0.0005      0.0004      494     0.0007      76     
+              MED: (med_map_mod:med_map_field_packed) copy from src       512    512    40       0.0002      0.0002      20      0.0003      164    
+            MED: (module_med_merge_mod: med_merge_auto)                   512    512    40       0.0034      0.0019      492     0.0044      131    
+        [MED] med_phases_restart_write                                    512    512    40       0.3056      0.3050      456     0.3069      161    
+          MED:(med_phases_restart_write)                                  512    512    40       0.3029      0.3024      486     0.3040      334    
+        [MED] med_phases_ocnalb_run                                       512    512    240      0.2775      0.0288      191     1.2952      166    
+          MED:(med_phases_ocnalb_run)                                     512    512    240      0.2597      0.0121      191     1.2770      166    
+        [MED] med_phases_prep_ice                                         512    512    240      0.2643      0.2581      368     0.4222      164    
+          MED:(med_phases_prep_ice)                                       512    512    240      0.2434      0.2379      368     0.3947      164    
+            MED: (module_med_merge_mod: med_merge_auto)                   512    512    240      0.0365      0.0332      106     0.0499      164    
+        [MED] med_phases_post_ocn                                         512    512    240      0.2398      0.0651      328     1.5793      191    
+          MED:(med_phases_post_ocn)                                       512    512    240      0.2149      0.0406      52      1.5537      191    
+            MED:(med_phases_post_ocn) map_ocn2ice                         512    512    240      0.2119      0.0379      52      1.5508      191    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    240      0.2113      0.0374      52      1.5502      191    
+                MED: (med_map_mod:med_map_field_packed) map               512    512    240      0.1825      0.0107      52      1.5194      191    
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    240      0.0023      0.0018      509     0.0030      130    
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    240      0.0018      0.0015      372     0.0025      129    
+            MED:(med_phases_history_write_comp_aux)                       512    512    240      0.0003      0.0003      328     0.0005      26     
+            MED:(med_phases_history_write_inst_comp)                      512    512    240      0.0002      0.0001      328     0.0003      203    
+            MED:(med_phases_history_write_comp_avg)                       512    512    240      0.0001      0.0001      351     0.0002      55     
+        [MED-TO-ATM] RunPhase1                                            512    512    240      0.1675      0.0498      511     0.3477      82     
+        [MED-TO-ICE] RunPhase1                                            512    512    240      0.1633      0.0454      511     0.4784      19     
+        [MED-TO-LND] RunPhase1                                            512    512    240      0.1177      0.0500      495     0.3119      126    
+        [MED] med_phases_post_rof                                         512    512    40       0.0990      0.0901      164     0.1051      445    
+          MED:(med_phases_post_rof)                                       512    512    40       0.0951      0.0851      164     0.1012      445    
+            MED:(med_phases_post_rof) map_rof2lnd                         512    512    40       0.0938      0.0835      164     0.0999      445    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    40       0.0938      0.0834      164     0.0998      445    
+                MED: (med_map_mod:med_map_field_packed) map               512    512    40       0.0894      0.0770      164     0.0954      445    
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    40       0.0003      0.0003      273     0.0004      128    
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    40       0.0002      0.0002      459     0.0003      480    
+            MED:(med_phases_post_rof) map_rof2ice                         512    512    40       0.0005      0.0004      326     0.0007      164    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    40       0.0004      0.0004      326     0.0006      164    
+            MED:(med_phases_history_write_comp_aux)                       512    512    40       0.0002      0.0001      486     0.0002      69     
+            MED:(med_phases_history_write_inst_comp)                      512    512    40       0.0001      0.0000      467     0.0001      134    
+            MED:(med_phases_history_write_comp_avg)                       512    512    40       0.0000      0.0000      201     0.0001      134    
+        [MED] med_phases_aofluxes_run                                     512    512    240      0.0841      0.0684      160     0.0932      273    
+          MED:(med_aofluxes_init)                                         512    512    1        0.0489      0.0440      190     0.0513      231    
+          MED: (med_phases_aofluxes_run)                                  512    512    240      0.0173      0.0018      477     0.0261      8      
+            MED:(med_aofluxes_update)                                     512    512    240      0.0168      0.0012      477     0.0254      8      
+        [MED] med_phases_post_ice                                         512    512    240      0.0825      0.0399      433     1.2675      0      
+          MED:(med_phases_post_ice)                                       512    512    240      0.0630      0.0204      433     1.2467      0      
+            MED: (med_fraction_set)                                       512    512    240      0.0608      0.0183      433     1.2443      0      
+              MED: (med_fraction_set) fbfrac(compocn)                     512    512    240      0.0298      0.0058      449     1.1431      2      
+              MED: (med_fraction_set) fbfrac(compatm)                     512    512    240      0.0278      0.0059      249     1.1758      0      
+            MED:(med_phases_history_write_comp_aux)                       512    512    240      0.0002      0.0002      368     0.0003      164    
+            MED:(med_phases_history_write_inst_comp)                      512    512    240      0.0001      0.0001      341     0.0002      435    
+            MED:(med_phases_history_write_comp_avg)                       512    512    240      0.0001      0.0001      48      0.0002      164    
+        [OCN] RunPhase1                                                   512    512    240      0.0798      0.0731      0       0.0879      67     
+          DOCN_RUN                                                        512    512    240      0.0467      0.0391      0       0.0506      296    
+            docn_strdata_advance                                          512    512    240      0.0093      0.0075      371     0.0120      296    
+              docn_strd_adv_total                                         512    512    240      0.0087      0.0070      371     0.0111      296    
+                docn_strd_adv_tint                                        512    512    240      0.0065      0.0052      454     0.0084      296    
+                docn_strd_adv_readLBUB                                    512    512    240      0.0013      0.0010      371     0.0017      63     
+                  docn_readLBUB_setup                                     512    512    240      0.0005      0.0003      52      0.0006      300    
+                  docn_readLBUB_filemgt                                   512    512    240      0.0001      0.0001      425     0.0001      74     
+            docn_dfield_copy                                              512    512    240      0.0024      0.0019      199     0.0032      293    
+        [OCN-TO-MED] RunPhase1                                            512    512    240      0.0291      0.0229      509     0.0362      357    
+        [MED-TO-ROF] RunPhase1                                            512    512    40       0.0054      0.0051      237     0.0058      121    
+        [MED] med_phases_history_write                                    512    512    40       0.0042      0.0029      126     0.0059      128    
+          MED:(med_phases_history_write)                                  512    512    40       0.0001      0.0001      332     0.0001      495    
+        [ROF-TO-MED] RunPhase1                                            512    512    40       0.0039      0.0036      165     0.0049      164    
+        [MED] med_phases_profile                                          512    512    40       0.0031      0.0030      351     0.0042      164    
+          MED:(med_phases_profile)                                        512    512    40       0.0006      0.0006      375     0.0014      0      
+    [ensemble] Init 1                                                     512    512    1        57.1499     57.1299     118     57.2079     460    
+      [ESM0001] IPDv02p3                                                  512    512    1        41.4901     41.4525     459     41.5272     292    
+        [ATM] IPDv03p3                                                    512    512    1        22.5339     22.5288     164     22.5382     503    
+          get_decomp                                                      512    512    18       0.1345      0.1261      411     0.1557      1      
+            newdecomp                                                     512    512    5        0.1340      0.1256      425     0.1549      1      
+            get_filemap                                                   512    512    5        0.0003      0.0002      412     0.0005      1      
+          ndepdyn_strd_adv_total                                          512    512    1        0.0562      0.0561      391     0.0563      1      
+            ndepdyn_strd_adv_readLBUB                                     512    512    1        0.0562      0.0561      391     0.0563      1      
+              ndepdyn_readLBUB_fbound                                     512    512    1        0.0365      0.0364      0       0.0366      1      
+              ndepdyn_readLBUB_UB_readpio                                 512    512    1        0.0148      0.0148      0       0.0148      349    
+              ndepdyn_readLBUB_LB_readpio                                 512    512    1        0.0024      0.0023      37      0.0025      271    
+              ndepdyn_readLBUB_setup                                      512    512    1        0.0000      0.0000      145     0.0000      301    
+              ndepdyn_readLBUB_filemgt                                    512    512    1        0.0000      0.0000      153     0.0000      0      
+            ndepdyn_strd_adv_tint                                         512    512    1        0.0000      0.0000      287     0.0000      245    
+          shr_reprosum_int                                                512    512    6        0.0114      0.0029      164     0.0185      284    
+            repro_sum_allr_minmax                                         512    512    6        0.0094      0.0008      164     0.0166      284    
+            repro_sum_allr_i8                                             512    512    6        0.0006      0.0001      354     0.0018      24     
+            repro_sum_loopa                                               512    512    6        0.0000      0.0000      104     0.0004      361    
+            repro_sum_loopb                                               512    512    6        0.0000      0.0000      199     0.0000      482    
+          parallelMin                                                     512    512    1        0.0019      0.0001      237     0.0030      200    
+          gmean_arr                                                       512    512    5        0.0005      0.0002      287     0.0017      441    
+            gmean_fixed_repro                                             512    512    5        0.0005      0.0002      287     0.0017      441    
+              shr_reprosum_int                                            512    512    5        0.0005      0.0001      287     0.0017      441    
+                repro_sum_allr_minmax                                     512    512    5        0.0004      0.0001      287     0.0016      441    
+                repro_sum_allr_i8                                         512    512    5        0.0000      0.0000      42      0.0001      341    
+                repro_sum_loopb                                           512    512    5        0.0000      0.0000      325     0.0000      164    
+                repro_sum_loopa                                           512    512    5        0.0000      0.0000      464     0.0000      279    
+              shr_reprosum_INF_NaN_Chk                                    512    512    5        0.0000      0.0000      468     0.0000      269    
+          phys_grid_init                                                  512    512    1        0.0002      0.0001      180     0.0025      437    
+          shr_reprosum_INF_NaN_Chk                                        512    512    6        0.0001      0.0000      6       0.0005      366    
+        [LND] IPDv01p3                                                    512    512    1        9.0604      9.0519      117     9.0710      323    
+          clm_init2                                                       512    512    1        5.2279      5.1957      164     5.2524      433    
+            readMonthlyVeg                                                512    512    1        0.7106      0.7084      387     0.7125      283    
+            hdmdyn_strd_adv_total                                         512    512    1        0.2744      0.2724      137     0.2767      312    
+              hdmdyn_strd_adv_readLBUB                                    512    512    1        0.2743      0.2721      133     0.2766      312    
+                hdmdyn_readLBUB_LB_readpio                                512    512    1        0.1874      0.1869      324     0.1882      30     
+                hdmdyn_readLBUB_fbound                                    512    512    1        0.0778      0.0761      179     0.0801      485    
+                hdmdyn_readLBUB_UB_readpio                                512    512    1        0.0022      0.0021      0       0.0022      129    
+                hdmdyn_readLBUB_setup                                     512    512    1        0.0000      0.0000      222     0.0000      367    
+                hdmdyn_readLBUB_filemgt                                   512    512    1        0.0000      0.0000      13      0.0000      0      
+              hdmdyn_strd_adv_tint                                        512    512    1        0.0001      0.0000      232     0.0011      133    
+            init_accflds                                                  512    512    1        0.0019      0.0019      487     0.0019      135    
+            init_map2gc                                                   512    512    1        0.0016      0.0001      0       0.0039      433    
+            init_cropcal                                                  512    512    1        0.0004      0.0001      367     0.0018      241    
+            init_dyn_subgrid                                              512    512    1        0.0002      0.0002      262     0.0022      259    
+            init_orbd                                                     512    512    1        0.0001      0.0000      385     0.0011      454    
+            init_lnd2glc                                                  512    512    1        0.0000      0.0000      478     0.0000      364    
+            init_wlog                                                     512    512    1        0.0000      0.0000      202     0.0000      0      
+          clm_init1                                                       512    512    1        2.9248      2.9236      8       2.9269      475    
+        [ROF] IPDv01p3                                                    512    512    1        1.7697      1.7565      422     1.7859      157    
+          mosarti_mosart_init                                             512    512    1        0.7440      0.7397      177     0.7457      466    
+            mosarti_histinit                                              512    512    1        0.0034      0.0006      177     0.0052      466    
+            mosarti_restart                                               512    512    1        0.0015      0.0001      440     0.0024      128    
+            mosarti_budgetinit                                            512    512    1        0.0001      0.0000      376     0.0017      325    
+          mosarti_decomp                                                  512    512    1        0.1289      0.1281      243     0.1305      14     
+        [MED-TO-ATM] IPDv05p6b                                            512    512    1        1.4071      1.3952      164     1.4079      325    
+        [ICE] IPDv01p3                                                    512    512    1        0.7237      0.7129      312     0.7322      2      
+          cice_init2                                                      512    512    1        0.0339      0.0233      325     0.0422      24     
+        [OCN] IPDv01p3                                                    512    512    1        0.4608      0.4452      263     0.4703      421    
+          docn_strdata_init                                               512    512    1        0.3595      0.3158      83      0.3833      160    
+          DOCN_RUN                                                        512    512    1        0.0571      0.0546      164     0.0586      197    
+            docn_strdata_advance                                          512    512    1        0.0568      0.0545      164     0.0578      381    
+              docn_strd_adv_total                                         512    512    1        0.0568      0.0545      164     0.0578      381    
+                docn_strd_adv_readLBUB                                    512    512    1        0.0568      0.0545      164     0.0578      381    
+                  docn_readLBUB_fbound                                    512    512    1        0.0373      0.0350      164     0.0384      331    
+                  docn_readLBUB_UB_readpio                                512    512    1        0.0127      0.0125      213     0.0130      451    
+                  docn_readLBUB_LB_readpio                                512    512    1        0.0042      0.0037      306     0.0045      130    
+                  docn_readLBUB_setup                                     512    512    1        0.0000      0.0000      438     0.0000      78     
+                  docn_readLBUB_filemgt                                   512    512    1        0.0000      0.0000      66      0.0000      0      
+                docn_strd_adv_tint                                        512    512    1        0.0000      0.0000      470     0.0000      441    
+            docn_dfield_copy                                              512    512    1        0.0003      0.0000      162     0.0008      197    
+        [MED-TO-ATM] IPDv05p4                                             512    512    1        0.3493      0.3444      242     0.3761      383    
+        [ROF-TO-MED] IPDv05p6b                                            512    512    1        0.2843      0.2843      256     0.2843      240    
+        [MED-TO-ATM] IPDv05p5                                             512    512    1        0.2823      0.2793      333     0.3032      164    
+        [MED-TO-ROF] IPDv05p6b                                            512    512    1        0.2710      0.2710      446     0.2710      231    
+        [MED] IPDv03p5                                                    512    512    1        0.2281      0.2094      476     0.2611      164    
+        [ICE-TO-MED] IPDv05p5                                             512    512    1        0.2252      0.2223      11      0.2270      94     
+        [ICE-TO-MED] IPDv05p4                                             512    512    1        0.2100      0.1822      383     0.2141      65     
+        [LND-TO-MED] IPDv05p5                                             512    512    1        0.2010      0.1997      373     0.2239      164    
+        [MED-TO-LND] IPDv05p5                                             512    512    1        0.1930      0.1869      44      0.1957      496    
+        [MED-TO-ICE] IPDv05p5                                             512    512    1        0.1733      0.1706      164     0.1742      330    
+        [MED-TO-ICE] IPDv05p4                                             512    512    1        0.1682      0.1643      92      0.1690      491    
+        [MED-TO-ATM] IPDv05p6a                                            512    512    1        0.1632      0.1482      167     0.1653      0      
+        [LND-TO-MED] IPDv05p4                                             512    512    1        0.1600      0.1584      197     0.1802      383    
+        [MED-TO-LND] IPDv05p4                                             512    512    1        0.1587      0.1476      314     0.1628      475    
+        [MED-TO-ROF] IPDv05p5                                             512    512    1        0.1550      0.1368      164     0.1561      337    
+        [ROF-TO-MED] IPDv05p5                                             512    512    1        0.1496      0.1495      144     0.1498      509    
+        [OCN-TO-MED] IPDv05p5                                             512    512    1        0.1459      0.1157      164     0.1475      486    
+        [ATM-TO-MED] IPDv05p5                                             512    512    1        0.1420      0.1416      486     0.1480      164    
+        [OCN-TO-MED] IPDv05p4                                             512    512    1        0.1370      0.1080      164     0.1385      209    
+        [ICE-TO-MED] IPDv05p6a                                            512    512    1        0.1211      0.1208      383     0.1214      420    
+        [LND-TO-MED] IPDv05p6a                                            512    512    1        0.1169      0.1163      229     0.1172      37     
+        [MED-TO-ROF] IPDv05p4                                             512    512    1        0.1148      0.0984      92      0.1157      404    
+        [ICE-TO-MED] IPDv05p6b                                            512    512    1        0.1112      0.1112      164     0.1112      106    
+        [ROF-TO-MED] IPDv05p4                                             512    512    1        0.1106      0.1105      155     0.1108      216    
+        [LND-TO-MED] IPDv05p6b                                            512    512    1        0.1103      0.1103      133     0.1103      377    
+        [MED-TO-LND] IPDv05p6a                                            512    512    1        0.1102      0.1100      162     0.1104      266    
+        [ATM-TO-MED] IPDv05p6a                                            512    512    1        0.1092      0.1086      107     0.1170      164    
+        [MED-TO-ICE] IPDv05p6a                                            512    512    1        0.1077      0.1075      164     0.1079      413    
+        [ROF-TO-MED] IPDv05p6a                                            512    512    1        0.1049      0.1040      164     0.1052      51     
+        [OCN-TO-MED] IPDv05p6a                                            512    512    1        0.1048      0.1045      420     0.1052      273    
+        [MED-TO-ROF] IPDv05p6a                                            512    512    1        0.0958      0.0948      164     0.0960      469    
+        [ATM-TO-MED] IPDv05p4                                             512    512    1        0.0907      0.0903      233     0.0967      164    
+        [MED-TO-LND] IPDv05p6b                                            512    512    1        0.0824      0.0824      470     0.0824      141    
+        [MED-TO-ICE] IPDv05p6b                                            512    512    1        0.0665      0.0664      128     0.0665      411    
+        [MED] IPDv03p4                                                    512    512    1        0.0576      0.0558      164     0.0577      198    
+        [LND] IPDv01p4                                                    512    512    1        0.0372      0.0003      220     0.0730      343    
+        [ATM-TO-MED] IPDv05p6b                                            512    512    1        0.0323      0.0322      217     0.0323      185    
+        [OCN-TO-MED] IPDv05p6b                                            512    512    1        0.0125      0.0125      234     0.0125      191    
+        [MED] IPDv03p3                                                    512    512    1        0.0086      0.0082      215     0.0135      164    
+        [ESM0001] IPDv05p4                                                512    512    1        0.0013      0.0000      28      0.0022      168    
+        [MED] IPDv03p6                                                    512    512    1        0.0007      0.0006      313     0.0010      164    
+        [ATM] IPDv03p6                                                    512    512    1        0.0002      0.0002      477     0.0004      392    
+        [ICE] IPDv01p4                                                    512    512    1        0.0002      0.0002      68      0.0004      56     
+        [ROF] IPDv01p4                                                    512    512    1        0.0001      0.0001      53      0.0001      233    
+        [ESM0001] IPDv05p6                                                512    512    1        0.0000      0.0000      490     0.0002      455    
+        [OCN] IPDv01p4                                                    512    512    1        0.0000      0.0000      68      0.0001      121    
+      [ESM0001] IPDv02p1                                                  512    512    1        9.1076      9.0818      447     9.1568      65     
+        [ICE] IPDv01p1                                                    512    512    1        3.7426      3.6259      346     3.9036      259    
+          cice_init_total                                                 512    512    1        3.7029      3.5757      345     3.8566      245    
+            cice_init1                                                    512    512    1        0.0399      0.0374      0       0.0424      202    
+        [MED-TO-ATM] IPDv05p1                                             512    512    1        0.7889      0.6019      33      1.0619      385    
+        [LND] IPDv01p1                                                    512    512    1        0.4138      0.4040      452     0.4500      164    
+        [MED-TO-LND] IPDv05p1                                             512    512    1        0.2778      0.0672      451     0.5253      83     
+        [MED-TO-ATM] IPDv05p3                                             512    512    1        0.2767      0.2586      354     0.2903      84     
+        [MED-TO-LND] IPDv05p3                                             512    512    1        0.2056      0.2051      314     0.2059      490    
+        [ICE-TO-MED] IPDv05p3                                             512    512    1        0.1884      0.1880      363     0.1885      433    
+        [MED-TO-ICE] IPDv05p3                                             512    512    1        0.1846      0.1820      164     0.1848      252    
+        [LND-TO-MED] IPDv05p3                                             512    512    1        0.1792      0.1792      160     0.1801      164    
+        [MED] IPDv03p1                                                    512    512    1        0.1350      0.1310      341     0.1970      164    
+        [OCN] IPDv01p1                                                    512    512    1        0.1132      0.0029      136     0.2823      333    
+        [MED-TO-ATM] IPDv05p2a                                            512    512    1        0.1059      0.0994      495     0.1122      11     
+        [ATM-TO-MED] IPDv05p3                                             512    512    1        0.0987      0.0986      272     0.0988      164    
+        [ATM] IPDv03p1                                                    512    512    1        0.0932      0.0393      164     0.0967      351    
+        [MED-TO-ATM] IPDv05p2b                                            512    512    1        0.0860      0.0857      479     0.0867      164    
+        [MED-TO-LND] IPDv05p2b                                            512    512    1        0.0782      0.0777      400     0.0786      273    
+        [MED-TO-ICE] IPDv05p2a                                            512    512    1        0.0770      0.0736      131     0.0772      85     
+        [MED-TO-ICE] IPDv05p2b                                            512    512    1        0.0767      0.0764      164     0.0768      41     
+        [ICE-TO-MED] IPDv05p2b                                            512    512    1        0.0765      0.0762      385     0.0773      164    
+        [ICE-TO-MED] IPDv05p2a                                            512    512    1        0.0749      0.0746      215     0.0756      164    
+        [MED-TO-LND] IPDv05p2a                                            512    512    1        0.0746      0.0727      385     0.0809      164    
+        [MED-TO-ROF] IPDv05p3                                             512    512    1        0.0729      0.0728      486     0.0734      164    
+        [LND-TO-MED] IPDv05p2b                                            512    512    1        0.0716      0.0713      164     0.0719      385    
+        [LND-TO-MED] IPDv05p2a                                            512    512    1        0.0715      0.0713      283     0.0718      246    
+        [ATM-TO-MED] IPDv05p2a                                            512    512    1        0.0715      0.0712      506     0.0731      164    
+        [OCN-TO-MED] IPDv05p3                                             512    512    1        0.0712      0.0702      164     0.0713      361    
+        [ATM-TO-MED] IPDv05p2b                                            512    512    1        0.0711      0.0709      472     0.0728      164    
+        [MED-TO-ICE] IPDv05p1                                             512    512    1        0.0711      0.0709      171     0.0712      256    
+        [MED-TO-ROF] IPDv05p2b                                            512    512    1        0.0702      0.0692      164     0.0705      32     
+        [ROF-TO-MED] IPDv05p3                                             512    512    1        0.0701      0.0700      244     0.0702      131    
+        [MED-TO-ROF] IPDv05p2a                                            512    512    1        0.0692      0.0682      164     0.0695      441    
+        [ICE-TO-MED] IPDv05p1                                             512    512    1        0.0689      0.0687      126     0.0691      266    
+        [LND-TO-MED] IPDv05p1                                             512    512    1        0.0684      0.0681      410     0.0685      69     
+        [ATM-TO-MED] IPDv05p1                                             512    512    1        0.0667      0.0665      462     0.0675      164    
+        [MED-TO-ROF] IPDv05p1                                             512    512    1        0.0662      0.0661      473     0.0663      211    
+        [OCN-TO-MED] IPDv05p2a                                            512    512    1        0.0647      0.0632      164     0.0649      98     
+        [OCN-TO-MED] IPDv05p2b                                            512    512    1        0.0647      0.0632      164     0.0649      254    
+        [ROF-TO-MED] IPDv05p2a                                            512    512    1        0.0641      0.0637      164     0.0643      138    
+        [ROF-TO-MED] IPDv05p2b                                            512    512    1        0.0628      0.0626      357     0.0631      46     
+        [OCN-TO-MED] IPDv05p1                                             512    512    1        0.0616      0.0614      54      0.0618      270    
+        [ROF] IPDv01p1                                                    512    512    1        0.0616      0.0177      389     0.2077      115    
+        [ROF-TO-MED] IPDv05p1                                             512    512    1        0.0615      0.0613      282     0.0660      23     
+        [MED] Init 0                                                      512    512    1        0.0427      0.0406      0       0.0451      235    
+        [ESM0001] IPDv05p3                                                512    512    1        0.0107      0.0009      106     0.0232      456    
+        [ESM0001] IPDv05p2                                                512    512    1        0.0057      0.0000      214     0.0123      342    
+        [ESM0001] IPDv03p2                                                512    512    1        0.0044      0.0008      113     0.0152      330    
+        [ICE] Init 0                                                      512    512    1        0.0010      0.0002      2       0.0015      288    
+        [MED-TO-LND] Init 0                                               512    512    1        0.0005      0.0001      95      0.0023      144    
+        [ATM-TO-MED] Init 0                                               512    512    1        0.0001      0.0001      336     0.0002      164    
+        [MED-TO-ROF] Init 0                                               512    512    1        0.0001      0.0001      342     0.0002      164    
+        [MED-TO-ATM] Init 0                                               512    512    1        0.0001      0.0001      357     0.0002      164    
+        [ICE-TO-MED] Init 0                                               512    512    1        0.0001      0.0001      323     0.0002      164    
+        [LND-TO-MED] Init 0                                               512    512    1        0.0001      0.0001      337     0.0002      164    
+        [OCN-TO-MED] Init 0                                               512    512    1        0.0001      0.0001      219     0.0002      164    
+        [ROF-TO-MED] Init 0                                               512    512    1        0.0001      0.0001      113     0.0002      164    
+        [MED-TO-ICE] Init 0                                               512    512    1        0.0001      0.0001      242     0.0002      164    
+        [ATM] Init 0                                                      512    512    1        0.0001      0.0001      13      0.0003      77     
+        [LND] Init 0                                                      512    512    1        0.0001      0.0001      74      0.0003      291    
+        [OCN] Init 0                                                      512    512    1        0.0001      0.0001      36      0.0002      256    
+        [ROF] Init 0                                                      512    512    1        0.0001      0.0001      13      0.0001      160    
+        [ESM0001] IPDv05p1                                                512    512    1        0.0000      0.0000      351     0.0000      469    
+      [ESM0001] IPDv02p5                                                  512    512    1        5.7412      5.7386      417     5.7431      69     
+        [ATM] IPDv03p7                                                    512    512    2        3.2824      3.1934      385     3.4772      164    
+          phys_run1                                                       512    512    1        2.7563      2.6621      385     2.9608      164    
+            physpkg_st1                                                   512    512    1        2.4755      2.4579      0       2.4878      333    
+              advance_trcdata                                             512    512    42       2.4499      2.4479      111     2.4529      511    
+                read_next_trcdata                                         512    512    42       2.4468      2.4442      269     2.4499      511    
+                interpolate_trcdata                                       512    512    42       0.0028      0.0022      463     0.0048      164    
+              chk_en_gmean                                                512    512    1        0.0168      0.0002      113     0.0287      281    
+                gmean_arr                                                 512    512    1        0.0168      0.0002      0       0.0287      281    
+              gmean_arr                                                   512    512    5        0.0007      0.0001      479     0.0020      135    
+                gmean_fixed_repro                                         512    512    5        0.0006      0.0001      479     0.0020      403    
+            bc_physics                                                    512    512    1        0.2808      0.1912      369     0.4759      164    
+              rrtmg_sw                                                    288    288    MULTIPLE 0.1102      0.0018      98      0.1507      136    
+              rrtmg_lw                                                    512    512    MULTIPLE 0.0275      0.0204      378     0.0369      164    
+              moist_convection                                            512    512    MULTIPLE 0.0209      0.0167      348     0.0260      109    
+                convect_deep_tend                                         512    512    MULTIPLE 0.0206      0.0164      348     0.0257      109    
+              mcica_subcol_lw                                             512    512    MULTIPLE 0.0102      0.0052      303     0.0186      40     
+              mcica_subcol_sw                                             288    288    MULTIPLE 0.0141      0.0002      98      0.0299      143    
+              cldoptics                                                   512    512    MULTIPLE 0.0036      0.0016      256     0.0055      255    
+              bc_init                                                     512    512    MULTIPLE 0.0013      0.0005      379     0.0031      75     
+                qneg3                                                     512    512    MULTIPLE 0.0006      0.0003      379     0.0022      248    
+              energy_fixer                                                512    512    MULTIPLE 0.0010      0.0006      411     0.0028      483    
+              dry_adjustment                                              512    512    MULTIPLE 0.0006      0.0004      379     0.0015      479    
+                qneg3                                                     512    512    MULTIPLE 0.0000      0.0000      371     0.0000      147    
+              cam_export                                                  512    512    MULTIPLE 0.0002      0.0001      379     0.0003      230    
+              diag_physvar_ic                                             512    512    MULTIPLE 0.0002      0.0000      313     0.0014      501    
+              diag_export                                                 512    512    MULTIPLE 0.0001      0.0000      303     0.0001      156    
+          stepon_run1                                                     512    512    1        0.5232      0.5108      281     0.5408      0      
+            d_p_coupling                                                  512    512    1        0.5231      0.5108      281     0.5408      125    
+              derived_phys                                                512    512    1        0.5085      0.4944      230     0.5300      5      
+                qneg3                                                     512    512    MULTIPLE 0.0005      0.0003      281     0.0014      502    
+              dyn2phys                                                    512    512    1        0.0062      0.0047      475     0.0081      164    
+              dpcopy                                                      512    512    1        0.0027      0.0007      475     0.0040      249    
+          ndepdyn_strd_adv_total                                          512    512    1        0.0001      0.0000      29      0.0001      349    
+            ndepdyn_strd_adv_tint                                         512    512    1        0.0000      0.0000      29      0.0001      349    
+            ndepdyn_strd_adv_readLBUB                                     512    512    1        0.0000      0.0000      29      0.0000      437    
+              ndepdyn_readLBUB_setup                                      512    512    1        0.0000      0.0000      122     0.0000      22     
+              ndepdyn_readLBUB_filemgt                                    512    512    1        0.0000      0.0000      41      0.0000      361    
+        [MED] IPDv03p7                                                    512    512    3        2.1129      1.8904      393     2.2031      164    
+          MED: (med_map_mod: RouteHandles_init)                           512    512    1        1.0697      0.9919      164     1.1105      469    
+          MED: (med_fraction_init)                                        512    512    2        0.4871      0.4772      407     0.5009      511    
+            MED: (med_map_mod:med_map_routehandles_initfrom_fieldbundle)  512    512    2        0.4647      0.4608      164     0.4649      499    
+          MED:(med_phases_profile)                                        512    512    1        0.0036      0.0001      227     0.0152      357    
+          MED:(med_phases_prep_atm)                                       512    512    1        0.0026      0.0018      282     0.0038      262    
+            MED: (med_map_mod:med_map_field_packed)                       512    512    4        0.0007      0.0004      197     0.0014      269    
+              MED: (med_map_mod:med_map_field_packed) map                 512    512    3        0.0004      0.0001      201     0.0011      269    
+              MED: (med_map_mod:med_map_field_packed) copy from src       512    512    3        0.0000      0.0000      385     0.0001      482    
+              MED: (med_map_mod:med_map_field_packed) copy to dest        512    512    3        0.0000      0.0000      241     0.0000      489    
+            MED: (module_med_merge_mod: med_merge_auto)                   512    512    1        0.0004      0.0002      19      0.0014      347    
+          MED:(med_phases_post_rof)                                       512    512    1        0.0016      0.0013      103     0.0019      297    
+            MED:(med_phases_post_rof) map_rof2lnd                         512    512    1        0.0016      0.0013      97      0.0019      297    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    1        0.0016      0.0013      97      0.0019      297    
+                MED: (med_map_mod:med_map_field_packed) map               512    512    1        0.0015      0.0012      103     0.0018      483    
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    1        0.0000      0.0000      38      0.0000      362    
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    1        0.0000      0.0000      225     0.0000      257    
+            MED:(med_phases_post_rof) map_rof2ice                         512    512    1        0.0000      0.0000      236     0.0000      255    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    1        0.0000      0.0000      487     0.0000      255    
+          MED:(med_phases_post_atm)                                       512    512    1        0.0016      0.0008      333     0.0037      291    
+            MED:(med_phases_post_atm) map_atm2ocn                         512    512    1        0.0006      0.0002      69      0.0029      268    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    1        0.0006      0.0002      69      0.0029      268    
+                MED: (med_map_mod:med_map_field_packed) map               512    512    1        0.0005      0.0000      500     0.0028      268    
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    1        0.0000      0.0000      349     0.0000      31     
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    1        0.0000      0.0000      305     0.0000      370    
+            MED:(med_phases_post_atm) map_atm2lnd                         512    512    1        0.0006      0.0002      350     0.0011      249    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    1        0.0006      0.0002      350     0.0011      249    
+                MED: (med_map_mod:med_map_field_packed) map               512    512    1        0.0004      0.0001      350     0.0010      249    
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    1        0.0000      0.0000      48      0.0000      164    
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    1        0.0000      0.0000      145     0.0000      173    
+            MED:(med_phases_post_atm) map_atm2ice                         512    512    1        0.0004      0.0002      176     0.0014      427    
+              MED: (med_map_mod:med_map_field_packed)                     512    512    1        0.0004      0.0002      176     0.0014      427    
+                MED: (med_map_mod:med_map_field_packed) map               512    512    1        0.0003      0.0000      176     0.0012      427    
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    1        0.0000      0.0000      465     0.0001      490    
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    1        0.0000      0.0000      396     0.0001      277    
+          MED:(med_phases_post_lnd)                                       512    512    2        0.0011      0.0005      399     0.0026      306    
+            MED: (med_map_mod:med_map_field_packed)                       512    512    2        0.0011      0.0005      399     0.0026      306    
+              MED: (med_map_mod:med_map_field_packed) map                 512    512    2        0.0008      0.0001      399     0.0023      306    
+              MED: (med_map_mod:med_map_field_packed) copy from src       512    512    2        0.0001      0.0000      265     0.0001      13     
+              MED: (med_map_mod:med_map_field_packed) copy to dest        512    512    2        0.0000      0.0000      257     0.0001      335    
+          MED: (med_fraction_set)                                         512    512    2        0.0009      0.0001      483     0.0030      2      
+            MED: (med_fraction_set) fbfrac(compocn)                       512    512    2        0.0005      0.0000      189     0.0029      2      
+            MED: (med_fraction_set) fbfrac(compatm)                       512    512    2        0.0003      0.0000      479     0.0011      212    
+          MED:(med_phases_post_ice)                                       512    512    1        0.0006      0.0000      264     0.0010      183    
+            MED: (med_fraction_set)                                       512    512    1        0.0006      0.0000      264     0.0010      183    
+              MED: (med_fraction_set) fbfrac(compocn)                     512    512    1        0.0004      0.0000      153     0.0010      180    
+              MED: (med_fraction_set) fbfrac(compatm)                     512    512    1        0.0003      0.0000      485     0.0009      380    
+          MED:(med_phases_ocnalb_run)                                     512    512    2        0.0004      0.0002      225     0.0012      0      
+            MED:(med_phases_ocnalb_init)                                  512    512    1        0.0002      0.0001      339     0.0010      122    
+          MED:(med_phases_post_ocn)                                       512    512    1        0.0003      0.0001      350     0.0006      18     
+            MED:(med_phases_post_ocn) map_ocn2ice                         512    512    1        0.0002      0.0001      350     0.0006      18     
+              MED: (med_map_mod:med_map_field_packed)                     512    512    1        0.0002      0.0001      350     0.0006      18     
+                MED: (med_map_mod:med_map_field_packed) map               512    512    1        0.0001      0.0000      248     0.0005      18     
+                MED: (med_map_mod:med_map_field_packed) copy from src     512    512    1        0.0000      0.0000      457     0.0000      309    
+                MED: (med_map_mod:med_map_field_packed) copy to dest      512    512    1        0.0000      0.0000      321     0.0000      496    
+        [ATM-TO-MED] RunPhase1                                            512    512    2        0.0209      0.0008      499     0.0370      256    
+        [LND] IPDv01p5                                                    512    512    1        0.0076      0.0001      315     0.0317      0      
+        [ICE-TO-MED] RunPhase1                                            512    512    2        0.0051      0.0005      0       0.0355      489    
+        [LND-TO-MED] RunPhase1                                            512    512    2        0.0020      0.0004      480     0.0236      393    
+        [MED-TO-ATM] RunPhase1                                            512    512    1        0.0004      0.0003      511     0.0005      254    
+        [ROF-TO-MED] RunPhase1                                            512    512    2        0.0002      0.0001      3       0.0002      164    
+        [OCN-TO-MED] RunPhase1                                            512    512    2        0.0002      0.0001      68      0.0002      164    
+        [ICE] IPDv01p5                                                    512    512    1        0.0001      0.0001      106     0.0002      73     
+        [OCN] IPDv01p5                                                    512    512    1        0.0000      0.0000      31      0.0001      314    
+        [ROF] IPDv01p5                                                    512    512    1        0.0000      0.0000      33      0.0001      308    
+        [ESM0001] IPDv05p8                                                512    512    1        0.0000      0.0000      345     0.0001      58     
+      (ensemble_driver.F90:SetModelServices)                              512    512    1        0.2041      0.1609      509     0.2467      156    
+      [ensemble] IPDv05p1                                                 512    512    1        0.0019      0.0000      420     0.0098      297    
+      [ESM0001] Init 0                                                    512    512    1        0.0000      0.0000      347     0.0001      137    
+      [ensemble] IPDv05p3                                                 512    512    1        0.0000      0.0000      295     0.0000      0      
+      [ensemble] IPDv05p8                                                 512    512    1        0.0000      0.0000      359     0.0000      0      
+      [ensemble] IPDv05p4                                                 512    512    1        0.0000      0.0000      477     0.0000      27     
+      [ensemble] IPDv05p2                                                 512    512    1        0.0000      0.0000      344     0.0000      326    
+      [ensemble] IPDv05p6                                                 512    512    1        0.0000      0.0000      280     0.0000      164    
+    [ensemble] FinalizePhase1                                             512    512    1        0.0346      0.0108      494     0.0795      114    
+      [ESM0001] FinalizePhase1                                            512    512    1        0.0330      0.0090      493     0.0792      118    
+        [ATM] FinalizePhase1                                              512    512    1        0.0024      0.0015      256     0.0039      320    
+        [ROF] FinalizePhase1                                              512    512    1        0.0004      0.0000      301     0.0020      8      
+        [MED-TO-ATM] FinalizePhase1                                       512    512    1        0.0002      0.0001      68      0.0015      298    
+        [ICE-TO-MED] FinalizePhase1                                       512    512    1        0.0001      0.0001      209     0.0002      495    
+        [MED-TO-ICE] FinalizePhase1                                       512    512    1        0.0001      0.0001      292     0.0001      116    
+        [LND-TO-MED] FinalizePhase1                                       512    512    1        0.0001      0.0001      377     0.0001      156    
+        [MED-TO-LND] FinalizePhase1                                       512    512    1        0.0001      0.0001      320     0.0001      13     
+        [ATM-TO-MED] FinalizePhase1                                       512    512    1        0.0001      0.0001      320     0.0001      1      
+        [MED-TO-ROF] FinalizePhase1                                       512    512    1        0.0001      0.0001      377     0.0001      13     
+        [OCN-TO-MED] FinalizePhase1                                       512    512    1        0.0001      0.0001      199     0.0001      188    
+        [ROF-TO-MED] FinalizePhase1                                       512    512    1        0.0001      0.0001      334     0.0001      507    
+        [MED] FinalizePhase1                                              512    512    1        0.0000      0.0000      339     0.0003      177    
+        [LND] FinalizePhase1                                              512    512    1        0.0000      0.0000      83      0.0000      0      
+        [ICE] FinalizePhase1                                              512    512    1        0.0000      0.0000      68      0.0000      0      
+        [OCN] FinalizePhase1                                              512    512    1        0.0000      0.0000      307     0.0000      0      
