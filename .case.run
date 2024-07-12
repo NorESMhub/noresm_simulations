@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # Batch system directives
-#SBATCH  --job-name=run.test_nf1850oslo
+#SBATCH  --job-name=run.test_nf1850oslo_trigrid
 #SBATCH  --nodes=12
 #SBATCH  --ntasks-per-node=128
-#SBATCH  --output=run.test_nf1850oslo   
+#SBATCH  --output=run.test_nf1850oslo_trigrid   
 #SBATCH  --ntasks=1536
 #SBATCH  --export=ALL
 #SBATCH  --switches=1
@@ -18,7 +18,7 @@ DO NOT RUN THIS SCRIPT MANUALLY
 """
 
 import os, sys
-os.chdir( '/cluster/home/mvertens/noresm/test_nf1850oslo')
+os.chdir( '/cluster/home/mvertens/noresm/test_nf1850oslo_trigrid')
 
 _LIBDIR = os.path.join("/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/cime", "CIME", "Tools")
 sys.path.append(_LIBDIR)

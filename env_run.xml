@@ -25,54 +25,56 @@
     </entry>
     <entry id="CCSM_BGC" value="CO2A">
       <type>char</type>
-      <valid_values>none,CO2A,CO2B,CO2C,CO2C:DMS,CO2A:DMS</valid_values>
+      <valid_values>none,CO2A,CO2B,CO2C</valid_values>
       <desc>Activates additional CO2-related fields to be exchanged between components. Possible values are:
 
-    CO2A: sets nuopc.runconfig variable flds_co2a = .true.; this adds
+    CO2A: sets the driver namelist variable flds_co2a = .true.; this adds
     prognostic CO2 and diagnostic CO2 at the lowest model level to be sent from
     the atmosphere to the land and ocean.
 
-    CO2B: sets nuopc.runconfig variable flds_co2b = .true.; this adds
+    CO2B: sets the driver namelist variable flds_co2b = .true.; this adds
     prognostic CO2 and diagnostic CO2 at the lowest model level to be sent from
     the atmosphere just to the land, and the surface upward flux of CO2 to be
     sent from the land back to the atmosphere
 
-    CO2C: sets nuopc.runconfig variable flds_co2c = .true.; this adds
+    CO2C: sets the driver namelist variable flds_co2c = .true.; this adds
     prognostic CO2 and diagnostic CO2 at the lowest model level to be sent from
     the atmosphere to the land and ocean, and the surface upward flux of CO2
     to be sent from the land and the open ocean back to the atmosphere.
 
+    The namelist variables flds_co2a, flds_co2b and flds_co2c are in the
+    namelist group cpl_flds_inparm.
     </desc>
     </entry>
     <entry id="NCPL_BASE_PERIOD" value="day">
       <type>char</type>
       <valid_values>hour,day,year,decade</valid_values>
       <desc>Base period associated with NCPL coupling frequency.
-    This xml variable is only used to set the driver config variables,
+    This xml variable is only used to set the driver namelist variables,
     atm_cpl_dt, lnd_cpl_dt, ocn_cpl_dt, ice_cpl_dt, glc_cpl_dt, rof_cpl_dt, wav_cpl_dt, and esp_dt.</desc>
     </entry>
     <entry id="ATM_NCPL" value="48">
       <type>integer</type>
       <desc>Number of atm coupling intervals per NCPL_BASE_PERIOD.
-    This is used to set the driver config atm_cpl_dt, equal to basedt/ATM_NCPL,
+    This is used to set the driver namelist atm_cpl_dt, equal to basedt/ATM_NCPL,
     where basedt is equal to NCPL_BASE_PERIOD in seconds.</desc>
     </entry>
     <entry id="LND_NCPL" value="$ATM_NCPL">
       <type>integer</type>
       <desc>Number of land coupling intervals per NCPL_BASE_PERIOD.
-    This is used to set the driver config atm_cpl_dt, equal to basedt/LND_NCPL,
+    This is used to set the driver namelist atm_cpl_dt, equal to basedt/LND_NCPL,
     where basedt is equal to NCPL_BASE_PERIOD in seconds.</desc>
     </entry>
     <entry id="ICE_NCPL" value="$ATM_NCPL">
       <type>integer</type>
       <desc>Number of ice coupling intervals per NCPL_BASE_PERIOD.
-    This is used to set the driver config ice_cpl_dt, equal to basedt/ICE_NCPL
+    This is used to set the driver namelist ice_cpl_dt, equal to basedt/ICE_NCPL
     where basedt is equal to NCPL_BASE_PERIOD in seconds.</desc>
     </entry>
     <entry id="OCN_NCPL" value="$ATM_NCPL">
       <type>integer</type>
       <desc>Number of ocn coupling intervals per NCPL_BASE_PERIOD.
-    Thisn is used to set the driver config ocn_cpl_dt, equal to basedt/OCN_NCPL
+    Thisn is used to set the driver namelist ocn_cpl_dt, equal to basedt/OCN_NCPL
     where basedt is equal to NCPL_BASE_PERIOD in seconds.</desc>
     </entry>
     <entry id="GLC_NCPL" value="$ATM_NCPL">
@@ -99,13 +101,13 @@
     <entry id="ROF_NCPL" value="8">
       <type>integer</type>
       <desc>Number of rof coupling intervals per NCPL_BASE_PERIOD.
-    This is used to set the driver config rof_cpl_dt, equal to basedt/ROF_NCPL
+    This is used to set the driver namelist rof_cpl_dt, equal to basedt/ROF_NCPL
     where basedt is equal to NCPL_BASE_PERIOD in seconds.</desc>
     </entry>
     <entry id="WAV_NCPL" value="$ATM_NCPL">
       <type>integer</type>
       <desc>Number of wav coupling intervals per NCPL_BASE_PERIOD.
-    This is used to set the driver config wav_cpl_dt, equal to basedt/WAV_NCPL
+    This is used to set the driver namelist wav_cpl_dt, equal to basedt/WAV_NCPL
     where basedt is equal to NCPL_BASE_PERIOD in seconds.</desc>
     </entry>
     <entry id="CPL_SEQ_OPTION" value="TIGHT">
@@ -262,14 +264,14 @@
       negative value implies off
     </desc>
     </entry>
-    <entry id="REST_OPTION" value="nyears">
+    <entry id="REST_OPTION" value="$STOP_OPTION">
       <type>char</type>
       <valid_values>none,never,nsteps,nseconds,nminutes,nhours,ndays,nmonths,nyears,date,end</valid_values>
       <desc>
       sets frequency of model restart writes (same options as STOP_OPTION)
     </desc>
     </entry>
-    <entry id="REST_N" value="5">
+    <entry id="REST_N" value="$STOP_N">
       <type>integer</type>
       <desc>
       sets model restart writes with REST_OPTION and REST_DATE
@@ -371,7 +373,7 @@
       <valid_values>TRUE,FALSE</valid_values>
       <desc>Logical to determine whether run has been submitted with the submit script or not</desc>
     </entry>
-    <entry id="JOB_IDS" value="case.run:941038, case.st_archive:941039">
+    <entry id="JOB_IDS" value="case.run:942273, case.st_archive:942274">
       <type>char</type>
       <desc>List of job ids for most recent case.submit</desc>
     </entry>
@@ -482,17 +484,17 @@
       <type>integer</type>
       <desc>
     integer indicating maximum detail level to profile. This xml
-    variable is used to set the config variable
-    timing_detail_limit. This config variable is used by perf_mod
+    variable is used to set the namelist variable
+    timing_detail_limit. This namelist variable is used by perf_mod
     (in $CIMEROOT/src/share/timing/perf_mod.F90) to turn timers off
     and on depending on calls to the routine t_adj_detailf. If in the
     code a statement appears like t_adj_detailf(+1), then the current
     timer detail level is incremented by 1 and compared to the
-    time_detail_limit obtained from the config.  If the limit is
+    time_detail_limit obtained from the namelist.  If the limit is
     exceeded then the timer is turned off.
     </desc>
     </entry>
-    <entry id="TIMER_LEVEL" value="9">
+    <entry id="TIMER_LEVEL" value="4">
       <type>integer</type>
       <desc>Maximum code stack depth of enabled timers.</desc>
     </entry>
@@ -513,7 +515,7 @@
       <desc>Longitude of grid location, in single column mode interpolate datasets to this location
           in single point mode assume all datasets are at this location</desc>
     </entry>
-    <entry id="PTS_DOMAINFILE" value="UNSET">
+    <entry id="PTS_DOMAINFILE" value="$DIN_LOC_ROOT/share/domains/domain.lnd.fv0.9x1.25_gx1v7.151020.nc">
       <type>char</type>
       <desc>used only if if PTS_LAT and PTS_LON are greater than or
           equal to 0.  If this is the case then if PTS_DOMAINFILE is not
@@ -533,7 +535,7 @@
       <type>char</type>
       <desc>atm mesh file (full pathname)</desc>
     </entry>
-    <entry id="LND_DOMAIN_MESH" value="$DIN_LOC_ROOT/share/meshes/ne30pg3_ESMFmesh_cdf5_c20211018.nc">
+    <entry id="LND_DOMAIN_MESH" value="$DIN_LOC_ROOT/share/meshes/fv0.9x1.25_141008_polemod_ESMFmesh.nc">
       <type>char</type>
       <desc>lnd mesh file (full pathname)</desc>
     </entry>
@@ -569,10 +571,6 @@
       <type>char</type>
       <desc>rof2lnd flux mapping file</desc>
     </entry>
-    <entry id="ROF2OCN_FMAPNAME" value="unset">
-      <type>char</type>
-      <desc>rof2ocn flux mapping file</desc>
-    </entry>
     <entry id="ROF2OCN_LIQ_RMAPNAME" value="unset">
       <type>char</type>
       <desc>rof2ocn runoff mapping file</desc>
@@ -580,30 +578,6 @@
     <entry id="ROF2OCN_ICE_RMAPNAME" value="unset">
       <type>char</type>
       <desc>rof2ocn runoff mapping file</desc>
-    </entry>
-    <entry id="GLC2ICE_RMAPNAME" value="idmap">
-      <type>char</type>
-      <desc>glc2ice runoff mapping file</desc>
-    </entry>
-    <entry id="GLC2OCN_LIQ_RMAPNAME" value="idmap">
-      <type>char</type>
-      <desc>glc2ocn runoff mapping file for liquid runoff</desc>
-    </entry>
-    <entry id="GLC2OCN_ICE_RMAPNAME" value="idmap">
-      <type>char</type>
-      <desc>glc2ocn runoff mapping file for ice runoff</desc>
-    </entry>
-    <entry id="OCN2WAV_SMAPNAME" value="unset">
-      <type>char</type>
-      <desc>ocn2wav state mapping file</desc>
-    </entry>
-    <entry id="ICE2WAV_SMAPNAME" value="unset">
-      <type>char</type>
-      <desc>ice2wav state mapping file</desc>
-    </entry>
-    <entry id="WAV2OCN_SMAPNAME" value="unset">
-      <type>char</type>
-      <desc>wav2ocn state mapping file</desc>
     </entry>
     <entry id="EPS_FRAC" value="1.0e-02">
       <type>char</type>
@@ -965,12 +939,12 @@
     </entry>
   </group>
   <group id="med_history">
-    <entry id="HIST_OPTION" value="never">
+    <entry id="HIST_OPTION" value="nmonths">
       <type>char</type>
       <valid_values>none,never,nsteps,nseconds,nminutes,nhours,ndays,nmonths,nyears,date,end</valid_values>
       <desc>Sets driver snapshot history file frequency (like REST_OPTION)</desc>
     </entry>
-    <entry id="HIST_N" value="-999">
+    <entry id="HIST_N" value="1">
       <type>integer</type>
       <valid_values/>
       <desc>Sets driver snapshot history file frequency (like REST_N)</desc>
@@ -1243,7 +1217,7 @@
   <group id="run_component_docn">
     <entry id="DOCN_MODE" value="prescribed">
       <type>char</type>
-      <valid_values>prescribed,sst_aquap1,sst_aquap2,sst_aquap3,sst_aquap4,sst_aquap5,sst_aquap6,sst_aquap7,sst_aquap8,sst_aquap9,sst_aquap10,sst_aquapfile,som,som_aquap,sst_aquap_constant,interannual,cplhist</valid_values>
+      <valid_values>prescribed,sst_aquap1,sst_aquap2,sst_aquap3,sst_aquap4,sst_aquap5,sst_aquap6,sst_aquap7,sst_aquap8,sst_aquap9,sst_aquap10,sst_aquapfile,som,som_aquap,sst_aquap_constant,interannual,cplhist,multilev</valid_values>
       <desc> DOCN mode. The data ocean component (DOCN) always returns SSTs to the
     driver. The atmosphere/ocean fluxes are computed in the
     coupler. Therefore, the data ocean model does not compute fluxes like

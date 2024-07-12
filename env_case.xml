@@ -30,7 +30,7 @@
       <type>char</type>
       <desc>Scripts root utils directory location (setup automatically to $CIMEROOT/scripts/Tools - DO NOT EDIT)</desc>
     </entry>
-    <entry id="MODEL_VERSION" value="noresm2_5_alpha02">
+    <entry id="MODEL_VERSION" value="noresm2_5_alpha02-2-g924151b">
       <type>char</type>
       <desc>Apparent version of the model used for this case</desc>
     </entry>
@@ -297,7 +297,7 @@
       <desc> main configuration file that specifies all relevant filenames
     and directories to configure a case</desc>
     </entry>
-    <entry id="CASEROOT" value="/cluster/home/mvertens/noresm/test_nf1850oslo">
+    <entry id="CASEROOT" value="/cluster/home/mvertens/noresm/test_nf1850oslo_trigrid">
       <type>char</type>
       <desc>full pathname of case</desc>
     </entry>
@@ -314,7 +314,7 @@
       <type>char</type>
       <desc>full pathname of source root directory</desc>
     </entry>
-    <entry id="CASE" value="test_nf1850oslo">
+    <entry id="CASE" value="test_nf1850oslo_trigrid">
       <type>char</type>
       <desc>case name</desc>
     </entry>
@@ -344,7 +344,7 @@
       <type>char</type>
       <desc>username of user who created case</desc>
     </entry>
-    <entry id="CASE_HASH" value="22eea936a6a3c972601a396ca4f5ca768239c75c552c09924de5be393aa93ba0">
+    <entry id="CASE_HASH" value="baaa41398f15f9920282684950707b8161c9c4a56864e871f1d3f64a9081c445">
       <type>char</type>
       <desc>Unique identifier for case</desc>
     </entry>
