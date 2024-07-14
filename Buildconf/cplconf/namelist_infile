@@ -1,3 +1,5 @@
 &comp_inparm 
 
+remove_negative_runoff_lnd = .false.
+
 / 

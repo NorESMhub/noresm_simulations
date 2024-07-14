@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # Batch system directives
-#SBATCH  --job-name=run.test_b1850_ghgmam4
-#SBATCH  --nodes=30
+#SBATCH  --job-name=run.n1850.ne30_f09_tn14.twin_trigrid.20240711
+#SBATCH  --nodes=16
 #SBATCH  --ntasks-per-node=128
-#SBATCH  --output=run.test_b1850_ghgmam4   
-#SBATCH  --ntasks=3776
+#SBATCH  --output=run.n1850.ne30_f09_tn14.twin_trigrid.20240711   
+#SBATCH  --ntasks=2048
 #SBATCH  --export=ALL
 #SBATCH  --switches=1
+#SBATCH  --exclude=b3355,b3356,b3357,b3359,b3379,b3382,b3383
 #SBATCH  --partition=normal
 
 """
@@ -18,9 +19,9 @@ DO NOT RUN THIS SCRIPT MANUALLY
 """
 
 import os, sys
-os.chdir( '/cluster/home/mvertens/noresm/test_b1850_ghgmam4')
+os.chdir( '/cluster/home/mvertens/src/cases/n1850.ne30_f09_tn14.twin_trigrid.20240711')
 
-_LIBDIR = os.path.join("/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/cime", "CIME", "Tools")
+_LIBDIR = os.path.join("/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/cime", "CIME", "Tools")
 sys.path.append(_LIBDIR)
 
 from standard_script_setup          import *

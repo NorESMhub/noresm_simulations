@@ -19,6 +19,5 @@
   ndens = 1
   nhtfrq = 0
   qgwl_runoff_option = "negative"
-  separate_glc2ocn_fluxes = .false.
   use_halo_option = .false.
 /

@@ -7,4 +7,5 @@
 
  interpolate_output = .true.
 
+ history_aerosol = .true.
 / 

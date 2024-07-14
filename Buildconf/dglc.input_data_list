@@ -1,0 +1,2 @@
+model_datafiles_list = /cluster/shared/noresm/inputdata/glc/cism/Greenland/greenland_4km_epsg3413_c171126.nc
+model_meshfiles_list = /cluster/shared/noresm/inputdata/share/meshes/greenland_4km_epsg3413_c170414_ESMFmesh_c20190729.nc

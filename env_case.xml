@@ -30,13 +30,13 @@
       <type>char</type>
       <desc>Scripts root utils directory location (setup automatically to $CIMEROOT/scripts/Tools - DO NOT EDIT)</desc>
     </entry>
-    <entry id="MODEL_VERSION" value="noresm2_5_alpha02-2-g924151b">
+    <entry id="MODEL_VERSION" value="noresm_develop_v7_proto-35-g8bdac78">
       <type>char</type>
       <desc>Apparent version of the model used for this case</desc>
     </entry>
   </group>
   <group id="case_last">
-    <entry id="GRIDS_SPEC_FILE" value="$SRCROOT/ccs_config/config_grids.xml">
+    <entry id="GRIDS_SPEC_FILE" value="$SRCROOT/ccs_config/config_grids_nuopc.xml">
       <type>char</type>
       <desc>file containing specification of all supported model grids, domains and mapping files (for documentation only - DO NOT EDIT)</desc>
       <schema>$CIMEROOT/CIME/data/config/xml_schemas/config_grids_v2.2.xsd</schema>
@@ -114,7 +114,7 @@
       <schema version="2.0">$CIMEROOT/CIME/data/config/xml_schemas/entry_id.xsd</schema>
       <schema version="3.0">$CIMEROOT/CIME/data/config/xml_schemas/entry_id_version3.xsd</schema>
     </entry>
-    <entry id="CONFIG_CPL_FILE_MODEL_SPECIFIC">
+    <entry id="CONFIG_CPL_FILE_MODEL_SPECIFIC" value="$SRCROOT/components/cmeps/cime_config/config_component_$MODEL.xml">
       <type>char</type>
       <desc>file containing all component specific driver configuration variables (for documentation only - DO NOT EDIT)</desc>
       <schema version="2.0">$CIMEROOT/CIME/data/config/xml_schemas/entry_id.xsd</schema>
@@ -178,7 +178,7 @@
       <type>char</type>
       <desc> path to buildlib script for the given library </desc>
     </entry>
-    <entry id="COMPSET" value="1850_CAM%DEV%LT%GHGMAM4_CLM51%SP_CICE_BLOM%ECO_MOSART_SGLC_SWAV_SESP">
+    <entry id="COMPSET" value="1850_CAM%DEV%LT%NORESM%CAMoslo_CLM51%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP">
       <type>char</type>
       <desc>Component set long name (for documentation only - DO NOT EDIT)</desc>
     </entry>
@@ -204,7 +204,7 @@
       <desc>Root directory of the case wave model component  </desc>
       <schema>$CIMEROOT/CIME/data/config/xml_schemas/config_compsets.xsd</schema>
     </entry>
-    <entry id="COMP_ROOT_DIR_GLC" value="$CIMEROOT/CIME/non_py/src/components/stub_comps_$COMP_INTERFACE/sglc">
+    <entry id="COMP_ROOT_DIR_GLC" value="$SRCROOT/components/cdeps/dglc">
       <type>char</type>
       <desc>Root directory of the case land ice component  </desc>
       <schema>$CIMEROOT/CIME/data/config/xml_schemas/config_compsets.xsd</schema>
@@ -275,10 +275,10 @@
       <valid_values>mosart</valid_values>
       <desc>Name of river component</desc>
     </entry>
-    <entry id="COMP_GLC" value="sglc">
+    <entry id="COMP_GLC" value="dglc">
       <type>char</type>
-      <valid_values>sglc</valid_values>
-      <desc>Name of land-ice component</desc>
+      <valid_values>dglc</valid_values>
+      <desc>Name of land component</desc>
     </entry>
     <entry id="COMP_WAV" value="swav">
       <type>char</type>
@@ -297,7 +297,7 @@
       <desc> main configuration file that specifies all relevant filenames
     and directories to configure a case</desc>
     </entry>
-    <entry id="CASEROOT" value="/cluster/home/mvertens/noresm/test_b1850_ghgmam4">
+    <entry id="CASEROOT" value="/cluster/home/mvertens/src/cases/n1850.ne30_f09_tn14.twin_trigrid.20240711">
       <type>char</type>
       <desc>full pathname of case</desc>
     </entry>
@@ -306,15 +306,15 @@
       <valid_values>TRUE,FALSE</valid_values>
       <desc>user is not on the requested machine</desc>
     </entry>
-    <entry id="CIMEROOT" value="/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/cime">
+    <entry id="CIMEROOT" value="/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/cime">
       <type>char</type>
       <desc>full pathname of CIME source root directory</desc>
     </entry>
-    <entry id="SRCROOT" value="/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam">
+    <entry id="SRCROOT" value="/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03">
       <type>char</type>
       <desc>full pathname of source root directory</desc>
     </entry>
-    <entry id="CASE" value="test_b1850_ghgmam4">
+    <entry id="CASE" value="n1850.ne30_f09_tn14.twin_trigrid.20240711">
       <type>char</type>
       <desc>case name</desc>
     </entry>
@@ -326,7 +326,7 @@
       <type>char</type>
       <desc>Machine name</desc>
     </entry>
-    <entry id="MACHDIR" value="/cluster/projects/nn2345k/mvertens/src/noresm2_5_alpha03_cam/ccs_config/machines">
+    <entry id="MACHDIR" value="/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/ccs_config/machines">
       <type>char</type>
       <desc>Machines directory location</desc>
     </entry>
@@ -344,7 +344,7 @@
       <type>char</type>
       <desc>username of user who created case</desc>
     </entry>
-    <entry id="CASE_HASH" value="53b57692598c24f468305af84e3fa8fbe7aeaade8f90b1ead3b200795c138f75">
+    <entry id="CASE_HASH" value="2b0ee424ae96a762770ec164ca9159730f4c1d5654ff060f56d56e086f5c5860">
       <type>char</type>
       <desc>Unique identifier for case</desc>
     </entry>
