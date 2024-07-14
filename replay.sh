@@ -2,11 +2,11 @@
 
 set -e
 
-# Created 2024-07-11 16:40:39
+# Created 2024-07-11 16:57:54
 
-CASEDIR="/cluster/home/mvertens/src/cases/n1850.ne30_f09_tn14.twin_trigrid.20240711"
+CASEDIR="/cluster/home/mvertens/src/cases/n1850.ne30_tn14.twin_bigrid.20240711"
 
-/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/cime/scripts/create_newcase --case "${CASEDIR}" --compset N1850 --res ne30pg3_f09_tn14 --project nn9039k --run-unsupported
+/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/cime/scripts/create_newcase --case "${CASEDIR}" --compset N1850 --res ne30pg3_tn14 --project nn9039k --run-unsupported
 
 cd "${CASEDIR}"
 
@@ -22,11 +22,9 @@ cd "${CASEDIR}"
 
 ./xmlchange JOB_WALLCLOCK_TIME=24:00:00
 
+./xmlchange RESUBMIT=1
+
 ./xmlchange STOP_N=5
-
-./xmlchange RESUBMIT=1
-
-./xmlchange RESUBMIT=1
 
 ./xmlchange STOP_OPTION=nyears
 
@@ -34,25 +32,21 @@ cd "${CASEDIR}"
 
 ./case.build
 
-./pelayout
-
 ./case.submit
 
 ./preview_namelists
-
-./preview_namelists
-
-./case.submit
 
 ./xmlchange REST_N=1
 
 ./xmlchange REST_OPTION=nyears
 
-./preview_namelists
-
 ./case.submit
 
 ./case.submit
+
+./xmlchange RESUBMIT=FALSE
+
+./xmlchange RESUBMIT=0
 
 ./xmlchange CONTINUE_RUN=TRUE
 
