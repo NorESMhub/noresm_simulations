@@ -3,7 +3,7 @@
 <config_definition>
 
 <commandline>
-/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/components/cam/bld/configure -s -fc_type intel -dyn se -hgrid ne30np4.pg3 -cpl nuopc -usr_src /cluster/home/mvertens/src/cases/n1850.ne30_tn14.twin_bigrid.20240711/SourceMods/src.cam -spmd -nosmp -ocn blom -phys cam_dev -camnor -chem trop_mam_oslo -nlev 58 -model_top lt
+/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/components/cam/bld/configure -s -fc_type intel -dyn se -hgrid ne30np4.pg3 -cpl nuopc -usr_src /cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712/SourceMods/src.cam -spmd -nosmp -ocn blom -phys cam_dev -camnor -chem trop_mam_oslo -nlev 58 -model_top lt
 </commandline>
 <entry id="aerocom" value="0" list="" valid_values="0,1">
 Turns on aerocom
@@ -25,7 +25,7 @@ be set to DOCN.
 <entry id="build_chem_proc" value="0,1" list="" valid_values="">
 Switch to force the build of the chemistry preprocessor.
 </entry>
-<entry id="cam_bld" value="/cluster/projects/nn9560k/mvertens/src/cases/n1850.ne30_tn14.twin_bigrid.20240711/Buildconf/camconf" list="" valid_values="">
+<entry id="cam_bld" value="/cluster/projects/nn9560k/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712/Buildconf/camconf" list="" valid_values="">
 CAM build directory; contains .o and .mod files.
 </entry>
 <entry id="cam_dir" value="/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/components/cam" list="" valid_values="">
@@ -315,7 +315,7 @@ Switch to turn on UNICON package: 0 => off, 1 => on
 <entry id="usr_mech_infile" value="" list="" valid_values="">
 Path and file name of the user supplied chemistry mechanism file.
 </entry>
-<entry id="usr_src" value="/cluster/home/mvertens/src/cases/n1850.ne30_tn14.twin_bigrid.20240711/SourceMods/src.cam" list="1" valid_values="">
+<entry id="usr_src" value="/cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712/SourceMods/src.cam" list="1" valid_values="">
 User source directories to prepend to the filepath.  Multiple directories
 are specified as a comma separated list with no embedded white space.
 </entry>

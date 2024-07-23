@@ -1,6 +1,6 @@
 !----------------------------------------------------------------------------------
-! Users should add all user specific namelist changes below in the form of
-!   namelist_var = new_namelist_value
+! Users should add all user specific namelist changes below in the form of 
+!   namelist_var = new_namelist_value 
 !
 ! NOTE: that it does not matter what namelist group the namelist_var belongs to
 ! EXCEPT for when a variable appears in more than one namelist
@@ -20,10 +20,10 @@
 !  GLB_NCFORMAT@diabgc
 !  LYR_DP@diabgc">
 !
-! For example:
+! For example: 
 ! GLB_FNAMETAG@diaphy = 'hd','hd','hd'
-!
-! NOTE: the array sections for MER_REGFLG must be entered as
+! 
+! NOTE: the array sections for MER_REGFLG must be entered as 
 !   MER_REGFLG1 - sets MER_REGFLG(1,:)
 !   MER_REGFLG2 - sets MER_REGFLG(2,:)
 !   MER_REGFLG3 - sets MER_REGFLG(3,:)
@@ -31,4 +31,5 @@
 
 ! To see a full documentation of the namelist variables - see $RUNDIR/ocn_in.readme
 !----------------------------------------------------------------------------------
-ICFILE = "/cluster/work/users/matsbn/archive/NOIIAJRAOC20TR_TL319_tn14_ppm_notz_20240115/rest/1775-01-01-00000/NOIIAJRAOC20TR_TL319_tn14_ppm_notz_20240115.blom.r.1775-01-01-00000.nc"
+ 
+ ICFILE = "/cluster/work/users/matsbn/archive/NOIIAJRAOC20TR_TL319_tn14_ppm_notz_20240115/rest/1775-01-01-00000/NOIIAJRAOC20TR_TL319_tn14_ppm_notz_20240115.blom.r.1775-01-01-00000.nc"

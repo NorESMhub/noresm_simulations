@@ -3,7 +3,7 @@ MED_attributes::
      add_gusts = .false.
      aoflux_grid = ogrid
      atm2ice_map = unset
-     atm2lnd_map = idmap
+     atm2lnd_map = unset
      atm2ocn_map = unset
      atm2wav_map = unset
      atm_nx = 48600
@@ -117,10 +117,10 @@ MED_attributes::
      ice_nx = 360
      ice_ny = 384
      info_debug = 1
-     lnd2atm_map = idmap
+     lnd2atm_map = unset
      lnd2rof_map = unset
-     lnd_nx = 48600
-     lnd_ny = 1
+     lnd_nx = 288
+     lnd_ny = 192
      mapuv_with_cart3d = .true.
      ocn2atm_map = unset
      ocn_nx = 360
@@ -227,7 +227,7 @@ ALLCOMP_attributes::
      WAV_model = swav
      brnch_retain_casename = .false.
      case_desc = UNSET
-     case_name = n1850.ne30_tn14.twin_bigrid.20240711
+     case_name = n1850.ne30_f09_tn14.twin_hybrid.20240712
      cism_evolve = .false.
      coldair_outbreak_mod = .true.
      data_assimilation_atm = .false.
@@ -262,7 +262,7 @@ ALLCOMP_attributes::
      mesh_atm = /cluster/shared/noresm/inputdata/share/meshes/ne30pg3_ESMFmesh_cdf5_c20211018.nc
      mesh_glc = /cluster/shared/noresm/inputdata/share/meshes/greenland_4km_epsg3413_c170414_ESMFmesh_c20190729.nc
      mesh_ice = /cluster/shared/noresm/inputdata/share/meshes/tnx1v4_20170601_cdf5_ESMFmesh.nc
-     mesh_lnd = /cluster/shared/noresm/inputdata/share/meshes/ne30pg3_ESMFmesh_cdf5_c20211018.nc
+     mesh_lnd = /cluster/shared/noresm/inputdata/share/meshes/fv0.9x1.25_141008_polemod_ESMFmesh.nc
      mesh_mask = /cluster/shared/noresm/inputdata/share/meshes/tnx1v4_20170601_cdf5_ESMFmesh.nc
      mesh_ocn = /cluster/shared/noresm/inputdata/share/meshes/tnx1v4_20170601_cdf5_ESMFmesh.nc
      model_version = unknown
@@ -275,7 +275,7 @@ ALLCOMP_attributes::
      orb_obliq = 1.e36
      scol_lat = -999.99
      scol_lon = -999.99
-     single_column_lnd_domainfile = UNSET
+     single_column_lnd_domainfile = /cluster/shared/noresm/inputdata/share/domains/domain.lnd.fv0.9x1.25_gx1v7.151020.nc
      start_type = continue
      tfreeze_option = mushy
      username = mvertens
@@ -299,7 +299,7 @@ CLOCK_attributes::
      rof_cpl_dt = 10800
      start_tod = 0
      start_ymd = 00010101
-     stop_n = 5
+     stop_n = 4
      stop_option = nyears
      stop_tod = 0
      stop_ymd = -999
@@ -343,8 +343,8 @@ WAV_attributes::
 ::
 
 MED_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = med.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = med.log.951472.240714-101838
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -355,8 +355,8 @@ MED_modelio::
 ::
 
 ATM_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = atm.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = atm.log.951472.240714-101838
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -367,8 +367,8 @@ ATM_modelio::
 ::
 
 LND_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = lnd.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = lnd.log.951472.240714-101838
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -379,8 +379,8 @@ LND_modelio::
 ::
 
 ICE_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = ice.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = ice.log.951472.240714-101838
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -391,8 +391,8 @@ ICE_modelio::
 ::
 
 OCN_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = ocn.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = ocn.log.951472.240714-101838
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -403,8 +403,8 @@ OCN_modelio::
 ::
 
 ROF_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = rof.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = rof.log.951472.240714-101838
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -415,8 +415,8 @@ ROF_modelio::
 ::
 
 GLC_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = glc.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = glc.log.951472.240714-101838
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -427,8 +427,8 @@ GLC_modelio::
 ::
 
 WAV_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = wav.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = wav.log.951472.240714-101838
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -439,8 +439,8 @@ WAV_modelio::
 ::
 
 ESP_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = esp.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = esp.log.951472.240714-101838
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -451,7 +451,7 @@ ESP_modelio::
 ::
 
 DRV_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_tn14.twin_bigrid.20240711/run
-     logfile = drv.log.950894.240712-115759
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid.20240712/run
+     logfile = drv.log.951472.240714-101838
 ::
 

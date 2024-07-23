@@ -297,7 +297,7 @@
       <desc> main configuration file that specifies all relevant filenames
     and directories to configure a case</desc>
     </entry>
-    <entry id="CASEROOT" value="/cluster/home/mvertens/cases/n1850.ne30_tn14.twin_bigrid.20240711">
+    <entry id="CASEROOT" value="/cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712">
       <type>char</type>
       <desc>full pathname of case</desc>
     </entry>
@@ -314,7 +314,7 @@
       <type>char</type>
       <desc>full pathname of source root directory</desc>
     </entry>
-    <entry id="CASE" value="n1850.ne30_tn14.twin_bigrid.20240711">
+    <entry id="CASE" value="n1850.ne30_f09_tn14.twin_hybrid.20240712">
       <type>char</type>
       <desc>case name</desc>
     </entry>
@@ -344,7 +344,7 @@
       <type>char</type>
       <desc>username of user who created case</desc>
     </entry>
-    <entry id="CASE_HASH" value="19cb0907fa5eb711215b7703b8cb07760309d09291c0fb09ef3901e599fa0b8f">
+    <entry id="CASE_HASH" value="a69cbd9a895a7a4d926cecb9e9b604f6c91c022b35d5dd4e7c43905a0affecb4">
       <type>char</type>
       <desc>Unique identifier for case</desc>
     </entry>

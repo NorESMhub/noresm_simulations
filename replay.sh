@@ -2,13 +2,15 @@
 
 set -e
 
-# Created 2024-07-11 16:57:54
+# Created 2024-07-12 14:07:19
 
-CASEDIR="/cluster/home/mvertens/src/cases/n1850.ne30_tn14.twin_bigrid.20240711"
+CASEDIR="/cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712"
 
-/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/cime/scripts/create_newcase --case "${CASEDIR}" --compset N1850 --res ne30pg3_tn14 --project nn9039k --run-unsupported
+/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/cime/scripts/create_newcase --case "${CASEDIR}" --compset N1850 --res ne30pg3_f09_tn14 --project nn9039k --run-unsupported
 
 cd "${CASEDIR}"
+
+./case.setup
 
 ./xmlchange NTASKS=1920
 
@@ -18,37 +20,41 @@ cd "${CASEDIR}"
 
 ./xmlchange ROOTPE_OCN=1920
 
-./xmlchange BLOM_VCOORD=cntiso_hybrid,BLOM_TURBULENT_CLOSURE=
-
-./xmlchange JOB_WALLCLOCK_TIME=24:00:00
-
-./xmlchange RESUBMIT=1
-
-./xmlchange STOP_N=5
-
 ./xmlchange STOP_OPTION=nyears
 
-./case.setup
-
-./case.build
-
-./case.submit
-
-./preview_namelists
+./xmlchange STOP_N=5
 
 ./xmlchange REST_N=1
 
 ./xmlchange REST_OPTION=nyears
 
-./case.submit
+./xmlchange RESUBMIT=1
 
-./case.submit
+./xmlchange JOB_WALLCLOCK_TIME=24:00:00
 
-./xmlchange RESUBMIT=FALSE
+./xmlchange BLOM_VCOORD=cntiso_hybrid,BLOM_TURBULENT_CLOSURE=
+
+./case.setup --reset
+
+./case.build
+
+./xmlchange STOP_N=6
 
 ./xmlchange RESUBMIT=0
+
+./case.submit
 
 ./xmlchange CONTINUE_RUN=TRUE
 
 ./case.submit
+
+./xmlchange STOP_N=4
+
+./case.submit
+
+./xmlchange DOUT_S_ROOT=/nird/datalake/NS2345k/mvertens/n1850.ne30_f09_tn14.twin_hybrid.20240712
+
+./xmlchange DOUT_S_ROOT=/nird/datalake/NS2345K/mvertens/n1850.ne30_f09_tn14.twin_hybrid.20240712
+
+./pelayout
 

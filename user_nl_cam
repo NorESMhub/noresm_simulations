@@ -1,6 +1,13 @@
-! Users should add all user specific namelist changes below in the form of
-! namelist_var = new_namelist_value
- interpolate_nlat   = 192
- interpolate_nlon   = 288
- interpolate_output = .true.
- history_aerosol = .true.
+! Users should add all user specific namelist changes below in the form of 
+! namelist_var = new_namelist_value 
+ 
+ interpolate_nlat          = 192
+ interpolate_nlon          = 288
+ interpolate_output        = .true.
+ history_aerosol           = .true.
+ zmconv_c0_lnd             =  0.0075D0
+ zmconv_c0_ocn             =  0.0300D0
+ zmconv_ke                 =  5.0E-6
+ zmconv_ke_lnd             =  1.0E-5
+ clim_modal_aero_top_press =  1.D-4
+ bndtvg                    = '/cluster/shared/noresm/inputdata/atm/cam/ggas/noaamisc.r8.nc'

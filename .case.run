@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # Batch system directives
-#SBATCH  --job-name=run.n1850.ne30_tn14.twin_bigrid.20240711
+#SBATCH  --job-name=run.n1850.ne30_f09_tn14.twin_hybrid.20240712
 #SBATCH  --nodes=16
 #SBATCH  --ntasks-per-node=128
-#SBATCH  --output=run.n1850.ne30_tn14.twin_bigrid.20240711   
+#SBATCH  --output=run.n1850.ne30_f09_tn14.twin_hybrid.20240712   
 #SBATCH  --ntasks=2048
 #SBATCH  --export=ALL
 #SBATCH  --switches=1
@@ -19,7 +19,7 @@ DO NOT RUN THIS SCRIPT MANUALLY
 """
 
 import os, sys
-os.chdir( '/cluster/home/mvertens/src/cases/n1850.ne30_tn14.twin_bigrid.20240711')
+os.chdir( '/cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712')
 
 _LIBDIR = os.path.join("/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/cime", "CIME", "Tools")
 sys.path.append(_LIBDIR)

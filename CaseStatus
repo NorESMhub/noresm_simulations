@@ -1,78 +1,80 @@
-2024-07-11 16:58:16: xmlchange success <command> ./xmlchange NTASKS=1920  </command>
+2024-07-12 14:19:13: case.setup starting 
  ---------------------------------------------------
-2024-07-11 16:58:21: xmlchange success <command> ./xmlchange ROOTPE=0  </command>
+2024-07-12 14:19:21: case.setup success 
  ---------------------------------------------------
-2024-07-11 16:58:25: xmlchange success <command> ./xmlchange NTASKS_OCN=128  </command>
+2024-07-12 14:19:32: xmlchange success <command> ./xmlchange NTASKS=1920  </command>
  ---------------------------------------------------
-2024-07-11 16:58:35: xmlchange success <command> ./xmlchange ROOTPE_OCN=1920  </command>
+2024-07-12 14:19:32: xmlchange success <command> ./xmlchange ROOTPE=0  </command>
  ---------------------------------------------------
-2024-07-11 16:58:39: xmlchange success <command> ./xmlchange BLOM_VCOORD=cntiso_hybrid,BLOM_TURBULENT_CLOSURE=  </command>
+2024-07-12 14:19:33: xmlchange success <command> ./xmlchange NTASKS_OCN=128  </command>
  ---------------------------------------------------
-2024-07-11 16:58:43: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
+2024-07-12 14:19:34: xmlchange success <command> ./xmlchange ROOTPE_OCN=1920  </command>
  ---------------------------------------------------
-2024-07-11 16:58:48: xmlchange success <command> ./xmlchange RESUBMIT=1  </command>
+2024-07-12 14:19:34: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
  ---------------------------------------------------
-2024-07-11 16:58:51: xmlchange success <command> ./xmlchange STOP_N=5  </command>
+2024-07-12 14:19:35: xmlchange success <command> ./xmlchange STOP_N=5  </command>
  ---------------------------------------------------
-2024-07-11 16:58:55: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
+2024-07-12 14:19:36: xmlchange success <command> ./xmlchange REST_N=1  </command>
  ---------------------------------------------------
-2024-07-11 16:59:16: case.setup starting 
+2024-07-12 14:19:36: xmlchange success <command> ./xmlchange REST_OPTION=nyears  </command>
  ---------------------------------------------------
-2024-07-11 16:59:20: case.setup success 
+2024-07-12 14:19:37: xmlchange success <command> ./xmlchange RESUBMIT=1  </command>
  ---------------------------------------------------
-2024-07-11 16:59:53: case.build starting 
+2024-07-12 14:19:37: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
  ---------------------------------------------------
-2024-07-11 17:07:35: case.build success 
+2024-07-12 14:19:38: xmlchange success <command> ./xmlchange BLOM_VCOORD=cntiso_hybrid,BLOM_TURBULENT_CLOSURE=  </command>
  ---------------------------------------------------
-2024-07-11 17:09:25: case.submit starting 950623
+2024-07-12 14:19:47: case.setup starting 
  ---------------------------------------------------
-2024-07-11 17:09:25: case.submit success 950623
+2024-07-12 14:19:50: case.setup success 
  ---------------------------------------------------
-2024-07-11 17:44:29: case.run starting 950622
+2024-07-12 14:19:54: case.build starting 
  ---------------------------------------------------
-2024-07-11 17:44:36: model execution starting 950622
+2024-07-12 14:28:42: case.build success 
  ---------------------------------------------------
-2024-07-11 19:21:42: xmlchange success <command> ./xmlchange REST_N=1  </command>
+2024-07-13 10:40:34: xmlchange success <command> ./xmlchange STOP_N=6  </command>
  ---------------------------------------------------
-2024-07-11 19:21:47: xmlchange success <command> ./xmlchange REST_OPTION=nyears  </command>
+2024-07-13 10:40:38: xmlchange success <command> ./xmlchange RESUBMIT=0  </command>
  ---------------------------------------------------
-2024-07-11 19:22:10: case.submit starting 950684
+2024-07-13 10:40:58: case.submit starting 951333
  ---------------------------------------------------
-2024-07-11 19:22:10: case.submit success 950684
+2024-07-13 10:40:58: case.submit success 951333
  ---------------------------------------------------
-2024-07-11 19:54:55: case.run starting 950683
+2024-07-13 10:41:02: case.run starting 951332
  ---------------------------------------------------
-2024-07-11 19:55:03: model execution starting 950683
+2024-07-13 10:41:07: model execution starting 951332
  ---------------------------------------------------
-2024-07-11 19:56:13: case.submit starting 950692
+2024-07-14 05:29:39: model execution success 951332
  ---------------------------------------------------
-2024-07-11 19:56:13: case.submit success 950692
+2024-07-14 05:29:39: case.run success 951332
  ---------------------------------------------------
-2024-07-11 20:06:38: case.run starting 950691
+2024-07-14 10:16:49: xmlchange success <command> ./xmlchange CONTINUE_RUN=TRUE  </command>
  ---------------------------------------------------
-2024-07-11 20:06:45: model execution starting 950691
+2024-07-14 10:18:07: case.submit starting 
  ---------------------------------------------------
-2024-07-12 11:40:28: model execution success 950691
+2024-07-14 10:18:07: case.submit error 
+
  ---------------------------------------------------
-2024-07-12 11:40:28: case.run success 950691
+2024-07-14 10:18:13: xmlchange success <command> ./xmlchange STOP_N=4  </command>
  ---------------------------------------------------
-2024-07-12 11:54:43: st_archive starting 
+2024-07-14 10:18:33: case.submit starting 951473
  ---------------------------------------------------
-2024-07-12 11:55:12: st_archive success 
+2024-07-14 10:18:33: case.submit success 951473
  ---------------------------------------------------
-2024-07-12 11:57:25: xmlchange success <command> ./xmlchange RESUBMIT=0  </command>
+2024-07-14 10:18:38: case.run starting 951472
  ---------------------------------------------------
-2024-07-12 11:57:31: xmlchange success <command> ./xmlchange CONTINUE_RUN=TRUE  </command>
+2024-07-14 10:18:45: model execution starting 951472
  ---------------------------------------------------
-2024-07-12 11:57:56: case.submit starting 950895
+2024-07-14 22:43:46: model execution success 951472
  ---------------------------------------------------
-2024-07-12 11:57:56: case.submit success 950895
+2024-07-14 22:43:46: case.run success 951472
  ---------------------------------------------------
-2024-07-12 11:57:59: case.run starting 950894
+2024-07-22 19:54:40: xmlchange success <command> ./xmlchange DOUT_S_ROOT=/nird/datalake/NS2345k/mvertens/n1850.ne30_f09_tn14.twin_hybrid.20240712  </command>
  ---------------------------------------------------
-2024-07-12 11:58:05: model execution starting 950894
+2024-07-22 19:55:19: xmlchange success <command> ./xmlchange DOUT_S_ROOT=/nird/datalake/NS2345K/mvertens/n1850.ne30_f09_tn14.twin_hybrid.20240712  </command>
  ---------------------------------------------------
-2024-07-13 04:26:51: model execution success 950894
+2024-07-22 19:55:34: st_archive starting 
  ---------------------------------------------------
-2024-07-13 04:26:52: case.run success 950894
+2024-07-22 20:05:21: st_archive error 
+[Errno 5] Input/output error
  ---------------------------------------------------
