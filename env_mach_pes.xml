@@ -44,7 +44,7 @@
       <values>
         <value compclass="ATM">1920</value>
         <value compclass="CPL">1920</value>
-        <value compclass="OCN">128</value>
+        <value compclass="OCN">256</value>
         <value compclass="WAV">1920</value>
         <value compclass="GLC">1920</value>
         <value compclass="ICE">1920</value>
@@ -58,7 +58,7 @@
       <type>integer</type>
       <values>
         <value compclass="ATM">1920</value>
-        <value compclass="OCN">128</value>
+        <value compclass="OCN">256</value>
         <value compclass="WAV">1920</value>
         <value compclass="GLC">1920</value>
         <value compclass="ICE">1920</value>
@@ -91,7 +91,7 @@
         <value compclass="OCN">1920</value>
         <value compclass="WAV">0</value>
         <value compclass="GLC">0</value>
-        <value compclass="ICE">0</value>
+        <value compclass="ICE">-1</value>
         <value compclass="ROF">0</value>
         <value compclass="LND">0</value>
         <value compclass="ESP">0</value>
@@ -131,11 +131,11 @@
     </entry>
   </group>
   <group id="mach_pes_last">
-    <entry id="COST_PES" value="2048">
+    <entry id="COST_PES" value="2176">
       <type>integer</type>
       <desc>pes or cores used relative to MAX_MPITASKS_PER_NODE for accounting (0 means TOTALPES is valid)</desc>
     </entry>
-    <entry id="TOTALPES" value="2048">
+    <entry id="TOTALPES" value="2176">
       <type>integer</type>
       <desc>total number of MPI tasks (setup automatically - DO NOT EDIT)</desc>
     </entry>

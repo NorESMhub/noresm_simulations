@@ -2,4 +2,6 @@
 
  remove_negative_runoff_lnd = .false.
 
+ ocn_surface_flux_scheme = 1
+
 / 

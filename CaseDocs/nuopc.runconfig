@@ -125,7 +125,7 @@ MED_attributes::
      ocn2atm_map = unset
      ocn_nx = 360
      ocn_ny = 384
-     ocn_surface_flux_scheme = 0
+     ocn_surface_flux_scheme = 1
      remove_negative_runoff_glc = .false.
      remove_negative_runoff_lnd = .false.
      rof2lnd_map = unset
@@ -185,13 +185,13 @@ PELAYOUT_attributes::
      ice_ntasks = 1920
      ice_nthreads = 1
      ice_pestride = 1
-     ice_rootpe = 0
+     ice_rootpe = 128
      lnd_ntasks = 1920
      lnd_nthreads = 1
      lnd_pestride = 1
      lnd_rootpe = 0
      ninst = 1
-     ocn_ntasks = 128
+     ocn_ntasks = 256
      ocn_nthreads = 1
      ocn_pestride = 1
      ocn_rootpe = 1920
@@ -227,7 +227,7 @@ ALLCOMP_attributes::
      WAV_model = swav
      brnch_retain_casename = .false.
      case_desc = UNSET
-     case_name = n1850.ne30_f09_tn14.twin_isopycnic.20240712
+     case_name = n1850.ne30_f09_tn14.twin_hybrid_coare.20240723
      cism_evolve = .false.
      coldair_outbreak_mod = .true.
      data_assimilation_atm = .false.
@@ -299,7 +299,7 @@ CLOCK_attributes::
      rof_cpl_dt = 10800
      start_tod = 0
      start_ymd = 00010101
-     stop_n = 2
+     stop_n = 4
      stop_option = nyears
      stop_tod = 0
      stop_ymd = -999
@@ -343,8 +343,8 @@ WAV_attributes::
 ::
 
 MED_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = med.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = med.log.959614.240724-103050
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -355,8 +355,8 @@ MED_modelio::
 ::
 
 ATM_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = atm.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = atm.log.959614.240724-103050
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -367,8 +367,8 @@ ATM_modelio::
 ::
 
 LND_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = lnd.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = lnd.log.959614.240724-103050
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -379,8 +379,8 @@ LND_modelio::
 ::
 
 ICE_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = ice.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = ice.log.959614.240724-103050
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -391,8 +391,8 @@ ICE_modelio::
 ::
 
 OCN_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = ocn.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = ocn.log.959614.240724-103050
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -403,8 +403,8 @@ OCN_modelio::
 ::
 
 ROF_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = rof.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = rof.log.959614.240724-103050
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -415,8 +415,8 @@ ROF_modelio::
 ::
 
 GLC_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = glc.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = glc.log.959614.240724-103050
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -427,8 +427,8 @@ GLC_modelio::
 ::
 
 WAV_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = wav.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = wav.log.959614.240724-103050
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -439,8 +439,8 @@ WAV_modelio::
 ::
 
 ESP_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = esp.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = esp.log.959614.240724-103050
      pio_async_interface = .false.
      pio_netcdf_format = 64bit_offset
      pio_numiotasks = -99
@@ -451,7 +451,7 @@ ESP_modelio::
 ::
 
 DRV_modelio::
-     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run
-     logfile = drv.log.951521.240714-151746
+     diro = /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_hybrid_coare.20240723/run
+     logfile = drv.log.959614.240724-103050
 ::
 
