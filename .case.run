@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # Batch system directives
-#SBATCH  --job-name=run.n1850.ne30_f09_tn14.twin_hybrid.20240712
+#SBATCH  --job-name=run.n1850.ne30_f09_tn14.twin_isopycnic.20240712
 #SBATCH  --nodes=16
 #SBATCH  --ntasks-per-node=128
-#SBATCH  --output=run.n1850.ne30_f09_tn14.twin_hybrid.20240712   
+#SBATCH  --output=run.n1850.ne30_f09_tn14.twin_isopycnic.20240712
 #SBATCH  --ntasks=2048
 #SBATCH  --export=ALL
 #SBATCH  --switches=1
-#SBATCH  --exclude=b3355,b3356,b3357,b3359,b3379,b3382,b3383
+##SBATCH  --exclude=b3355,b3356,b3357,b3359,b3379,b3382,b3383
+#SBATCH  --exclude=b3355,b3356,b3357,b3359,b3379,b3382,b3383,b3120,b3133,b3134,b3135,b3171,b3173,b3181,b3186
 #SBATCH  --partition=normal
 
 """
@@ -19,7 +20,7 @@ DO NOT RUN THIS SCRIPT MANUALLY
 """
 
 import os, sys
-os.chdir( '/cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712')
+os.chdir( '/cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_isopycnic.20240712')
 
 _LIBDIR = os.path.join("/cluster/projects/nn9560k/mvertens/src/noresm2_5_alpha03/cime", "CIME", "Tools")
 sys.path.append(_LIBDIR)

@@ -4,7 +4,7 @@ c --- itdm  = total grid dimension in i direction
 c --- jtdm  = total grid dimension in j direction
 c --- kdm   =       grid dimension in k direction
       integer    itdm,jtdm,kdm
-      parameter (itdm=360,jtdm=385,kdm=56)
+      parameter (itdm=360,jtdm=385,kdm=53)
 c
 c --- ijqr  = total number of active tiles
 c --- iqr   = maximum number of tiles in i direction

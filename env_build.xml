@@ -369,7 +369,7 @@
       <valid_values>TRUE,FALSE</valid_values>
       <desc>Set preprocessor option to activate age tracer code. Requires module iage or ecosys</desc>
     </entry>
-    <entry id="BLOM_TURBULENT_CLOSURE" value="">
+    <entry id="BLOM_TURBULENT_CLOSURE" value="oneeq advection">
       <type>char</type>
       <valid_values/>
       <desc>Optional turbulent closure.  Valid values one of: twoeq oneeq. Additional values: advection isodif</desc>
@@ -379,7 +379,7 @@
       <valid_values>cgs,mks</valid_values>
       <desc>Unit system.  Valid values one of: cgs mks. </desc>
     </entry>
-    <entry id="BLOM_VCOORD" value="cntiso_hybrid">
+    <entry id="BLOM_VCOORD" value="isopyc_bulkml">
       <type>char</type>
       <valid_values>isopyc_bulkml,cntiso_hybrid</valid_values>
       <desc>Vertical coordinate type of BLOM</desc>

@@ -283,7 +283,7 @@
       Sets the run length along with STOP_N and STOP_DATE
     </desc>
     </entry>
-    <entry id="STOP_N" value="4">
+    <entry id="STOP_N" value="2">
       <type>integer</type>
       <desc>
       Provides a numerical count for $STOP_OPTION.
@@ -405,7 +405,7 @@
       <valid_values>TRUE,FALSE</valid_values>
       <desc>Logical to determine whether run has been submitted with the submit script or not</desc>
     </entry>
-    <entry id="JOB_IDS" value="case.run:951472, case.st_archive:951473">
+    <entry id="JOB_IDS" value="case.run:951521, case.st_archive:951522">
       <type>char</type>
       <desc>List of job ids for most recent case.submit</desc>
     </entry>
@@ -697,7 +697,7 @@
     </entry>
   </group>
   <group id="run_dout">
-    <entry id="DOUT_S_ROOT" value="/nird/datalake/NS2345K/mvertens/n1850.ne30_f09_tn14.twin_hybrid.20240712">
+    <entry id="DOUT_S_ROOT" value="/nird/datalake/NS2345K/mvertens/n1850.ne30_f09_tn14.twin_isopycnic.20240712">
       <type>char</type>
       <desc>Root directory for short term archiving. This directory must be visible to compute nodes.</desc>
     </entry>

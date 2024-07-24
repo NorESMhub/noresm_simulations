@@ -1,11 +1,11 @@
 ---------------- TIMING PROFILE ---------------------
-  Case        : n1850.ne30_f09_tn14.twin_hybrid.20240712
-  LID         : 951332.240713-104102
+  Case        : n1850.ne30_f09_tn14.twin_isopycnic.20240712
+  LID         : 951330.240713-104012
   Machine     : betzy
-  Caseroot    : /cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712
-  Timeroot    : /cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712/Tools
+  Caseroot    : /cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_isopycnic.20240712
+  Timeroot    : /cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_isopycnic.20240712/Tools
   User        : mvertens
-  Curr Date   : Sun Jul 14 05:29:39 2024
+  Curr Date   : Sun Jul 14 04:59:06 2024
   Driver      : CMEPS
   grid        : a%ne30np4.pg3_l%0.9x1.25_oi%tnx1v4_r%r05_w%null_z%null_g%gris4_m%tnx1v4
   compset     : 1850_CAM%DEV%LT%NORESM%CAMoslo_CLM51%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP
@@ -30,28 +30,28 @@
   pe count for cost estimate : 2048 
 
   Overall Metrics: 
-    Model Cost:            6400.68   pe-hrs/simulated_year 
-    Model Throughput:         7.68   simulated_years/day 
+    Model Cost:            6237.71   pe-hrs/simulated_year 
+    Model Throughput:         7.88   simulated_years/day 
 
-    Init Time   :     151.575 seconds 
-    Run Time    :   67507.156 seconds       30.825 seconds/day 
-    Final Time  :      54.237 seconds 
+    Init Time   :      85.717 seconds 
+    Run Time    :   65788.305 seconds       30.040 seconds/day 
+    Final Time  :      33.130 seconds 
 
 
 Runs Time in total seconds, seconds/model-day, and model-years/wall-day 
 CPL Run Time represents time in CPL pes alone, not including time associated with data exchange with other components 
 
-    TOT Run Time:   67507.156 seconds       30.825 seconds/mday         7.68 myears/wday 
-    CPL Run Time:    2630.095 seconds        1.201 seconds/mday       197.10 myears/wday 
-    ATM Run Time:   58966.977 seconds       26.926 seconds/mday         8.79 myears/wday 
-    LND Run Time:    2624.574 seconds        1.198 seconds/mday       197.52 myears/wday 
-    ICE Run Time:    3138.392 seconds        1.433 seconds/mday       165.18 myears/wday 
-    OCN Run Time:   60854.137 seconds       27.787 seconds/mday         8.52 myears/wday 
-    ROF Run Time:     197.753 seconds        0.090 seconds/mday      2621.45 myears/wday 
-    GLC Run Time:       1.915 seconds        0.001 seconds/mday    270648.43 myears/wday 
+    TOT Run Time:   65788.305 seconds       30.040 seconds/mday         7.88 myears/wday 
+    CPL Run Time:    2613.142 seconds        1.193 seconds/mday       198.38 myears/wday 
+    ATM Run Time:   58925.148 seconds       26.906 seconds/mday         8.80 myears/wday 
+    LND Run Time:    2403.727 seconds        1.098 seconds/mday       215.67 myears/wday 
+    ICE Run Time:    2936.844 seconds        1.341 seconds/mday       176.52 myears/wday 
+    OCN Run Time:   31678.674 seconds       14.465 seconds/mday        16.36 myears/wday 
+    ROF Run Time:      74.892 seconds        0.034 seconds/mday      6921.98 myears/wday 
+    GLC Run Time:       1.780 seconds        0.001 seconds/mday    291301.42 myears/wday 
     WAV Run Time:       0.000 seconds        0.000 seconds/mday         0.00 myears/wday 
     ESP Run Time:       0.000 seconds        0.000 seconds/mday         0.00 myears/wday 
-    CPL COMM Time:   2324.853 seconds        1.062 seconds/mday       222.98 myears/wday 
+    CPL COMM Time:   3048.359 seconds        1.392 seconds/mday       170.06 myears/wday 
    NOTE: min:max driver timers (seconds/day):   
                             CPL (pes 0 to 1919) 
                                                 ATM (pes 0 to 1919) 

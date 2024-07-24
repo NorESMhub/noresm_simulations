@@ -1,80 +1,92 @@
-2024-07-12 14:19:13: case.setup starting 
+2024-07-12 14:20:53: case.setup starting 
  ---------------------------------------------------
-2024-07-12 14:19:21: case.setup success 
+2024-07-12 14:20:56: case.setup success 
  ---------------------------------------------------
-2024-07-12 14:19:32: xmlchange success <command> ./xmlchange NTASKS=1920  </command>
+2024-07-12 14:21:21: xmlchange success <command> ./xmlchange NTASKS=1920  </command>
  ---------------------------------------------------
-2024-07-12 14:19:32: xmlchange success <command> ./xmlchange ROOTPE=0  </command>
+2024-07-12 14:21:21: xmlchange success <command> ./xmlchange ROOTPE=0  </command>
  ---------------------------------------------------
-2024-07-12 14:19:33: xmlchange success <command> ./xmlchange NTASKS_OCN=128  </command>
+2024-07-12 14:21:22: xmlchange success <command> ./xmlchange NTASKS_OCN=128  </command>
  ---------------------------------------------------
-2024-07-12 14:19:34: xmlchange success <command> ./xmlchange ROOTPE_OCN=1920  </command>
+2024-07-12 14:21:23: xmlchange success <command> ./xmlchange ROOTPE_OCN=1920  </command>
  ---------------------------------------------------
-2024-07-12 14:19:34: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
+2024-07-12 14:21:23: xmlchange success <command> ./xmlchange STOP_OPTION=nyears  </command>
  ---------------------------------------------------
-2024-07-12 14:19:35: xmlchange success <command> ./xmlchange STOP_N=5  </command>
+2024-07-12 14:21:24: xmlchange success <command> ./xmlchange STOP_N=5  </command>
  ---------------------------------------------------
-2024-07-12 14:19:36: xmlchange success <command> ./xmlchange REST_N=1  </command>
+2024-07-12 14:21:24: xmlchange success <command> ./xmlchange REST_N=1  </command>
  ---------------------------------------------------
-2024-07-12 14:19:36: xmlchange success <command> ./xmlchange REST_OPTION=nyears  </command>
+2024-07-12 14:21:25: xmlchange success <command> ./xmlchange REST_OPTION=nyears  </command>
  ---------------------------------------------------
-2024-07-12 14:19:37: xmlchange success <command> ./xmlchange RESUBMIT=1  </command>
+2024-07-12 14:21:26: xmlchange success <command> ./xmlchange RESUBMIT=1  </command>
  ---------------------------------------------------
-2024-07-12 14:19:37: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
+2024-07-12 14:21:26: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
  ---------------------------------------------------
-2024-07-12 14:19:38: xmlchange success <command> ./xmlchange BLOM_VCOORD=cntiso_hybrid,BLOM_TURBULENT_CLOSURE=  </command>
+2024-07-12 14:21:30: case.setup starting 
  ---------------------------------------------------
-2024-07-12 14:19:47: case.setup starting 
+2024-07-12 14:21:33: case.setup success 
  ---------------------------------------------------
-2024-07-12 14:19:50: case.setup success 
+2024-07-12 14:21:37: case.build starting 
  ---------------------------------------------------
-2024-07-12 14:19:54: case.build starting 
+2024-07-12 14:29:32: case.build success 
  ---------------------------------------------------
-2024-07-12 14:28:42: case.build success 
+2024-07-13 10:37:43: xmlchange success <command> ./xmlchange STOP_N=10  </command>
  ---------------------------------------------------
-2024-07-13 10:40:34: xmlchange success <command> ./xmlchange STOP_N=6  </command>
+2024-07-13 10:38:04: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=36:00:00  </command>
  ---------------------------------------------------
-2024-07-13 10:40:38: xmlchange success <command> ./xmlchange RESUBMIT=0  </command>
+2024-07-13 10:38:44: case.submit starting 
  ---------------------------------------------------
-2024-07-13 10:40:58: case.submit starting 951333
+2024-07-13 10:38:44: case.submit error 
+ERROR: Command: 'sbatch --time 36:00:00 --account nn9039k  --dependency=afterok:951328 case.st_archive --resubmit' failed with error 'sbatch: error: Batch job submission failed: Requested time limit is invalid (missing or exceeds some limit)' from dir '/cluster/projects/nn9560k/mvertens/cases/n1850.ne30_f09_tn14.twin_isopycnic.20240712'
  ---------------------------------------------------
-2024-07-13 10:40:58: case.submit success 951333
+2024-07-13 10:38:49: case.run starting 951328
  ---------------------------------------------------
-2024-07-13 10:41:02: case.run starting 951332
+2024-07-13 10:38:56: model execution starting 951328
  ---------------------------------------------------
-2024-07-13 10:41:07: model execution starting 951332
+2024-07-13 10:39:13: xmlchange success <command> ./xmlchange STOP_N=6  </command>
  ---------------------------------------------------
-2024-07-14 05:29:39: model execution success 951332
+2024-07-13 10:39:22: xmlchange success <command> ./xmlchange JOB_WALLCLOCK_TIME=24:00:00  </command>
  ---------------------------------------------------
-2024-07-14 05:29:39: case.run success 951332
+2024-07-13 10:39:39: xmlchange success <command> ./xmlchange RESUBMIT=0  </command>
  ---------------------------------------------------
-2024-07-14 10:16:49: xmlchange success <command> ./xmlchange CONTINUE_RUN=TRUE  </command>
+2024-07-13 10:40:09: case.submit starting 951331
  ---------------------------------------------------
-2024-07-14 10:18:07: case.submit starting 
+2024-07-13 10:40:09: case.submit success 951331
  ---------------------------------------------------
-2024-07-14 10:18:07: case.submit error 
-
+2024-07-13 10:40:12: case.run starting 951330
  ---------------------------------------------------
-2024-07-14 10:18:13: xmlchange success <command> ./xmlchange STOP_N=4  </command>
+2024-07-13 10:40:18: model execution starting 951330
  ---------------------------------------------------
-2024-07-14 10:18:33: case.submit starting 951473
+2024-07-14 04:59:06: model execution success 951330
  ---------------------------------------------------
-2024-07-14 10:18:33: case.submit success 951473
+2024-07-14 04:59:06: case.run success 951330
  ---------------------------------------------------
-2024-07-14 10:18:38: case.run starting 951472
+2024-07-14 13:52:51: model execution error 
+ERROR: Command: 'srun  /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed with error '' from dir '/cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run'
  ---------------------------------------------------
-2024-07-14 10:18:45: model execution starting 951472
+2024-07-14 13:52:51: case.run error 
+ERROR: RUN FAIL: Command 'srun  /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/bld/cesm.exe   >> cesm.log.$LID 2>&1 ' failed
+See log file for details: /cluster/work/users/mvertens/noresm/n1850.ne30_f09_tn14.twin_isopycnic.20240712/run/cesm.log.951328.240713-103849
  ---------------------------------------------------
-2024-07-14 22:43:46: model execution success 951472
+2024-07-14 15:15:40: xmlchange success <command> ./xmlchange CONTINUE_RUN=TRUE  </command>
  ---------------------------------------------------
-2024-07-14 22:43:46: case.run success 951472
+2024-07-14 15:15:44: xmlchange success <command> ./xmlchange STOP_N=2  </command>
  ---------------------------------------------------
-2024-07-22 19:54:40: xmlchange success <command> ./xmlchange DOUT_S_ROOT=/nird/datalake/NS2345k/mvertens/n1850.ne30_f09_tn14.twin_hybrid.20240712  </command>
+2024-07-14 15:17:41: case.submit starting 951522
  ---------------------------------------------------
-2024-07-22 19:55:19: xmlchange success <command> ./xmlchange DOUT_S_ROOT=/nird/datalake/NS2345K/mvertens/n1850.ne30_f09_tn14.twin_hybrid.20240712  </command>
+2024-07-14 15:17:41: case.submit success 951522
  ---------------------------------------------------
-2024-07-22 19:55:34: st_archive starting 
+2024-07-14 15:17:46: case.run starting 951521
  ---------------------------------------------------
-2024-07-22 20:05:21: st_archive error 
-[Errno 5] Input/output error
+2024-07-14 15:17:51: model execution starting 951521
+ ---------------------------------------------------
+2024-07-14 21:25:06: model execution success 951521
+ ---------------------------------------------------
+2024-07-14 21:25:06: case.run success 951521
+ ---------------------------------------------------
+2024-07-22 19:45:56: xmlchange success <command> ./xmlchange DOUT_S_ROOT=/nird/datalake/NS2345K/mvertens/n1850.ne30_f09_tn14.twin_isopycnic.20240712  </command>
+ ---------------------------------------------------
+2024-07-22 19:47:15: st_archive starting 
+ ---------------------------------------------------
+2024-07-22 20:33:18: st_archive success 
  ---------------------------------------------------

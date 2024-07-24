@@ -541,7 +541,7 @@
 &diffusion
   BDMC1 = 5.e-8
   BDMC2 = 1.e-5
-  BDMLDP = .false.
+  BDMLDP = .true.
   BDMTYP = 2
   EDANIS = .true.
   EDDF2D = .true.
@@ -556,7 +556,7 @@
   EGMXDF = 2500.
   EITMTH = 'gm'
   LNGMTP = 'none'
-  LTEDTP = 'neutral'
+  LTEDTP = 'layer'
   REDI3D = .false.
   RHISCF = 0.5
   RHSCTP = .true.
@@ -572,11 +572,11 @@
   ATM_PATH = 'unset'
   BACLIN = 3600.
   BATROP = 60.
-  BMCMTH = 'dluc'
+  BMCMTH = 'uc'
   CB = .002
   CBAR = .05
   CCFILE = '/cluster/shared/noresm/inputdata/ocn/blom/bndcon/chlorophyll_concentration_tnx1v4_20170608.nc'
-  CE = .06
+  CE = .5
   CHLOPT = 'climatology'
   CNSVDI = .false.
   CSDIAG = .false.
@@ -586,7 +586,7 @@
   DITFLX = .false.
   EXPCNF = 'cesm'
   GRFILE = '/cluster/shared/noresm/inputdata/ocn/blom/grid/grid_tnx1v4_20170622.nc'
-  ICFILE = '/cluster/work/users/matsbn/archive/NOIIAJRAOC20TR_TL319_tn14_ppm_notz_20240115/rest/1775-01-01-00000/NOIIAJRAOC20TR_TL319_tn14_ppm_notz_20240115.blom.r.1775-01-01-00000.nc'
+  ICFILE = '/cluster/work/users/matsbn/archive/NOIIAJRAOC20TR_TL319_tn14_20190710/rest/1775-01-01-00000/NOIIAJRAOC20TR_TL319_tn14_20190710.micom.r.1775-01-01-00000.nc'
   IDATE = 00010101
   IDATE0 = 00010101
   IOTYPE = 1
@@ -667,26 +667,5 @@
   STREAM_SST_YEAR_ALIGN = 1
   STREAM_SST_YEAR_FIRST = 1850
   STREAM_SST_YEAR_LAST = 1850
-/
-
-&vcoord
-  DENSITY_LIMITING = 'monotonic'
-  DENSITY_PC_LOWER_BNDR = .false.
-  DENSITY_PC_UPPER_BNDR = .false.
-  DKTZL = 0
-  DKTZU = 0
-  DPMIN_INFLATION_FACTOR = 1.08
-  DPMIN_INTERIOR = .1
-  DPMIN_SURFACE = 2.5
-  LOWER_BNDR_ORD = 4
-  RECONSTRUCTION_METHOD = 'ppm'
-  TRACER_LIMITING = 'non_oscillatory'
-  TRACER_PC_LOWER_BNDR = .false.
-  TRACER_PC_UPPER_BNDR = .true.
-  UPPER_BNDR_ORD = 6
-  VCOORD_TYPE = 'cntiso_hybrid'
-  VELOCITY_LIMITING = 'non_oscillatory'
-  VELOCITY_PC_LOWER_BNDR = .false.
-  VELOCITY_PC_UPPER_BNDR = .true.
 /
 

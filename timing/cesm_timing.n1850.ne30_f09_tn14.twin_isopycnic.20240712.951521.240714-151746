@@ -1,17 +1,17 @@
 ---------------- TIMING PROFILE ---------------------
-  Case        : n1850.ne30_f09_tn14.twin_hybrid.20240712
-  LID         : 951472.240714-101838
+  Case        : n1850.ne30_f09_tn14.twin_isopycnic.20240712
+  LID         : 951521.240714-151746
   Machine     : betzy
-  Caseroot    : /cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712
-  Timeroot    : /cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_hybrid.20240712/Tools
+  Caseroot    : /cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_isopycnic.20240712
+  Timeroot    : /cluster/home/mvertens/cases/n1850.ne30_f09_tn14.twin_isopycnic.20240712/Tools
   User        : mvertens
-  Curr Date   : Sun Jul 14 22:43:46 2024
+  Curr Date   : Sun Jul 14 21:25:06 2024
   Driver      : CMEPS
   grid        : a%ne30np4.pg3_l%0.9x1.25_oi%tnx1v4_r%r05_w%null_z%null_g%gris4_m%tnx1v4
   compset     : 1850_CAM%DEV%LT%NORESM%CAMoslo_CLM51%SP_CICE_BLOM%ECO_MOSART_DGLC%NOEVOLVE_SWAV_SESP
   run type    : startup, continue_run = TRUE (inittype = FALSE)
-  stop option : nyears, stop_n = 4
-  run length  : 1460 days (1460.0 for ocean)
+  stop option : nyears, stop_n = 2
+  run length  : 730 days (730.0 for ocean)
 
   component       comp_pes    root_pe   tasks  x threads instances (stride) 
   ---------        ------     -------   ------   ------  ---------  ------  
@@ -30,28 +30,28 @@
   pe count for cost estimate : 2048 
 
   Overall Metrics: 
-    Model Cost:            6335.83   pe-hrs/simulated_year 
-    Model Throughput:         7.76   simulated_years/day 
+    Model Cost:            6224.89   pe-hrs/simulated_year 
+    Model Throughput:         7.90   simulated_years/day 
 
-    Init Time   :      95.051 seconds 
-    Run Time    :   44548.836 seconds       30.513 seconds/day 
-    Final Time  :      31.590 seconds 
+    Init Time   :      91.937 seconds 
+    Run Time    :   21884.369 seconds       29.979 seconds/day 
+    Final Time  :      33.056 seconds 
 
 
 Runs Time in total seconds, seconds/model-day, and model-years/wall-day 
 CPL Run Time represents time in CPL pes alone, not including time associated with data exchange with other components 
 
-    TOT Run Time:   44548.836 seconds       30.513 seconds/mday         7.76 myears/wday 
-    CPL Run Time:    1775.569 seconds        1.216 seconds/mday       194.64 myears/wday 
-    ATM Run Time:   39229.258 seconds       26.869 seconds/mday         8.81 myears/wday 
-    LND Run Time:    1578.951 seconds        1.081 seconds/mday       218.88 myears/wday 
-    ICE Run Time:    1950.709 seconds        1.336 seconds/mday       177.17 myears/wday 
-    OCN Run Time:   40742.785 seconds       27.906 seconds/mday         8.48 myears/wday 
-    ROF Run Time:      46.468 seconds        0.032 seconds/mday      7437.42 myears/wday 
-    GLC Run Time:       1.972 seconds        0.001 seconds/mday    175244.66 myears/wday 
+    TOT Run Time:   21884.369 seconds       29.979 seconds/mday         7.90 myears/wday 
+    CPL Run Time:     868.009 seconds        1.189 seconds/mday       199.08 myears/wday 
+    ATM Run Time:   19614.344 seconds       26.869 seconds/mday         8.81 myears/wday 
+    LND Run Time:     789.081 seconds        1.081 seconds/mday       218.99 myears/wday 
+    ICE Run Time:     975.602 seconds        1.336 seconds/mday       177.12 myears/wday 
+    OCN Run Time:   10422.836 seconds       14.278 seconds/mday        16.58 myears/wday 
+    ROF Run Time:      25.245 seconds        0.035 seconds/mday      6844.84 myears/wday 
+    GLC Run Time:       0.839 seconds        0.001 seconds/mday    206008.58 myears/wday 
     WAV Run Time:       0.000 seconds        0.000 seconds/mday         0.00 myears/wday 
     ESP Run Time:       0.000 seconds        0.000 seconds/mday         0.00 myears/wday 
-    CPL COMM Time:   1517.045 seconds        1.039 seconds/mday       227.81 myears/wday 
+    CPL COMM Time:   1006.137 seconds        1.378 seconds/mday       171.75 myears/wday 
    NOTE: min:max driver timers (seconds/day):   
                             CPL (pes 0 to 1919) 
                                                 ATM (pes 0 to 1919) 
