@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 bda1779198d99b460659900330ea789e2e2e5a00 Steve Goldhaber <stevenng@met.no> 1719583651 +0200	fetch --append --no-auto-gc --no-write-commit-graph --prune NorESMhub: storing head
+bda1779198d99b460659900330ea789e2e2e5a00 4b09fa339015c8fe6ba7de5df8a7c197e5753bf8 Steve Goldhaber <stevenng@met.no> 1719584602 +0200	fetch --prune --no-tags NorESMhub: fast-forward
