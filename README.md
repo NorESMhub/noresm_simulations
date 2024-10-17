@@ -4,15 +4,8 @@ The noresm3_dev_simulations repository is dedicated to **development of new case
 
 The idea for this repository was stolen shamelessly from the [NCAR amwg_dev repo](https://github.com/NCAR/amwg_dev).
 
-## To start a new development simulation, follow these steps:
-- Determine what branch your experiment case directory will live on, current supported branches are:
-  - noresm25_preindust_coupled
-  - noresm25_preindust_amip
-- Determine a case name for your run using the proposed naming convention of
-    ``compset_alias.grid_alias.codeversion.somekindofinfo.yyyyymmdd``
-- Open an issue and fill out the template
-  -- include a link to the branch in the issue (when pushed)
-- Create your case directory and using the script (TBD) push your case directory to the branch
+## To start a new development simulation, follow the Wiki instructions
+https://github.com/NorESMhub/noresm3_dev_simulations/wiki
 
 ## Discussions
 Discussions relevant to NorESM3 development and preparation for CMIP7 could be posted under [Discussions](https://github.com/NorESMhub/noresm_simulations/discussions).
