@@ -1,6 +1,6 @@
-# noresm_simulations
+# noresm3_dev_simulations
 
-The noresm3_dev_simulations repository is dedicated to development of new cases for NorESM3 including for NorESM3 component models.
+The noresm3_dev_simulations repository is dedicated to **development of new cases for NorESM3** including for NorESM3 component models.
 
 The idea for this repository was stolen shamelessly from the [NCAR amwg_dev repo](https://github.com/NCAR/amwg_dev).
 
