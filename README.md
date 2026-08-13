@@ -11,6 +11,21 @@ https://github.com/NorESMhub/noresm3_dev_simulations/wiki
 - Workflow for running coupled NorESM3_0_betaXX simulations on Betzy
 - Workflow for producing and managing diagnostics output
 
+## Naming conventions for issues / cases
+The title of an issue should be the case name of the simulation, following this format: `Compset.ModelVersionTag.Resolution.IssueNr.Date`
+
+For example: `n1850.n30b22LM.499.20260901`
+
+The components of the name are:
+- `n1850` — the compset.
+- `n30` — NorESM3.0.
+- `b22` — beta22.
+- `LM` — the `ne16pg3_tn14` resolution.
+- `499` — the issue number.
+- `20260901` — the date, in `YYYYMMDD` format.
+  
+Thus, issue titles should follow the same naming convention as the corresponding simulation case name.
+
 ## Discussions
 Discussions relevant to NorESM3 development and preparation for CMIP7 could be posted under [Discussions](https://github.com/NorESMhub/noresm3_dev_simulations/discussions).
 
